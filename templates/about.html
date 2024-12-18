@@ -1,0 +1,92 @@
+{% extends "base.html" %}
+
+{% block title %}About{% endblock %}
+
+{% block content %}
+<div class="max-w-6xl mx-auto px-4">
+    <!-- 个人介绍 -->
+    <section class="py-20">
+        <div class="grid md:grid-cols-2 gap-12 items-center">
+            <div>
+                <h1 class="text-4xl font-bold mb-6">About Me</h1>
+                <p class="text-xl text-gray-600 dark:text-gray-400 mb-6">
+                    I'm a full-stack developer with a passion for creating beautiful and functional web applications. 
+                    With over 5 years of experience in web development, I've worked on various projects ranging from 
+                    small business websites to large-scale enterprise applications.
+                </p>
+                <p class="text-xl text-gray-600 dark:text-gray-400 mb-6">
+                    My approach to development focuses on creating clean, maintainable code while ensuring an excellent 
+                    user experience. I'm always eager to learn new technologies and stay up-to-date with the latest 
+                    industry trends.
+                </p>
+                <div class="flex space-x-4">
+                    <a href="/contact" class="px-6 py-3 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors">
+                        Contact Me
+                    </a>
+                    <a href="#" class="px-6 py-3 border border-blue-500 text-blue-500 rounded-lg hover:bg-blue-50 dark:hover:bg-blue-900/30 transition-colors">
+                        Download CV
+                    </a>
+                </div>
+            </div>
+            <div class="relative">
+                <div class="aspect-w-4 aspect-h-5 rounded-lg overflow-hidden">
+                    <img src="{{ url_for('static', filename='images/profile.jpg') }}" 
+                         alt="Profile picture" 
+                         class="object-cover w-full h-full">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 工作经历 -->
+    <section class="py-20">
+        <h2 class="text-3xl font-bold mb-10">Experience</h2>
+        <div class="space-y-12">
+            <div class="bg-white dark:bg-gray-800 p-8 rounded-lg shadow-lg">
+                <div class="flex justify-between items-start mb-4">
+                    <div>
+                        <h3 class="text-xl font-bold">Senior Developer</h3>
+                        <p class="text-blue-500">Company Name</p>
+                    </div>
+                    <span class="text-gray-600 dark:text-gray-400">2020 - Present</span>
+                </div>
+                <p class="text-gray-600 dark:text-gray-400">
+                    Led development of multiple high-impact projects, mentored junior developers, 
+                    and implemented best practices that improved team productivity by 30%.
+                </p>
+            </div>
+
+            <div class="bg-white dark:bg-gray-800 p-8 rounded-lg shadow-lg">
+                <div class="flex justify-between items-start mb-4">
+                    <div>
+                        <h3 class="text-xl font-bold">Full Stack Developer</h3>
+                        <p class="text-blue-500">Previous Company</p>
+                    </div>
+                    <span class="text-gray-600 dark:text-gray-400">2018 - 2020</span>
+                </div>
+                <p class="text-gray-600 dark:text-gray-400">
+                    Developed and maintained multiple web applications using React and Node.js, 
+                    resulting in a 40% increase in user engagement.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 教育背景 -->
+    <section class="py-20">
+        <h2 class="text-3xl font-bold mb-10">Education</h2>
+        <div class="bg-white dark:bg-gray-800 p-8 rounded-lg shadow-lg">
+            <div class="flex justify-between items-start mb-4">
+                <div>
+                    <h3 class="text-xl font-bold">Bachelor of Computer Science</h3>
+                    <p class="text-blue-500">University Name</p>
+                </div>
+                <span class="text-gray-600 dark:text-gray-400">2014 - 2018</span>
+            </div>
+            <p class="text-gray-600 dark:text-gray-400">
+                Graduated with honors. Specialized in web development and artificial intelligence.
+            </p>
+        </div>
+    </section>
+</div>
+{% endblock %}

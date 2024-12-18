@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat History - AI Chat</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="chat-history-container">
+        <div class="chat-header">
+            <h2>Chat History</h2>
+            <a href="{{ url_for('home') }}" class="back-button">Back to Chat</a>
+        </div>
+        <div class="messages-list">
+            {% for message in messages %}
+            <div class="message-item {% if message.is_ai %}ai{% else %}user{% endif %}">
+                <div class="message-content">
+                    {{ message.content }}
+                    {% if message.image_url %}
+                    <div class="message-image">
+                        <img src="{{ message.image_url }}" alt="Generated image">
+                    </div>
+                    {% endif %}
+                </div>
+                <div class="message-meta">
+                    <span class="message-time">{{ message.timestamp.strftime('%Y-%m-%d %H:%M:%S') }}</span>
+                    <span class="message-sender">{{ 'AI' if message.is_ai else 'You' }}</span>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</body>
+</html>

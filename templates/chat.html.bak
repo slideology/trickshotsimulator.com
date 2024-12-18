@@ -1,0 +1,150 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="flex h-screen bg-gray-100">
+    <!-- 聊天区域 -->
+    <div class="flex-1 flex flex-col">
+        <div class="bg-white shadow">
+            <div class="max-w-7xl mx-auto py-4 px-4 flex justify-between items-center">
+                <div class="flex items-center">
+                    <div class="w-10 h-10 bg-blue-500 rounded-full flex items-center justify-center text-white">
+                        AI
+                    </div>
+                    <div class="ml-3">
+                        <h2 class="text-lg font-semibold text-gray-900">AI Assistant</h2>
+                        <p class="text-sm text-green-500">Online</p>
+                    </div>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <a href="{{ url_for('chat_history') }}" class="text-gray-600 hover:text-gray-900">
+                        <i class="fas fa-history"></i>
+                    </a>
+                    <a href="{{ url_for('logout') }}" class="text-gray-600 hover:text-gray-900">
+                        <i class="fas fa-sign-out-alt"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="flex-1 overflow-y-auto p-4 space-y-4" id="chat-messages">
+            {% for message in messages %}
+                <div class="flex {% if message.is_ai %}justify-start{% else %}justify-end{% endif %}">
+                    <div class="max-w-xl {% if message.is_ai %}bg-white{% else %}bg-blue-500 text-white{% endif %} rounded-lg px-4 py-2 shadow">
+                        <p class="text-sm">{{ message.content }}</p>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+
+        <div class="bg-white border-t p-4">
+            <form id="chat-form" class="flex items-center space-x-2">
+                <button type="button" id="emoji-button" class="text-gray-500 hover:text-gray-700">
+                    <i class="far fa-smile"></i>
+                </button>
+                <input type="text" id="message-input" 
+                       class="flex-1 rounded-lg border border-gray-300 px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" 
+                       placeholder="Type your message..." 
+                       autocomplete="off">
+                <button type="button" id="image-button" class="text-gray-500 hover:text-gray-700" title="Generate image">
+                    <i class="fas fa-image"></i>
+                </button>
+                <button type="submit" class="bg-blue-500 text-white rounded-lg px-4 py-2 hover:bg-blue-600">
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- 侧边栏广告 -->
+    <div class="w-64 bg-white border-l p-4 hidden lg:block">
+        <ins class="adsbygoogle"
+             style="display:block"
+             data-ad-client="ca-pub-YOUR_PUBLISHER_ID"
+             data-ad-slot="YOUR_AD_SLOT_ID_3"
+             data-ad-format="vertical"
+             data-full-width-responsive="true"></ins>
+        <script>
+             (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+    </div>
+</div>
+
+<div id="emoji-picker" class="hidden fixed bottom-20 left-4 bg-white rounded-lg shadow-lg"></div>
+{% endblock %}
+
+{% block extra_scripts %}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/emoji-mart@latest/dist/browser.js"></script>
+<script>
+    const socket = io();
+    const chatMessages = document.getElementById('chat-messages');
+    const chatForm = document.getElementById('chat-form');
+    const messageInput = document.getElementById('message-input');
+
+    function scrollToBottom() {
+        chatMessages.scrollTop = chatMessages.scrollHeight;
+    }
+
+    function appendMessage(content, isAI) {
+        const messageDiv = document.createElement('div');
+        messageDiv.className = `flex ${isAI ? 'justify-start' : 'justify-end'}`;
+        messageDiv.innerHTML = `
+            <div class="max-w-xl ${isAI ? 'bg-white' : 'bg-blue-500 text-white'} rounded-lg px-4 py-2 shadow">
+                <p class="text-sm">${content}</p>
+            </div>
+        `;
+        chatMessages.appendChild(messageDiv);
+        scrollToBottom();
+    }
+
+    chatForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const message = messageInput.value.trim();
+        if (message) {
+            socket.emit('message', { content: message });
+            appendMessage(message, false);
+            messageInput.value = '';
+        }
+    });
+
+    socket.on('response', (data) => {
+        appendMessage(data.content, true);
+    });
+
+    socket.on('error', (data) => {
+        alert(data.message);
+    });
+
+    scrollToBottom();
+
+    // Emoji picker
+    const emojiButton = document.getElementById('emoji-button');
+    const emojiPicker = document.getElementById('emoji-picker');
+    let picker = null;
+
+    emojiButton.addEventListener('click', () => {
+        if (!picker) {
+            picker = new EmojiMart.Picker({
+                onEmojiSelect: (emoji) => {
+                    messageInput.value += emoji.native;
+                    emojiPicker.classList.add('hidden');
+                }
+            });
+            emojiPicker.appendChild(picker);
+        }
+        emojiPicker.classList.toggle('hidden');
+    });
+
+    // Image generation
+    const imageButton = document.getElementById('image-button');
+    imageButton.addEventListener('click', () => {
+        const prompt = messageInput.value.trim();
+        if (prompt) {
+            socket.emit('generate_image', { prompt: prompt });
+            messageInput.value = '';
+        } else {
+            alert('Please enter a description for the image you want to generate.');
+        }
+    });
+</script>
+{% endblock %}

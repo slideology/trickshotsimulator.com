@@ -1,0 +1,79 @@
+{
+    "faq_sections": [
+        {
+            "title": "Getting Started",
+            "items": [
+                {
+                    "question": "What is Spranki? 🎮",
+                    "answer": "Spranki is an innovative music creation game that combines rhythm gaming with creative music production. It's designed to make music creation fun and accessible while helping you develop real musical skills.",
+                    "color": "blue"
+                },
+                {
+                    "question": "Do I need musical experience? 🎵",
+                    "answer": "Not at all! Spranki is designed to be enjoyable for everyone, regardless of their musical background. Our intuitive interface and tutorial system will help you get started quickly.",
+                    "color": "purple"
+                }
+            ]
+        },
+        {
+            "title": "Features & Gameplay",
+            "items": [
+                {
+                    "question": "What can I create with Spranki? 🎼",
+                    "answer": "Create beats, melodies, full songs, and collaborate with other musicians. Our platform provides various musical tools, effects, and AI-powered features to enhance your creativity and make music production exciting.",
+                    "color": "pink"
+                },
+                {
+                    "question": "How does the game work? 🎹",
+                    "answer": "Simply tap or click to create beats, use our intuitive interface to mix sounds, and let our AI assist you in creating harmonies. Start with the tutorial mode to learn the basics, then explore freestyle and challenge modes.",
+                    "color": "indigo"
+                }
+            ]
+        },
+        {
+            "title": "Technical & Access",
+            "items": [
+                {
+                    "question": "Can I play on mobile devices? 📱",
+                    "answer": "Yes! Spranki works seamlessly on any modern web browser, including mobile devices. No installation required - just visit our website and start creating music instantly!",
+                    "color": "green"
+                },
+                {
+                    "question": "Is Spranki free to play? 💰",
+                    "answer": "Absolutely! The core game experience is completely free. We offer optional premium features for enhanced creativity, but you can enjoy the full musical journey without any cost.",
+                    "color": "yellow"
+                }
+            ]
+        },
+        {
+            "title": "Collaboration & Sharing",
+            "items": [
+                {
+                    "question": "Can I collaborate with others? 👥",
+                    "answer": "Yes! Join real-time sessions with friends, share your creations, and even participate in community challenges. Our collaboration features make music creation a social experience.",
+                    "color": "red"
+                },
+                {
+                    "question": "How do I share my music? 🌐",
+                    "answer": "Easily share your creations on social media, generate shareable links, or export your music in various formats. You can also participate in our community showcase events!",
+                    "color": "orange"
+                }
+            ]
+        },
+        {
+            "title": "Learning & Progress",
+            "items": [
+                {
+                    "question": "How do I improve my skills? 📈",
+                    "answer": "Follow our structured learning paths, complete daily challenges, and receive instant feedback. Our AI-powered system adapts to your skill level and helps you progress naturally.",
+                    "color": "teal"
+                },
+                {
+                    "question": "Are there tutorials available? 📚",
+                    "answer": "Yes! We offer comprehensive tutorials for all skill levels, from basic rhythm concepts to advanced music theory. Start with our interactive lessons and progress at your own pace.",
+                    "color": "cyan"
+                }
+            ]
+        }
+    ]
+}
