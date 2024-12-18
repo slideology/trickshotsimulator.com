@@ -25,7 +25,16 @@ def load_translations():
             return json.load(f)
     except Exception as e:
         app.logger.error(f"Error loading translations: {e}")
-        return {}
+        return {
+            "zh": {
+                "nav": {"home": "首页", "faq": "常见问题"},
+                "hero": {
+                    "title_highlight": "创作音乐",
+                    "title_regular": "前所未有的体验",
+                    "description": "用 Sprunkr 将您的音乐创意变为现实。混音节拍，创作旋律，与世界分享您的音乐。"
+                }
+            }
+        }
 
 def load_faq_data():
     faq_path = os.path.join(app.static_folder, 'data', 'faq.json')
@@ -34,95 +43,210 @@ def load_faq_data():
             return json.load(f)
     except Exception as e:
         app.logger.error(f"Error loading FAQ data: {e}")
-        return {}
+        return {
+            "zh": {
+                "faq_sections": []
+            }
+        }
 
 def get_faq_data(lang='zh'):
-    faq_data = load_faq_data()
-    return faq_data.get(lang, faq_data.get('zh', {})).get('faq_sections', [])
+    try:
+        faq_data = load_faq_data()
+        return faq_data.get(lang, faq_data.get('zh', {})).get('faq_sections', [])
+    except Exception as e:
+        app.logger.error(f"Error getting FAQ data: {e}")
+        return []
 
-# Load translations
-translations = load_translations()
+# Load translations with error handling
+try:
+    translations = load_translations()
+except Exception as e:
+    app.logger.error(f"Error loading initial translations: {e}")
+    translations = {}
 
 def get_translations(lang='zh'):
-    return translations.get(lang, translations['zh'])
+    try:
+        return translations.get(lang, translations.get('zh', {
+            "nav": {"home": "首页", "faq": "常见问题"},
+            "hero": {
+                "title_highlight": "创作音乐",
+                "title_regular": "前所未有的体验",
+                "description": "用 Sprunkr 将您的音乐创意变为现实。混音节拍，创作旋律，与世界分享您的音乐。"
+            }
+        }))
+    except Exception as e:
+        app.logger.error(f"Error getting translations: {e}")
+        return {
+            "nav": {"home": "首页", "faq": "常见问题"},
+            "hero": {
+                "title_highlight": "创作音乐",
+                "title_regular": "前所未有的体验",
+                "description": "用 Sprunkr 将您的音乐创意变为现实。混音节拍，创作旋律，与世界分享您的音乐。"
+            }
+        }
 
 @app.route('/')
 def home():
-    lang = request.args.get('lang', 'zh')
-    trans = get_translations(lang)
     try:
-        faq_data = load_faq_data()
-        return render_template('index.html', 
-                         title='Sprunkr - Interactive Music Experience',
-                         description='Create amazing music with Sprunkr! Mix beats, compose tunes, and share your musical creations.',
-                         faq_data=faq_data,
-                         translations=trans,
-                         current_lang=lang)
+        lang = request.args.get('lang', 'zh')
+        trans = get_translations(lang)
+        try:
+            faq_data = load_faq_data()
+            return render_template('index.html', 
+                             title='Sprunkr - Interactive Music Experience',
+                             description='Create amazing music with Sprunkr! Mix beats, compose tunes, and share your musical creations.',
+                             faq_data=faq_data,
+                             translations=trans,
+                             current_lang=lang)
+        except Exception as e:
+            app.logger.error(f"Error in home route: {str(e)}")
+            return render_template('index.html', 
+                             title='Sprunkr - Interactive Music Experience',
+                             description='Create amazing music with Sprunkr! Mix beats, compose tunes, and share your musical creations.',
+                             faq_data={"faq_sections": []},
+                             translations=trans,
+                             current_lang=lang)
     except Exception as e:
-        app.logger.error(f"Error in home route: {str(e)}")
-        return render_template('index.html', 
-                         title='Sprunkr - Interactive Music Experience',
-                         description='Create amazing music with Sprunkr! Mix beats, compose tunes, and share your musical creations.',
-                         faq_data={"faq_sections": []},
-                         translations=trans,
-                         current_lang=lang)
+        app.logger.error(f"Error in home route: {e}")
+        return render_template('index.html',
+                             title='Sprunkr - Interactive Music Creation Game',
+                             translations={
+                                 "nav": {"home": "首页", "faq": "常见问题"},
+                                 "hero": {
+                                     "title_highlight": "创作音乐",
+                                     "title_regular": "前所未有的体验",
+                                     "description": "用 Sprunkr 将您的音乐创意变为现实。混音节拍，创作旋律，与世界分享您的音乐。"
+                                 }
+                             },
+                             current_lang='zh')
 
 @app.route('/about')
 def about():
-    lang = request.args.get('lang', 'zh')
-    trans = get_translations(lang)
-    return render_template('about.html', 
+    try:
+        lang = request.args.get('lang', 'zh')
+        trans = get_translations(lang)
+        return render_template('about.html', 
                          title='About Sprunkr',
                          translations=trans,
                          current_lang=lang)
+    except Exception as e:
+        app.logger.error(f"Error in about route: {e}")
+        return render_template('about.html',
+                         title='About Sprunkr',
+                         translations={
+                             "nav": {"home": "首页", "faq": "常见问题"},
+                             "hero": {
+                                 "title_highlight": "创作音乐",
+                                 "title_regular": "前所未有的体验",
+                                 "description": "用 Sprunkr 将您的音乐创意变为现实。混音节拍，创作旋律，与世界分享您的音乐。"
+                             }
+                         },
+                         current_lang='zh')
 
 @app.route('/game')
 def game():
-    lang = request.args.get('lang', 'zh')
-    trans = get_translations(lang)
-    return render_template('game.html',
+    try:
+        lang = request.args.get('lang', 'zh')
+        trans = get_translations(lang)
+        return render_template('game.html',
                          title='Play Sprunkr',
                          translations=trans,
                          current_lang=lang)
+    except Exception as e:
+        app.logger.error(f"Error in game route: {e}")
+        return render_template('game.html',
+                         title='Play Sprunkr',
+                         translations={
+                             "nav": {"home": "首页", "faq": "常见问题"},
+                             "hero": {
+                                 "title_highlight": "创作音乐",
+                                 "title_regular": "前所未有的体验",
+                                 "description": "用 Sprunkr 将您的音乐创意变为现实。混音节拍，创作旋律，与世界分享您的音乐。"
+                             }
+                         },
+                         current_lang='zh')
 
 @app.route('/introduction')
 def introduction():
-    lang = request.args.get('lang', 'zh')
-    trans = get_translations(lang)
-    return render_template('introduction.html',
+    try:
+        lang = request.args.get('lang', 'zh')
+        trans = get_translations(lang)
+        return render_template('introduction.html',
                          title='Game Guide - Sprunkr',
                          translations=trans,
                          current_lang=lang)
+    except Exception as e:
+        app.logger.error(f"Error in introduction route: {e}")
+        return render_template('introduction.html',
+                         title='Game Guide - Sprunkr',
+                         translations={
+                             "nav": {"home": "首页", "faq": "常见问题"},
+                             "hero": {
+                                 "title_highlight": "创作音乐",
+                                 "title_regular": "前所未有的体验",
+                                 "description": "用 Sprunkr 将您的音乐创意变为现实。混音节拍，创作旋律，与世界分享您的音乐。"
+                             }
+                         },
+                         current_lang='zh')
 
 @app.route('/contact', methods=['GET', 'POST'])
 def contact():
-    lang = request.args.get('lang', 'zh')
-    trans = get_translations(lang)
-    if request.method == 'POST':
-        return send_message()
-    return render_template('contact.html',
+    try:
+        lang = request.args.get('lang', 'zh')
+        trans = get_translations(lang)
+        if request.method == 'POST':
+            return send_message()
+        return render_template('contact.html',
                          title='Contact Sprunkr',
                          translations=trans,
                          current_lang=lang)
+    except Exception as e:
+        app.logger.error(f"Error in contact route: {e}")
+        return render_template('contact.html',
+                         title='Contact Sprunkr',
+                         translations={
+                             "nav": {"home": "首页", "faq": "常见问题"},
+                             "hero": {
+                                 "title_highlight": "创作音乐",
+                                 "title_regular": "前所未有的体验",
+                                 "description": "用 Sprunkr 将您的音乐创意变为现实。混音节拍，创作旋律，与世界分享您的音乐。"
+                             }
+                         },
+                         current_lang='zh')
 
 @app.route('/faq')
 def faq():
-    lang = request.args.get('lang', 'zh')
-    trans = get_translations(lang)
     try:
-        faq_sections = get_faq_data(lang)
-        return render_template('faq.html',
+        lang = request.args.get('lang', 'zh')
+        trans = get_translations(lang)
+        try:
+            faq_sections = get_faq_data(lang)
+            return render_template('faq.html',
                              title='FAQ - Sprunkr',
                              faq_data={'faq_sections': faq_sections},
                              translations=trans,
                              current_lang=lang)
-    except Exception as e:
-        app.logger.error(f"Error in faq route: {str(e)}")
-        return render_template('faq.html',
+        except Exception as e:
+            app.logger.error(f"Error in faq route: {str(e)}")
+            return render_template('faq.html',
                              title='FAQ - Sprunkr',
                              faq_data={"faq_sections": []},
                              translations=trans,
                              current_lang=lang)
+    except Exception as e:
+        app.logger.error(f"Error in faq route: {e}")
+        return render_template('faq.html',
+                         title='FAQ - Sprunkr',
+                         faq_data={"faq_sections": []},
+                         translations={
+                             "nav": {"home": "首页", "faq": "常见问题"},
+                             "hero": {
+                                 "title_highlight": "创作音乐",
+                                 "title_regular": "前所未有的体验",
+                                 "description": "用 Sprunkr 将您的音乐创意变为现实。混音节拍，创作旋律，与世界分享您的音乐。"
+                             }
+                         },
+                         current_lang='zh')
 
 @app.route('/sitemap.xml')
 def sitemap():
@@ -134,89 +258,163 @@ def robots():
 
 @app.route('/blog')
 def blog():
-    lang = request.args.get('lang', 'zh')
-    trans = get_translations(lang)
-    return render_template('blog.html',
+    try:
+        lang = request.args.get('lang', 'zh')
+        trans = get_translations(lang)
+        return render_template('blog.html',
                          title='Blog - Sprunkr',
                          translations=trans,
                          current_lang=lang)
+    except Exception as e:
+        app.logger.error(f"Error in blog route: {e}")
+        return render_template('blog.html',
+                         title='Blog - Sprunkr',
+                         translations={
+                             "nav": {"home": "首页", "faq": "常见问题"},
+                             "hero": {
+                                 "title_highlight": "创作音乐",
+                                 "title_regular": "前所未有的体验",
+                                 "description": "用 Sprunkr 将您的音乐创意变为现实。混音节拍，创作旋律，与世界分享您的音乐。"
+                             }
+                         },
+                         current_lang='zh')
 
 @app.route('/community')
 def community():
-    lang = request.args.get('lang', 'zh')
-    trans = get_translations(lang)
-    return render_template('community.html',
+    try:
+        lang = request.args.get('lang', 'zh')
+        trans = get_translations(lang)
+        return render_template('community.html',
                          title='Community - Sprunkr',
                          translations=trans,
                          current_lang=lang)
+    except Exception as e:
+        app.logger.error(f"Error in community route: {e}")
+        return render_template('community.html',
+                         title='Community - Sprunkr',
+                         translations={
+                             "nav": {"home": "首页", "faq": "常见问题"},
+                             "hero": {
+                                 "title_highlight": "创作音乐",
+                                 "title_regular": "前所未有的体验",
+                                 "description": "用 Sprunkr 将您的音乐创意变为现实。混音节拍，创作旋律，与世界分享您的音乐。"
+                             }
+                         },
+                         current_lang='zh')
 
 @app.route('/leaderboard')
 def leaderboard():
-    lang = request.args.get('lang', 'zh')
-    trans = get_translations(lang)
-    return render_template('leaderboard.html',
+    try:
+        lang = request.args.get('lang', 'zh')
+        trans = get_translations(lang)
+        return render_template('leaderboard.html',
                          title='Leaderboard - Sprunkr',
                          translations=trans,
                          current_lang=lang)
+    except Exception as e:
+        app.logger.error(f"Error in leaderboard route: {e}")
+        return render_template('leaderboard.html',
+                         title='Leaderboard - Sprunkr',
+                         translations={
+                             "nav": {"home": "首页", "faq": "常见问题"},
+                             "hero": {
+                                 "title_highlight": "创作音乐",
+                                 "title_regular": "前所未有的体验",
+                                 "description": "用 Sprunkr 将您的音乐创意变为现实。混音节拍，创作旋律，与世界分享您的音乐。"
+                             }
+                         },
+                         current_lang='zh')
 
 @app.route('/events')
 def events():
-    lang = request.args.get('lang', 'zh')
-    trans = get_translations(lang)
-    return render_template('events.html',
+    try:
+        lang = request.args.get('lang', 'zh')
+        trans = get_translations(lang)
+        return render_template('events.html',
                          title='Events - Sprunkr',
                          translations=trans,
                          current_lang=lang)
+    except Exception as e:
+        app.logger.error(f"Error in events route: {e}")
+        return render_template('events.html',
+                         title='Events - Sprunkr',
+                         translations={
+                             "nav": {"home": "首页", "faq": "常见问题"},
+                             "hero": {
+                                 "title_highlight": "创作音乐",
+                                 "title_regular": "前所未有的体验",
+                                 "description": "用 Sprunkr 将您的音乐创意变为现实。混音节拍，创作旋律，与世界分享您的音乐。"
+                             }
+                         },
+                         current_lang='zh')
 
 @app.route('/feedback')
 def feedback():
-    lang = request.args.get('lang', 'zh')
-    trans = get_translations(lang)
-    return render_template('feedback.html',
+    try:
+        lang = request.args.get('lang', 'zh')
+        trans = get_translations(lang)
+        return render_template('feedback.html',
                          title='Feedback - Sprunkr',
                          translations=trans,
                          current_lang=lang)
+    except Exception as e:
+        app.logger.error(f"Error in feedback route: {e}")
+        return render_template('feedback.html',
+                         title='Feedback - Sprunkr',
+                         translations={
+                             "nav": {"home": "首页", "faq": "常见问题"},
+                             "hero": {
+                                 "title_highlight": "创作音乐",
+                                 "title_regular": "前所未有的体验",
+                                 "description": "用 Sprunkr 将您的音乐创意变为现实。混音节拍，创作旋律，与世界分享您的音乐。"
+                             }
+                         },
+                         current_lang='zh')
 
 def send_message():
-    name = request.form.get('name')
-    email = request.form.get('email')
-    subject = request.form.get('subject')
-    message = request.form.get('message')
-    
-    if not all([name, email, subject, message]):
-        flash('Please fill in all fields', 'error')
-        return redirect(url_for('contact'))
-    
     try:
-        email_user = os.getenv('EMAIL_USER')
-        email_password = os.getenv('EMAIL_PASSWORD')
+        name = request.form.get('name')
+        email = request.form.get('email')
+        subject = request.form.get('subject')
+        message = request.form.get('message')
         
-        if not email_user or not email_password:
-            flash('Email configuration is not set up', 'error')
+        if not all([name, email, subject, message]):
+            flash('Please fill in all fields', 'error')
             return redirect(url_for('contact'))
         
-        msg = MIMEMultipart()
-        msg['From'] = email_user
-        msg['To'] = email_user  # Send to yourself
-        msg['Subject'] = f"Sprunkr: {subject} - from {name}"
-        
-        body = f"""
-        Name: {name}
-        Email: {email}
-        Subject: {subject}
-        Message: {message}
-        """
-        msg.attach(MIMEText(body, 'plain'))
-        
-        server = smtplib.SMTP('smtp.gmail.com', 587)
-        server.starttls()
-        server.login(email_user, email_password)
-        server.send_message(msg)
-        server.quit()
-        
-        flash('Thank you for your message! We will get back to you soon.', 'success')
+        try:
+            email_user = os.getenv('EMAIL_USER')
+            email_password = os.getenv('EMAIL_PASSWORD')
+            
+            if not email_user or not email_password:
+                flash('Email configuration is not set up', 'error')
+                return redirect(url_for('contact'))
+            
+            msg = MIMEMultipart()
+            msg['From'] = email_user
+            msg['To'] = email_user  # Send to yourself
+            msg['Subject'] = f"Sprunkr: {subject} - from {name}"
+            
+            body = f"""
+            Name: {name}
+            Email: {email}
+            Subject: {subject}
+            Message: {message}
+            """
+            msg.attach(MIMEText(body, 'plain'))
+            
+            server = smtplib.SMTP('smtp.gmail.com', 587)
+            server.starttls()
+            server.login(email_user, email_password)
+            server.send_message(msg)
+            server.quit()
+            
+            flash('Thank you for your message! We will get back to you soon.', 'success')
+        except Exception as e:
+            app.logger.error(f"Error sending message: {str(e)}")
+            flash('Sorry, there was a problem sending your message. Please try again later.', 'error')
     except Exception as e:
-        app.logger.error(f"Error sending message: {str(e)}")
+        app.logger.error(f"Error in send_message: {e}")
         flash('Sorry, there was a problem sending your message. Please try again later.', 'error')
     
     return redirect(url_for('contact'))
