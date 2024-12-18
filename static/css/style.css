@@ -56,10 +56,68 @@ a:hover {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
+/* 动画效果 */
+@keyframes blob {
+    0% {
+        transform: translate(0px, 0px) scale(1);
+    }
+    33% {
+        transform: translate(30px, -50px) scale(1.1);
+    }
+    66% {
+        transform: translate(-20px, 20px) scale(0.9);
+    }
+    100% {
+        transform: translate(0px, 0px) scale(1);
+    }
+}
+
+.animate-blob {
+    animation: blob 7s infinite;
+}
+
+.animation-delay-2000 {
+    animation-delay: 2s;
+}
+
+.animation-delay-4000 {
+    animation-delay: 4s;
+}
+
+/* 渐变文本 */
+.gradient-text {
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+/* 玻璃态效果 */
+.glassmorphism {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* 暗色模式适配 */
+@media (prefers-color-scheme: dark) {
+    .glassmorphism {
+        background: rgba(0, 0, 0, 0.2);
+        border: 1px solid rgba(255, 255, 255, 0.05);
+    }
+}
+
 /* 响应式布局辅助类 */
 @media (max-width: 768px) {
     .container {
         padding-left: 1rem;
         padding-right: 1rem;
+    }
+}
+
+/* 响应式调整 */
+@media (max-width: 640px) {
+    .animate-blob {
+        display: none;
     }
 }

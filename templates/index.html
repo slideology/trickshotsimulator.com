@@ -1,58 +1,77 @@
 {% extends "base.html" %}
 
-{% block head %}
-<!-- SEO Meta Tags -->
-<meta name="description" content="Play Sprunki - The innovative music creation game. Mix beats, create unique sounds, and experience an interactive musical journey. Free online music game for all ages.">
-<meta name="keywords" content="sprunki, music game, beat maker, online music creator, interactive music, rhythm game, musical game, sprunki online">
-<meta name="author" content="Sprunki">
-
-<!-- Open Graph Meta Tags -->
-<meta property="og:title" content="Sprunkr - Interactive Music Creation Game">
-<meta property="og:description" content="Create amazing music with Sprunkr! Mix beats, compose tunes, and share your musical creations in this innovative online game.">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://sprunkr.online">
-<meta property="og:image" content="https://sprunkr.online/static/images/sprunkr-preview.jpg">
-
-<!-- Twitter Card Meta Tags -->
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Sprunkr - Interactive Music Creation Game">
-<meta name="twitter:description" content="Create amazing music with Sprunkr! Mix beats, compose tunes, and share your musical creations.">
-<meta name="twitter:image" content="https://sprunkr.online/static/images/sprunkr-preview.jpg">
-
-<!-- Structured Data -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "WebApplication",
-  "name": "Sprunki",
-  "description": "An interactive music creation game where players can mix beats and create unique musical compositions",
-  "url": "https://sprunkr.online",
-  "applicationCategory": "Game",
-  "genre": "Music",
-  "browserRequirements": "Requires HTML5",
-  "offers": {
-    "@type": "Offer",
-    "price": "0",
-    "priceCurrency": "USD"
-  }
-}
-</script>
-{% endblock %}
-
-{% block title %}Sprunki - Interactive Music Creation Game{% endblock %}
+{% block title %}Sprunkr - Interactive Music Creation Game{% endblock %}
 
 {% block content %}
-<div class="container mx-auto px-4 py-8">
+<div class="relative overflow-hidden">
     <!-- Hero Section -->
-    <section class="text-center mb-8">
-        <h1 class="text-4xl md:text-5xl font-bold mb-4">Welcome to Sprunki</h1>
-        <p class="text-xl text-gray-600 dark:text-gray-400 mb-4">
-            Create, Mix, and Share Your Musical Masterpiece!
-        </p>
-        <p class="text-lg text-gray-500 dark:text-gray-400">
-            Join millions of music creators in this innovative beat-making experience
-        </p>
-    </section>
+    <div class="relative pt-16 pb-32 flex content-center items-center justify-center min-h-screen">
+        <!-- 背景渐变 -->
+        <div class="absolute top-0 w-full h-full bg-gradient-to-br from-indigo-600 via-purple-600 to-pink-500 opacity-10"></div>
+        
+        <div class="container relative mx-auto px-4">
+            <div class="flex flex-wrap items-center">
+                <!-- 左侧文案区域 -->
+                <div class="w-full lg:w-6/12 px-4 ml-auto mr-auto text-center lg:text-left">
+                    <div class="pr-12">
+                        <h1 class="text-5xl md:text-6xl font-bold leading-tight mb-6">
+                            <span class="bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-500 bg-clip-text text-transparent">
+                                Create, Mix, Play
+                            </span>
+                        </h1>
+                        <p class="mt-4 text-lg text-gray-600 dark:text-gray-300">
+                            Transform your musical ideas into reality with Sprunkr. No experience needed - just bring your creativity.
+                        </p>
+                        <div class="mt-8 flex flex-col sm:flex-row justify-center lg:justify-start gap-4">
+                            <a href="/game" 
+                               class="px-8 py-3 rounded-lg bg-gradient-to-r from-indigo-600 to-purple-600 text-white font-semibold 
+                                      hover:from-indigo-700 hover:to-purple-700 transform hover:scale-105 transition-all duration-200
+                                      flex items-center justify-center gap-2">
+                                <i data-lucide="play" class="w-5 h-5"></i>
+                                Start Creating
+                            </a>
+                            <a href="/about" 
+                               class="px-8 py-3 rounded-lg border-2 border-indigo-600 dark:border-indigo-400 text-indigo-600 
+                                      dark:text-indigo-400 font-semibold hover:bg-indigo-50 dark:hover:bg-indigo-900/30 
+                                      transform hover:scale-105 transition-all duration-200
+                                      flex items-center justify-center gap-2">
+                                <i data-lucide="info" class="w-5 h-5"></i>
+                                Learn More
+                            </a>
+                        </div>
+                        <!-- 特性标签 -->
+                        <div class="mt-8 flex flex-wrap justify-center lg:justify-start gap-3">
+                            <span class="px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm text-sm font-medium text-gray-700 dark:text-gray-300 border border-gray-200 dark:border-gray-700">
+                                <i data-lucide="music" class="w-4 h-4 inline-block mr-1"></i> Real-time Mixing
+                            </span>
+                            <span class="px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm text-sm font-medium text-gray-700 dark:text-gray-300 border border-gray-200 dark:border-gray-700">
+                                <i data-lucide="share-2" class="w-4 h-4 inline-block mr-1"></i> Easy Sharing
+                            </span>
+                            <span class="px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm text-sm font-medium text-gray-700 dark:text-gray-300 border border-gray-200 dark:border-gray-700">
+                                <i data-lucide="users" class="w-4 h-4 inline-block mr-1"></i> Community
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 右侧展示区域 -->
+                <div class="w-full lg:w-6/12 px-4 ml-auto mr-auto mt-12 lg:mt-0">
+                    <div class="relative">
+                        <!-- 装饰圆环 -->
+                        <div class="absolute -top-4 -left-4 w-72 h-72 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob"></div>
+                        <div class="absolute -bottom-4 -right-4 w-72 h-72 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-2000"></div>
+                        
+                        <!-- 主要展示区 -->
+                        <div class="relative rounded-2xl overflow-hidden shadow-2xl border border-gray-200 dark:border-gray-700">
+                            <img src="{{ url_for('static', filename='images/hero-preview.jpg') }}" 
+                                 alt="Sprunkr Music Creation Interface" 
+                                 class="w-full rounded-2xl transform hover:scale-105 transition-transform duration-500">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- Game Section -->
     <section class="mb-12" aria-label="Sprunki Game Interface">
