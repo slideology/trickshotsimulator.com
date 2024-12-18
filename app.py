@@ -57,25 +57,36 @@ def get_faq_data(lang='zh'):
         app.logger.error(f"Error getting FAQ data: {e}")
         return []
 
-# Load translations with error handling
+# Load translations
 try:
     translations = load_translations()
 except Exception as e:
     app.logger.error(f"Error loading initial translations: {e}")
-    translations = {}
-
-def get_translations(lang='zh'):
-    try:
-        return translations.get(lang, translations.get('zh', {
+    translations = {
+        "zh": {
             "nav": {"home": "首页", "faq": "常见问题"},
             "hero": {
                 "title_highlight": "创作音乐",
                 "title_regular": "前所未有的体验",
                 "description": "用 Sprunkr 将您的音乐创意变为现实。混音节拍，创作旋律，与世界分享您的音乐。"
             }
-        }))
+        }
+    }
+
+def get_translations(lang='zh'):
+    try:
+        if lang not in translations:
+            return translations.get('zh', {
+                "nav": {"home": "首页", "faq": "常见问题"},
+                "hero": {
+                    "title_highlight": "创作音乐",
+                    "title_regular": "前所未有的体验",
+                    "description": "用 Sprunkr 将您的音乐创意变为现实。混音节拍，创作旋律，与世界分享您的音乐。"
+                }
+            })
+        return translations[lang]
     except Exception as e:
-        app.logger.error(f"Error getting translations: {e}")
+        app.logger.error(f"Error getting translations for {lang}: {e}")
         return {
             "nav": {"home": "首页", "faq": "常见问题"},
             "hero": {
