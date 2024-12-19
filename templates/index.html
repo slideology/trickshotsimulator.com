@@ -5,7 +5,7 @@
 {% block content %}
 <div class="relative overflow-hidden">
     <!-- Hero Section -->
-    <div class="relative pt-16 pb-32 flex content-center items-center justify-center min-h-screen">
+    <div class="relative pt-16 pb-32 flex content-center items-center justify-center" style="min-height: 60vh;">
         <!-- 背景渐变 -->
         <div class="absolute top-0 w-full h-full bg-gradient-to-br from-indigo-600 via-purple-600 to-pink-500 opacity-10"></div>
         
@@ -48,6 +48,32 @@
                         </div>
                     </div>
                 </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Trending Games Section -->
+    <div class="py-24 bg-gray-50 dark:bg-gray-900">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold mb-12 text-center bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-500 bg-clip-text text-transparent">
+                Trending Games
+            </h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6">
+                <!-- Game Card -->
+                <a href="https://www.sprunkr.online/sprunki-lily" class="group relative rounded-lg overflow-hidden shadow-lg transition-transform duration-300 hover:transform hover:scale-105">
+                    <div class="relative aspect-[4/3]">
+                        <img src="{{ url_for('static', filename='images/games/sprunki-lily.png') }}" 
+                             alt="Sprunki Lily" 
+                             class="w-full h-full object-cover">
+                        <div class="absolute bottom-0 left-0 right-0 h-12 bg-gradient-to-t from-pink-500 via-purple-500 to-transparent opacity-0 group-hover:opacity-80 transition-opacity duration-300"></div>
+                        <div class="absolute bottom-0 left-0 right-0 p-3">
+                            <h3 class="text-sm font-semibold text-gray-800 dark:text-gray-200 group-hover:text-white group-hover:drop-shadow-lg transition-colors duration-300">
+                                Sprunki - Lily
+                            </h3>
+                        </div>
+                    </div>
+                </a>
+                <!-- More game cards can be added here -->
             </div>
         </div>
     </div>
