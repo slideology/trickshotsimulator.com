@@ -1,0 +1,85 @@
+{% extends "base.html" %}
+
+{% block head %}
+<meta name="description" content="Sprunki new mod adds new characters like Lilac (Lily), and they are so cool. Experience the amazing world of Sprunki with new characters and exciting gameplay.">
+<meta name="keywords" content="sprunki lily, sprunkr, sprunki retake deluxe, sprunki kiss mod, sprunki lairity, sinner sprunki mod, sprunki sus mod, sprunki new mod">
+{% endblock %}
+
+{% block content %}
+<div class="relative overflow-hidden">
+    <!-- Hero Section -->
+    <div class="relative pt-16 pb-32 flex content-center items-center justify-center min-h-screen">
+        <!-- 背景渐变 -->
+        <div class="absolute top-0 w-full h-full bg-gradient-to-br from-pink-400 via-purple-500 to-indigo-600 opacity-10"></div>
+        
+        <div class="container relative mx-auto px-4">
+            <div class="flex flex-wrap items-center">
+                <!-- 左侧文案区域 -->
+                <div class="w-full lg:w-5/12 px-4 ml-auto mr-auto text-center lg:text-left">
+                    <div class="pr-12">
+                        <h1 class="text-5xl md:text-6xl font-bold leading-tight mb-6">
+                            <span class="bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-500 bg-clip-text text-transparent">
+                                {{ translations['hero']['title_highlight'] }}
+                            </span>
+                            <br>
+                            <span class="text-gray-800 dark:text-white">{{ translations['hero']['title_regular'] }}</span>
+                        </h1>
+                        <p class="mt-4 text-lg text-gray-600 dark:text-gray-300">
+                            {{ translations['hero']['description'] }}
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- 右侧游戏区域 -->
+                <div class="w-full lg:w-7/12 px-4 ml-auto mr-auto mt-12 lg:mt-0">
+                    <div class="relative">
+                        <!-- 装饰效果 -->
+                        <div class="absolute -top-4 -left-4 w-72 h-72 bg-gradient-to-r from-pink-500 to-purple-500 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob"></div>
+                        <div class="absolute -bottom-4 -right-4 w-72 h-72 bg-gradient-to-r from-purple-500 to-indigo-500 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-2000"></div>
+                        
+                        <!-- 游戏区域 -->
+                        <div class="relative rounded-2xl overflow-hidden shadow-2xl border border-gray-200 dark:border-gray-700">
+                            <div class="w-full bg-gray-100 dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden" style="aspect-ratio: 16/9;">
+                                <iframe src="https://html-classic.itch.zone/html/12268349/index.html" class="w-full h-full" frameborder="0" allowfullscreen></iframe>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Known Issues Section -->
+    <div class="container mx-auto px-4 py-16">
+        <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-8">
+            <h2 class="text-3xl font-bold mb-6 bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-500 bg-clip-text text-transparent">Known Issues</h2>
+            <ul class="space-y-3 text-gray-600 dark:text-gray-300">
+                <li class="flex items-start">
+                    <svg class="w-6 h-6 text-pink-500 mr-2 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/>
+                    </svg>
+                    <span>Lily not moving</span>
+                </li>
+                <li class="flex items-start">
+                    <svg class="w-6 h-6 text-pink-500 mr-2 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/>
+                    </svg>
+                    <span>Lily not appearing in Phase 2</span>
+                </li>
+                <li class="flex items-start">
+                    <svg class="w-6 h-6 text-pink-500 mr-2 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/>
+                    </svg>
+                    <span>SmithTails and Ellie make Evelyn's sound in Phase 1 (They are experimental characters for a reason.)</span>
+                </li>
+                <li class="flex items-start">
+                    <svg class="w-6 h-6 text-pink-500 mr-2 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/>
+                    </svg>
+                    <span>Ellie and Lily making no sound in Phase 2</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+{% endblock %}

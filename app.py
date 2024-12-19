@@ -382,6 +382,80 @@ def feedback():
                          },
                          current_lang='en')
 
+@app.route('/sprunki-lily')
+def sprunki_lily():
+    try:
+        lang = request.args.get('lang', 'en')
+        custom_translations = {
+            "nav": {
+                "home": "Home",
+                "about": "About",
+                "game": "Game",
+                "introduction": "Introduction",
+                "contact": "Contact",
+                "faq": "FAQ",
+                "blog": "Blog",
+                "community": "Community",
+                "leaderboard": "Leaderboard",
+                "events": "Events",
+                "feedback": "Feedback",
+                "sprunki-lily": "Sprunki Lily"
+            },
+            "hero": {
+                "title_highlight": "Sprunki Lily",
+                "title_regular": "New Character Mod",
+                "description": "Sprunki new mod adds new characters like Lilac (Lily), and they are so cool"
+            },
+            "footer": {
+                "description": "Experience the joy of music creation with Sprunkr's innovative platform.",
+                "copyright": " 2024 Sprunkr. All rights reserved.",
+                "links": {
+                    "privacy": "Privacy Policy",
+                    "terms": "Terms of Service",
+                    "contact": "Contact Us"
+                }
+            }
+        }
+        return render_template('sprunki-lily.html',
+                         title='Sprunki Lily - New Character Mod',
+                         translations=custom_translations,
+                         current_lang=lang)
+    except Exception as e:
+        app.logger.error(f"Error in sprunki-lily route: {e}")
+        return render_template('sprunki-lily.html',
+                         title='Sprunki Lily - New Character Mod',
+                         translations={
+                             "nav": {
+                                "home": "Home",
+                                "about": "About",
+                                "game": "Game",
+                                "introduction": "Introduction",
+                                "contact": "Contact",
+                                "faq": "FAQ",
+                                "blog": "Blog",
+                                "community": "Community",
+                                "leaderboard": "Leaderboard",
+                                "events": "Events",
+                                "feedback": "Feedback",
+                                "sprunki-lily": "Sprunki Lily"
+                             },
+                             "hero": {
+                                 "title_highlight": "Sprunki Lily",
+                                 "title_regular": "New Character Mod",
+                                 "description": "Sprunki new mod adds new characters like Lilac (Lily), and they are so cool"
+                             },
+                             "footer": {
+                                 "description": "Experience the joy of music creation with Sprunkr's innovative platform.",
+                                 "copyright": " 2024 Sprunkr. All rights reserved.",
+                                 "links": {
+                                     "privacy": "Privacy Policy",
+                                     "terms": "Terms of Service",
+                                     "contact": "Contact Us"
+                                 }
+                             }
+                         },
+                         current_lang='en')
+
 def send_message():
     try:
         name = request.form.get('name')
