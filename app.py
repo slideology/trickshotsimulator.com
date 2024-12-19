@@ -26,12 +26,12 @@ def load_translations():
     except Exception as e:
         app.logger.error(f"Error loading translations: {e}")
         return {
-            "zh": {
-                "nav": {"home": "首页", "faq": "常见问题"},
+            "en": {
+                "nav": {"home": "Home", "faq": "FAQ"},
                 "hero": {
-                    "title_highlight": "创作音乐",
-                    "title_regular": "前所未有的体验",
-                    "description": "用 Sprunkr 将您的音乐创意变为现实。混音节拍，创作旋律，与世界分享您的音乐。"
+                    "title_highlight": "Create Music",
+                    "title_regular": "Like Never Before",
+                    "description": "Transform your musical ideas into reality with Sprunkr. Mix beats, create melodies, and share your music with the world."
                 }
             }
         }
@@ -44,15 +44,15 @@ def load_faq_data():
     except Exception as e:
         app.logger.error(f"Error loading FAQ data: {e}")
         return {
-            "zh": {
+            "en": {
                 "faq_sections": []
             }
         }
 
-def get_faq_data(lang='zh'):
+def get_faq_data(lang='en'):
     try:
         faq_data = load_faq_data()
-        return faq_data.get(lang, faq_data.get('zh', {})).get('faq_sections', [])
+        return faq_data.get(lang, faq_data.get('en', {})).get('faq_sections', [])
     except Exception as e:
         app.logger.error(f"Error getting FAQ data: {e}")
         return []
@@ -63,43 +63,43 @@ try:
 except Exception as e:
     app.logger.error(f"Error loading initial translations: {e}")
     translations = {
-        "zh": {
-            "nav": {"home": "首页", "faq": "常见问题"},
+        "en": {
+            "nav": {"home": "Home", "faq": "FAQ"},
             "hero": {
-                "title_highlight": "创作音乐",
-                "title_regular": "前所未有的体验",
-                "description": "用 Sprunkr 将您的音乐创意变为现实。混音节拍，创作旋律，与世界分享您的音乐。"
+                "title_highlight": "Create Music",
+                "title_regular": "Like Never Before",
+                "description": "Transform your musical ideas into reality with Sprunkr. Mix beats, create melodies, and share your music with the world."
             }
         }
     }
 
-def get_translations(lang='zh'):
+def get_translations(lang='en'):
     try:
         if lang not in translations:
-            return translations.get('zh', {
-                "nav": {"home": "首页", "faq": "常见问题"},
+            return translations.get('en', {
+                "nav": {"home": "Home", "faq": "FAQ"},
                 "hero": {
-                    "title_highlight": "创作音乐",
-                    "title_regular": "前所未有的体验",
-                    "description": "用 Sprunkr 将您的音乐创意变为现实。混音节拍，创作旋律，与世界分享您的音乐。"
+                    "title_highlight": "Create Music",
+                    "title_regular": "Like Never Before",
+                    "description": "Transform your musical ideas into reality with Sprunkr. Mix beats, create melodies, and share your music with the world."
                 }
             })
         return translations[lang]
     except Exception as e:
         app.logger.error(f"Error getting translations for {lang}: {e}")
         return {
-            "nav": {"home": "首页", "faq": "常见问题"},
+            "nav": {"home": "Home", "faq": "FAQ"},
             "hero": {
-                "title_highlight": "创作音乐",
-                "title_regular": "前所未有的体验",
-                "description": "用 Sprunkr 将您的音乐创意变为现实。混音节拍，创作旋律，与世界分享您的音乐。"
+                "title_highlight": "Create Music",
+                "title_regular": "Like Never Before",
+                "description": "Transform your musical ideas into reality with Sprunkr. Mix beats, create melodies, and share your music with the world."
             }
         }
 
 @app.route('/')
 def home():
     try:
-        lang = request.args.get('lang', 'zh')
+        lang = request.args.get('lang', 'en')
         trans = get_translations(lang)
         try:
             faq_data = load_faq_data()
@@ -122,19 +122,19 @@ def home():
         return render_template('index.html',
                              title='Sprunkr - Interactive Music Creation Game',
                              translations={
-                                 "nav": {"home": "首页", "faq": "常见问题"},
+                                 "nav": {"home": "Home", "faq": "FAQ"},
                                  "hero": {
-                                     "title_highlight": "创作音乐",
-                                     "title_regular": "前所未有的体验",
-                                     "description": "用 Sprunkr 将您的音乐创意变为现实。混音节拍，创作旋律，与世界分享您的音乐。"
+                                     "title_highlight": "Create Music",
+                                     "title_regular": "Like Never Before",
+                                     "description": "Transform your musical ideas into reality with Sprunkr. Mix beats, create melodies, and share your music with the world."
                                  }
                              },
-                             current_lang='zh')
+                             current_lang='en')
 
 @app.route('/about')
 def about():
     try:
-        lang = request.args.get('lang', 'zh')
+        lang = request.args.get('lang', 'en')
         trans = get_translations(lang)
         return render_template('about.html', 
                          title='About Sprunkr',
@@ -145,19 +145,19 @@ def about():
         return render_template('about.html',
                          title='About Sprunkr',
                          translations={
-                             "nav": {"home": "首页", "faq": "常见问题"},
+                             "nav": {"home": "Home", "faq": "FAQ"},
                              "hero": {
-                                 "title_highlight": "创作音乐",
-                                 "title_regular": "前所未有的体验",
-                                 "description": "用 Sprunkr 将您的音乐创意变为现实。混音节拍，创作旋律，与世界分享您的音乐。"
+                                 "title_highlight": "Create Music",
+                                 "title_regular": "Like Never Before",
+                                 "description": "Transform your musical ideas into reality with Sprunkr. Mix beats, create melodies, and share your music with the world."
                              }
                          },
-                         current_lang='zh')
+                         current_lang='en')
 
 @app.route('/game')
 def game():
     try:
-        lang = request.args.get('lang', 'zh')
+        lang = request.args.get('lang', 'en')
         trans = get_translations(lang)
         return render_template('game.html',
                          title='Play Sprunkr',
@@ -168,19 +168,19 @@ def game():
         return render_template('game.html',
                          title='Play Sprunkr',
                          translations={
-                             "nav": {"home": "首页", "faq": "常见问题"},
+                             "nav": {"home": "Home", "faq": "FAQ"},
                              "hero": {
-                                 "title_highlight": "创作音乐",
-                                 "title_regular": "前所未有的体验",
-                                 "description": "用 Sprunkr 将您的音乐创意变为现实。混音节拍，创作旋律，与世界分享您的音乐。"
+                                 "title_highlight": "Create Music",
+                                 "title_regular": "Like Never Before",
+                                 "description": "Transform your musical ideas into reality with Sprunkr. Mix beats, create melodies, and share your music with the world."
                              }
                          },
-                         current_lang='zh')
+                         current_lang='en')
 
 @app.route('/introduction')
 def introduction():
     try:
-        lang = request.args.get('lang', 'zh')
+        lang = request.args.get('lang', 'en')
         trans = get_translations(lang)
         return render_template('introduction.html',
                          title='Game Guide - Sprunkr',
@@ -191,19 +191,19 @@ def introduction():
         return render_template('introduction.html',
                          title='Game Guide - Sprunkr',
                          translations={
-                             "nav": {"home": "首页", "faq": "常见问题"},
+                             "nav": {"home": "Home", "faq": "FAQ"},
                              "hero": {
-                                 "title_highlight": "创作音乐",
-                                 "title_regular": "前所未有的体验",
-                                 "description": "用 Sprunkr 将您的音乐创意变为现实。混音节拍，创作旋律，与世界分享您的音乐。"
+                                 "title_highlight": "Create Music",
+                                 "title_regular": "Like Never Before",
+                                 "description": "Transform your musical ideas into reality with Sprunkr. Mix beats, create melodies, and share your music with the world."
                              }
                          },
-                         current_lang='zh')
+                         current_lang='en')
 
 @app.route('/contact', methods=['GET', 'POST'])
 def contact():
     try:
-        lang = request.args.get('lang', 'zh')
+        lang = request.args.get('lang', 'en')
         trans = get_translations(lang)
         if request.method == 'POST':
             return send_message()
@@ -216,19 +216,19 @@ def contact():
         return render_template('contact.html',
                          title='Contact Sprunkr',
                          translations={
-                             "nav": {"home": "首页", "faq": "常见问题"},
+                             "nav": {"home": "Home", "faq": "FAQ"},
                              "hero": {
-                                 "title_highlight": "创作音乐",
-                                 "title_regular": "前所未有的体验",
-                                 "description": "用 Sprunkr 将您的音乐创意变为现实。混音节拍，创作旋律，与世界分享您的音乐。"
+                                 "title_highlight": "Create Music",
+                                 "title_regular": "Like Never Before",
+                                 "description": "Transform your musical ideas into reality with Sprunkr. Mix beats, create melodies, and share your music with the world."
                              }
                          },
-                         current_lang='zh')
+                         current_lang='en')
 
 @app.route('/faq')
 def faq():
     try:
-        lang = request.args.get('lang', 'zh')
+        lang = request.args.get('lang', 'en')
         trans = get_translations(lang)
         try:
             faq_sections = get_faq_data(lang)
@@ -250,14 +250,14 @@ def faq():
                          title='FAQ - Sprunkr',
                          faq_data={"faq_sections": []},
                          translations={
-                             "nav": {"home": "首页", "faq": "常见问题"},
+                             "nav": {"home": "Home", "faq": "FAQ"},
                              "hero": {
-                                 "title_highlight": "创作音乐",
-                                 "title_regular": "前所未有的体验",
-                                 "description": "用 Sprunkr 将您的音乐创意变为现实。混音节拍，创作旋律，与世界分享您的音乐。"
+                                 "title_highlight": "Create Music",
+                                 "title_regular": "Like Never Before",
+                                 "description": "Transform your musical ideas into reality with Sprunkr. Mix beats, create melodies, and share your music with the world."
                              }
                          },
-                         current_lang='zh')
+                         current_lang='en')
 
 @app.route('/sitemap.xml')
 def sitemap():
@@ -270,7 +270,7 @@ def robots():
 @app.route('/blog')
 def blog():
     try:
-        lang = request.args.get('lang', 'zh')
+        lang = request.args.get('lang', 'en')
         trans = get_translations(lang)
         return render_template('blog.html',
                          title='Blog - Sprunkr',
@@ -281,19 +281,19 @@ def blog():
         return render_template('blog.html',
                          title='Blog - Sprunkr',
                          translations={
-                             "nav": {"home": "首页", "faq": "常见问题"},
+                             "nav": {"home": "Home", "faq": "FAQ"},
                              "hero": {
-                                 "title_highlight": "创作音乐",
-                                 "title_regular": "前所未有的体验",
-                                 "description": "用 Sprunkr 将您的音乐创意变为现实。混音节拍，创作旋律，与世界分享您的音乐。"
+                                 "title_highlight": "Create Music",
+                                 "title_regular": "Like Never Before",
+                                 "description": "Transform your musical ideas into reality with Sprunkr. Mix beats, create melodies, and share your music with the world."
                              }
                          },
-                         current_lang='zh')
+                         current_lang='en')
 
 @app.route('/community')
 def community():
     try:
-        lang = request.args.get('lang', 'zh')
+        lang = request.args.get('lang', 'en')
         trans = get_translations(lang)
         return render_template('community.html',
                          title='Community - Sprunkr',
@@ -304,19 +304,19 @@ def community():
         return render_template('community.html',
                          title='Community - Sprunkr',
                          translations={
-                             "nav": {"home": "首页", "faq": "常见问题"},
+                             "nav": {"home": "Home", "faq": "FAQ"},
                              "hero": {
-                                 "title_highlight": "创作音乐",
-                                 "title_regular": "前所未有的体验",
-                                 "description": "用 Sprunkr 将您的音乐创意变为现实。混音节拍，创作旋律，与世界分享您的音乐。"
+                                 "title_highlight": "Create Music",
+                                 "title_regular": "Like Never Before",
+                                 "description": "Transform your musical ideas into reality with Sprunkr. Mix beats, create melodies, and share your music with the world."
                              }
                          },
-                         current_lang='zh')
+                         current_lang='en')
 
 @app.route('/leaderboard')
 def leaderboard():
     try:
-        lang = request.args.get('lang', 'zh')
+        lang = request.args.get('lang', 'en')
         trans = get_translations(lang)
         return render_template('leaderboard.html',
                          title='Leaderboard - Sprunkr',
@@ -327,19 +327,19 @@ def leaderboard():
         return render_template('leaderboard.html',
                          title='Leaderboard - Sprunkr',
                          translations={
-                             "nav": {"home": "首页", "faq": "常见问题"},
+                             "nav": {"home": "Home", "faq": "FAQ"},
                              "hero": {
-                                 "title_highlight": "创作音乐",
-                                 "title_regular": "前所未有的体验",
-                                 "description": "用 Sprunkr 将您的音乐创意变为现实。混音节拍，创作旋律，与世界分享您的音乐。"
+                                 "title_highlight": "Create Music",
+                                 "title_regular": "Like Never Before",
+                                 "description": "Transform your musical ideas into reality with Sprunkr. Mix beats, create melodies, and share your music with the world."
                              }
                          },
-                         current_lang='zh')
+                         current_lang='en')
 
 @app.route('/events')
 def events():
     try:
-        lang = request.args.get('lang', 'zh')
+        lang = request.args.get('lang', 'en')
         trans = get_translations(lang)
         return render_template('events.html',
                          title='Events - Sprunkr',
@@ -350,19 +350,19 @@ def events():
         return render_template('events.html',
                          title='Events - Sprunkr',
                          translations={
-                             "nav": {"home": "首页", "faq": "常见问题"},
+                             "nav": {"home": "Home", "faq": "FAQ"},
                              "hero": {
-                                 "title_highlight": "创作音乐",
-                                 "title_regular": "前所未有的体验",
-                                 "description": "用 Sprunkr 将您的音乐创意变为现实。混音节拍，创作旋律，与世界分享您的音乐。"
+                                 "title_highlight": "Create Music",
+                                 "title_regular": "Like Never Before",
+                                 "description": "Transform your musical ideas into reality with Sprunkr. Mix beats, create melodies, and share your music with the world."
                              }
                          },
-                         current_lang='zh')
+                         current_lang='en')
 
 @app.route('/feedback')
 def feedback():
     try:
-        lang = request.args.get('lang', 'zh')
+        lang = request.args.get('lang', 'en')
         trans = get_translations(lang)
         return render_template('feedback.html',
                          title='Feedback - Sprunkr',
@@ -373,14 +373,14 @@ def feedback():
         return render_template('feedback.html',
                          title='Feedback - Sprunkr',
                          translations={
-                             "nav": {"home": "首页", "faq": "常见问题"},
+                             "nav": {"home": "Home", "faq": "FAQ"},
                              "hero": {
-                                 "title_highlight": "创作音乐",
-                                 "title_regular": "前所未有的体验",
-                                 "description": "用 Sprunkr 将您的音乐创意变为现实。混音节拍，创作旋律，与世界分享您的音乐。"
+                                 "title_highlight": "Create Music",
+                                 "title_regular": "Like Never Before",
+                                 "description": "Transform your musical ideas into reality with Sprunkr. Mix beats, create melodies, and share your music with the world."
                              }
                          },
-                         current_lang='zh')
+                         current_lang='en')
 
 def send_message():
     try:
