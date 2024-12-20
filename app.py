@@ -456,6 +456,18 @@ def sprunki_lily():
                          },
                          current_lang='en')
 
+@app.route('/sprunki-megalovania')
+def sprunki_megalovania():
+    translations = get_translations('en')
+    translations.update({
+        'hero': {
+            'title_highlight': 'Sprunki Megalovania',
+            'title_regular': '',
+            'description': 'Have some fun with this Sprunki new mod'
+        }
+    })
+    return render_template('sprunki-megalovania.html', translations=translations)
+
 def send_message():
     try:
         name = request.form.get('name')

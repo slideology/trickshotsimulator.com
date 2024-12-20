@@ -59,7 +59,7 @@
                 Trending Games
             </h2>
             <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6">
-                <!-- Game Card -->
+                <!-- Sprunki Lily Card -->
                 <a href="https://www.sprunkr.online/sprunki-lily" class="group relative rounded-lg overflow-hidden shadow-lg transition-transform duration-300 hover:transform hover:scale-105">
                     <div class="relative aspect-[4/3]">
                         <img src="{{ url_for('static', filename='images/games/sprunki-lily.png') }}" 
@@ -73,7 +73,21 @@
                         </div>
                     </div>
                 </a>
-                <!-- More game cards can be added here -->
+
+                <!-- Sprunki Megalovania Card -->
+                <a href="https://www.sprunkr.online/sprunki-megalovania" class="group relative rounded-lg overflow-hidden shadow-lg transition-transform duration-300 hover:transform hover:scale-105">
+                    <div class="relative aspect-[4/3]">
+                        <img src="{{ url_for('static', filename='images/games/sprunki-megalovania.png') }}" 
+                             alt="Sprunki Megalovania" 
+                             class="w-full h-full object-cover">
+                        <div class="absolute bottom-0 left-0 right-0 h-12 bg-gradient-to-t from-gray-900 via-gray-700 to-transparent opacity-0 group-hover:opacity-80 transition-opacity duration-300"></div>
+                        <div class="absolute bottom-0 left-0 right-0 p-3">
+                            <h3 class="text-sm font-semibold text-gray-800 dark:text-gray-200 group-hover:text-white group-hover:drop-shadow-lg transition-colors duration-300">
+                                Sprunki - Megalovania
+                            </h3>
+                        </div>
+                    </div>
+                </a>
             </div>
         </div>
     </div>
