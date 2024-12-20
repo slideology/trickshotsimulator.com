@@ -29,8 +29,10 @@
     <link rel="canonical" href="https://sprunkr.vercel.app{{ request.path }}">
     
     <!-- Favicon -->
+    {% block favicon %}
     <link rel="icon" type="image/png" href="{{ url_for('static', filename='img/favicon.png') }}">
     <link rel="apple-touch-icon" sizes="180x180" href="{{ url_for('static', filename='img/favicon.png') }}">
+    {% endblock %}
     
     <!-- Schema.org Markup -->
     <script type="application/ld+json">
