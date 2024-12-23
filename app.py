@@ -472,6 +472,10 @@ def sprunki_megalovania():
 def ads_txt():
     return send_from_directory('static', 'ads.txt')
 
+@app.route('/sprunki-spruted')
+def sprunki_spruted():
+    return render_template('sprunki-spruted.html', translations=translations)
+
 def send_message():
     try:
         name = request.form.get('name')

@@ -139,27 +139,27 @@
                         Sprunkr
                     </a>
                     <p class="mt-4 text-gray-600 dark:text-gray-400">
-                        {{ translations['footer']['description'] }}
+                        {{ translations.get('footer', {}).get('description', 'An innovative music creation platform') }}
                     </p>
                 </div>
 
                 <!-- Quick Links -->
                 <div class="col-span-1">
-                    <h3 class="text-lg font-semibold mb-4">{{ translations['footer']['quick_links'] }}</h3>
+                    <h3 class="text-lg font-semibold mb-4">{{ translations.get('footer', {}).get('quick_links', 'Quick Links') }}</h3>
                     <ul class="space-y-2">
                         <li>
                             <a href="{{ url_for('about', lang=current_lang) }}" class="text-gray-600 hover:text-blue-500 dark:text-gray-400 dark:hover:text-blue-400 transition-colors">
-                                {{ translations['nav']['about'] }}
+                                {{ translations.get('nav', {}).get('about', 'About') }}
                             </a>
                         </li>
                         <li>
                             <a href="{{ url_for('game', lang=current_lang) }}" class="text-gray-600 hover:text-blue-500 dark:text-gray-400 dark:hover:text-blue-400 transition-colors">
-                                {{ translations['nav']['game'] }}
+                                {{ translations.get('nav', {}).get('game', 'Play Game') }}
                             </a>
                         </li>
                         <li>
                             <a href="{{ url_for('faq', lang=current_lang) }}" class="text-gray-600 hover:text-blue-500 dark:text-gray-400 dark:hover:text-blue-400 transition-colors">
-                                {{ translations['nav']['faq'] }}
+                                {{ translations.get('nav', {}).get('faq', 'FAQ') }}
                             </a>
                         </li>
                     </ul>
@@ -167,21 +167,21 @@
 
                 <!-- Community -->
                 <div class="col-span-1">
-                    <h3 class="text-lg font-semibold mb-4">{{ translations['footer']['community'] }}</h3>
+                    <h3 class="text-lg font-semibold mb-4">{{ translations.get('footer', {}).get('community', 'Community') }}</h3>
                     <ul class="space-y-2">
                         <li>
                             <a href="{{ url_for('community', lang=current_lang) }}" class="text-gray-600 hover:text-blue-500 dark:text-gray-400 dark:hover:text-blue-400 transition-colors">
-                                {{ translations['nav']['community'] }}
+                                {{ translations.get('nav', {}).get('community', 'Community') }}
                             </a>
                         </li>
                         <li>
                             <a href="{{ url_for('blog', lang=current_lang) }}" class="text-gray-600 hover:text-blue-500 dark:text-gray-400 dark:hover:text-blue-400 transition-colors">
-                                {{ translations['nav']['blog'] }}
+                                {{ translations.get('footer', {}).get('blog', 'Blog') }}
                             </a>
                         </li>
                         <li>
                             <a href="{{ url_for('events', lang=current_lang) }}" class="text-gray-600 hover:text-blue-500 dark:text-gray-400 dark:hover:text-blue-400 transition-colors">
-                                {{ translations['nav']['events'] }}
+                                {{ translations.get('footer', {}).get('events', 'Events') }}
                             </a>
                         </li>
                     </ul>
@@ -189,16 +189,16 @@
 
                 <!-- Contact -->
                 <div class="col-span-1">
-                    <h3 class="text-lg font-semibold mb-4">{{ translations['footer']['contact'] }}</h3>
+                    <h3 class="text-lg font-semibold mb-4">{{ translations.get('footer', {}).get('contact', 'Contact') }}</h3>
                     <ul class="space-y-2">
                         <li>
                             <a href="{{ url_for('contact', lang=current_lang) }}" class="text-gray-600 hover:text-blue-500 dark:text-gray-400 dark:hover:text-blue-400 transition-colors">
-                                {{ translations['nav']['contact'] }}
+                                {{ translations.get('nav', {}).get('contact', 'Contact') }}
                             </a>
                         </li>
                         <li>
                             <a href="{{ url_for('feedback', lang=current_lang) }}" class="text-gray-600 hover:text-blue-500 dark:text-gray-400 dark:hover:text-blue-400 transition-colors">
-                                {{ translations['nav']['feedback'] }}
+                                {{ translations.get('footer', {}).get('feedback', 'Feedback') }}
                             </a>
                         </li>
                     </ul>
@@ -209,14 +209,14 @@
             <div class="mt-12 pt-8 border-t border-gray-200 dark:border-gray-700">
                 <div class="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
                     <p class="text-gray-600 dark:text-gray-400">
-                        © 2023 Sprunkr. {{ translations['footer']['rights'] }}
+                        {{ translations.get('footer', {}).get('copyright', '2024 Sprunkr - Making Music Creation Easier') }}
                     </p>
                     <div class="flex space-x-6">
                         <a href="#" class="text-gray-600 hover:text-blue-500 dark:text-gray-400 dark:hover:text-blue-400 transition-colors">
-                            {{ translations['footer']['privacy'] }}
+                            {{ translations.get('footer', {}).get('privacy', 'Privacy Policy') }}
                         </a>
                         <a href="#" class="text-gray-600 hover:text-blue-500 dark:text-gray-400 dark:hover:text-blue-400 transition-colors">
-                            {{ translations['footer']['terms'] }}
+                            {{ translations.get('footer', {}).get('terms', 'Terms of Service') }}
                         </a>
                     </div>
                 </div>

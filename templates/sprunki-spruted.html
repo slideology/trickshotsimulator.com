@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+
+{% block title %}Play Sprunki Spruted Mod on Sprunkr Online{% endblock %}
+
+{% block meta_description %}
+<meta name="description" content="Sprunki Spruted, a sprunki-themed mod, is an online fan-made alteration of Incredibox Sprunki rhythm game, enjoy it on sprunkr online">
+{% endblock %}
+
+{% block meta_keywords %}
+<meta name="keywords" content="Sprunki Spruted,Sprunki mod,online rhythm game,Incredibox Sprunki,fan-made game,music creation,Sprunkr">
+{% endblock %}
+
+{% block og_title %}Play Sprunki Spruted Mod on Sprunkr Online{% endblock %}
+{% block og_description %}Sprunki Spruted, a sprunki-themed mod, is an online fan-made alteration of Incredibox Sprunki rhythm game, enjoy it on sprunkr online{% endblock %}
+
+{% block content %}
+<div class="relative overflow-hidden">
+    <!-- Hero Section -->
+    <div class="max-w-6xl mx-auto px-4 py-8">
+        <!-- Text Content -->
+        <div class="space-y-6 text-center mb-8">
+            <h1 class="text-4xl md:text-5xl font-bold bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-500 bg-clip-text text-transparent">
+                Sprunki Spruted
+            </h1>
+            <p class="text-lg text-gray-700 dark:text-gray-300 max-w-3xl mx-auto">
+                Sprunki Spruted mode, a sprunki-themed mod, is an online fan-made alteration of Incredibox Sprunki rhythm game, enjoy it on sprunkr online
+            </p>
+            <div class="flex justify-center space-x-4">
+                <a href="#game" class="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700">
+                    Play Now
+                </a>
+            </div>
+        </div>
+        
+        <!-- Game Iframe -->
+        <div class="w-full flex justify-center">
+            <div class="w-[200%] aspect-w-16 aspect-h-9 rounded-lg overflow-hidden shadow-xl">
+                <div class="w-full h-[624px] relative bg-black rounded-lg">
+                    <iframe
+                        data-game-cover-target="iframe"
+                        data-fullscreen-target="iframe"
+                        data-action="load->game-cover#handleLoad"
+                        id="game-iframe"
+                        src="https://www.cocrea.world/@Dupyshome/Spruted"
+                        class="w-full h-full absolute inset-0"
+                        frameborder="0"
+                        loading="lazy"
+                        allowfullscreen
+                        allow="fullscreen"
+                        referrerpolicy="no-referrer"
+                        rel="nofollow">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
