@@ -1,3 +1,3 @@
 User-agent: *
 Allow: /
-Sitemap: https://countryhopper.online/sitemap.xml
+Sitemap: https://sprunkr.online/sitemap.xml
