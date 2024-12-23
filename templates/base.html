@@ -1,6 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-JW7VP8KX3V"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-JW7VP8KX3V');
+    </script>
+
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3179065211650247"
      crossorigin="anonymous"></script>
     <meta charset="UTF-8">
@@ -17,157 +26,105 @@
     <meta name="keywords" content="Sprunkr,Unleash haunting melodies with our special glitch music system. Stack sounds, witness their digital distortion transformation. Embrace Horror Aesthetics.">
     {% endblock %}
     
-    {% block meta_author %}
     <meta name="author" content="Sprunkr">
-    {% endblock %}
-    
-    {% block meta_robots %}
     <meta name="robots" content="index, follow">
-    {% endblock %}
     
     <!-- Open Graph Meta Tags -->
-    {% block meta_og_title %}
     <meta property="og:title" content="{% block og_title %}Sprunkr : Sprunki Online Horror Music Game{% endblock %}">
-    {% endblock %}
-    
-    {% block meta_og_description %}
     <meta property="og:description" content="{% block og_description %}Unleash haunting melodies with our special glitch music system. Stack sounds, witness their digital distortion transformation. Embrace Horror Aesthetics.{% endblock %}">
-    {% endblock %}
-    
-    {% block meta_og_type %}
     <meta property="og:type" content="website">
-    {% endblock %}
-    
-    {% block meta_og_url %}
     <meta property="og:url" content="https://sprunkr.vercel.app{{ request.path }}">
-    {% endblock %}
-    
-    {% block meta_og_image %}
     <meta property="og:image" content="{% block og_image %}{{ url_for('static', filename='images/og-image.jpg', _external=True) }}{% endblock %}">
-    {% endblock %}
-    
-    {% block meta_og_site_name %}
     <meta property="og:site_name" content="Sprunkr">
-    {% endblock %}
     
     <!-- Twitter Card Meta Tags -->
-    {% block meta_twitter_card %}
     <meta name="twitter:card" content="summary_large_image">
-    {% endblock %}
-    
-    {% block meta_twitter_title %}
     <meta name="twitter:title" content="{{ self.og_title() }}">
-    {% endblock %}
-    
-    {% block meta_twitter_description %}
     <meta name="twitter:description" content="{{ self.og_description() }}">
-    {% endblock %}
-    
-    {% block meta_twitter_image %}
     <meta name="twitter:image" content="{{ self.og_image() }}">
-    {% endblock %}
     
     <!-- Canonical URL -->
-    {% block canonical_url %}
     <link rel="canonical" href="https://sprunkr.vercel.app{{ request.path }}">
-    {% endblock %}
     
     <!-- Favicon -->
     {% block favicon %}
-    <link rel="icon" type="image/png" href="{{ url_for('static', filename='img/favicon.png') }}">
-    <link rel="apple-touch-icon" sizes="180x180" href="{{ url_for('static', filename='img/favicon.png') }}">
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='favicon.ico') }}">
     {% endblock %}
     
     <!-- Schema.org Markup -->
-    {% block schema_org_markup %}
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
         "@type": "WebSite",
         "name": "Sprunkr",
+        "description": "Unleash haunting melodies with our special glitch music system",
         "url": "https://sprunkr.vercel.app",
-        "description": "An interactive music creation platform where you can create beats, mix sounds, and make your own music.",
         "potentialAction": {
-            "@type": "PlayAction",
-            "target": "https://sprunkr.vercel.app/music"
+            "@type": "SearchAction",
+            "target": "https://sprunkr.vercel.app/search?q={search_term_string}",
+            "query-input": "required name=search_term_string"
         }
     }
     </script>
-    {% endblock %}
     
     <!-- Alpine.js -->
     <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
-    <!-- Lucide Icons -->
-    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {"50":"#eff6ff","100":"#dbeafe","200":"#bfdbfe","300":"#93c5fd","400":"#60a5fa","500":"#3b82f6","600":"#2563eb","700":"#1d4ed8","800":"#1e40af","900":"#1e3a8a","950":"#172554"}
+                    }
+                },
+                fontFamily: {
+                    'body': [
+                        'Inter', 
+                        'ui-sans-serif', 
+                        'system-ui', 
+                        '-apple-system', 
+                        'system-ui', 
+                        'Segoe UI', 
+                        'Roboto', 
+                        'Helvetica Neue', 
+                        'Arial', 
+                        'Noto Sans', 
+                        'sans-serif', 
+                        'Apple Color Emoji', 
+                        'Segoe UI Emoji', 
+                        'Segoe UI Symbol', 
+                        'Noto Color Emoji'
+                    ],
+                    'sans': [
+                        'Inter', 
+                        'ui-sans-serif', 
+                        'system-ui', 
+                        '-apple-system', 
+                        'system-ui', 
+                        'Segoe UI', 
+                        'Roboto', 
+                        'Helvetica Neue', 
+                        'Arial', 
+                        'Noto Sans', 
+                        'sans-serif', 
+                        'Apple Color Emoji', 
+                        'Segoe UI Emoji', 
+                        'Segoe UI Symbol', 
+                        'Noto Color Emoji'
+                    ]
+                }
+            }
+        }
+    </script>
 </head>
 <body class="bg-gray-50 dark:bg-gray-900 text-gray-800 dark:text-gray-200">
     <!-- Navigation -->
-    <nav class="fixed w-full bg-white/80 dark:bg-gray-900/80 backdrop-blur-sm z-50">
-        <div class="max-w-6xl mx-auto px-4 py-3">
-            <div class="flex justify-between items-center">
-                <a href="/" class="text-2xl font-bold bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-500 bg-clip-text text-transparent hover:opacity-80 transition-opacity">
-                    Sprunkr
-                </a>
-                <div class="flex items-center space-x-6">
-                    <a href="{{ url_for('home', lang=current_lang) }}" class="text-gray-800 dark:text-gray-200 hover:text-blue-600 dark:hover:text-blue-400">{{ translations['nav']['home'] }}</a>
-                    <a href="{{ url_for('faq', lang=current_lang) }}" class="text-gray-800 dark:text-gray-200 hover:text-blue-600 dark:hover:text-blue-400">{{ translations['nav']['faq'] }}</a>
-                    
-                    <!-- Language Selector -->
-                    <div class="relative group" x-data="{ open: false }">
-                        <button @click="open = !open" 
-                                class="flex items-center space-x-1 text-gray-800 dark:text-gray-200 hover:text-blue-600 dark:hover:text-blue-400 focus:outline-none"
-                                @click.away="open = false">
-                            <i data-lucide="globe" class="w-5 h-5"></i>
-                            <span class="text-sm">
-                                {% if current_lang == 'zh' %}简体中文
-                                {% elif current_lang == 'en' %}English
-                                {% elif current_lang == 'ja' %}日本語
-                                {% elif current_lang == 'ko' %}한국어
-                                {% elif current_lang == 'fr' %}Français
-                                {% elif current_lang == 'de' %}Deutsch
-                                {% endif %}
-                            </span>
-                            <i data-lucide="chevron-down" class="w-4 h-4 transition-transform" :class="{ 'transform rotate-180': open }"></i>
-                        </button>
-                        
-                        <!-- Dropdown Menu -->
-                        <div x-show="open" 
-                             x-transition:enter="transition ease-out duration-200"
-                             x-transition:enter-start="opacity-0 transform scale-95"
-                             x-transition:enter-end="opacity-100 transform scale-100"
-                             x-transition:leave="transition ease-in duration-150"
-                             x-transition:leave-start="opacity-100 transform scale-100"
-                             x-transition:leave-end="opacity-0 transform scale-95"
-                             class="absolute right-0 mt-2 w-48 bg-white dark:bg-gray-800 rounded-lg shadow-lg py-2 z-50">
-                            <a href="?lang=zh" class="flex items-center px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 {% if current_lang == 'zh' %}bg-gray-100 dark:bg-gray-700{% endif %}">
-                                {% if current_lang == 'zh' %}<i data-lucide="check" class="w-4 h-4 mr-2 text-blue-500"></i>{% else %}<span class="w-4 h-4 mr-2"></span>{% endif %}
-                                简体中文
-                            </a>
-                            <a href="?lang=en" class="flex items-center px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 {% if current_lang == 'en' %}bg-gray-100 dark:bg-gray-700{% endif %}">
-                                {% if current_lang == 'en' %}<i data-lucide="check" class="w-4 h-4 mr-2 text-blue-500"></i>{% else %}<span class="w-4 h-4 mr-2"></span>{% endif %}
-                                English
-                            </a>
-                            <a href="?lang=ja" class="flex items-center px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 {% if current_lang == 'ja' %}bg-gray-100 dark:bg-gray-700{% endif %}">
-                                {% if current_lang == 'ja' %}<i data-lucide="check" class="w-4 h-4 mr-2 text-blue-500"></i>{% else %}<span class="w-4 h-4 mr-2"></span>{% endif %}
-                                日本語
-                            </a>
-                        </div>
-                    </div>
+    {% include 'components/nav.html' %}
 
-                    <!-- Theme Toggle -->
-                    <button id="theme-toggle" class="text-gray-700 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-400">
-                        <i data-lucide="sun" class="w-5 h-5 dark:hidden"></i>
-                        <i data-lucide="moon" class="w-5 h-5 hidden dark:inline"></i>
-                    </button>
-                </div>
-            </div>
-        </div>
-    </nav>
-
-    <!-- Main Content -->
     <main class="pt-20">
         {% block content %}{% endblock %}
     </main>
@@ -181,59 +138,28 @@
                     <a href="/" class="text-2xl font-bold bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-500 bg-clip-text text-transparent">
                         Sprunkr
                     </a>
-                    <p class="mt-4 text-sm text-gray-600 dark:text-gray-400">
+                    <p class="mt-4 text-gray-600 dark:text-gray-400">
                         {{ translations['footer']['description'] }}
                     </p>
-                    <div class="mt-6 flex space-x-4">
-                        <a href="https://twitter.com/sprunkr" target="_blank" rel="noopener noreferrer" 
-                           class="text-gray-600 hover:text-blue-500 dark:text-gray-400 dark:hover:text-blue-400 transition-colors">
-                            <i data-lucide="twitter" class="w-5 h-5"></i>
-                        </a>
-                        <a href="https://youtube.com/sprunkr" target="_blank" rel="noopener noreferrer"
-                           class="text-gray-600 hover:text-red-500 dark:text-gray-400 dark:hover:text-red-400 transition-colors">
-                            <i data-lucide="youtube" class="w-5 h-5"></i>
-                        </a>
-                        <a href="https://reddit.com/r/sprunkr" target="_blank" rel="noopener noreferrer"
-                           class="text-gray-600 hover:text-orange-500 dark:text-gray-400 dark:hover:text-orange-400 transition-colors">
-                            <i data-lucide="message-circle" class="w-5 h-5"></i>
-                        </a>
-                        <a href="https://discord.gg/sprunkr" target="_blank" rel="noopener noreferrer"
-                           class="text-gray-600 hover:text-indigo-500 dark:text-gray-400 dark:hover:text-indigo-400 transition-colors">
-                            <i data-lucide="message-square-plus" class="w-5 h-5"></i>
-                        </a>
-                        <a href="https://github.com/sprunkr" target="_blank" rel="noopener noreferrer"
-                           class="text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white transition-colors">
-                            <i data-lucide="github" class="w-5 h-5"></i>
-                        </a>
-                    </div>
                 </div>
 
                 <!-- Quick Links -->
                 <div class="col-span-1">
-                    <h3 class="text-lg font-semibold mb-4">{{ translations['footer']['quickLinks'] }}</h3>
+                    <h3 class="text-lg font-semibold mb-4">{{ translations['footer']['quick_links'] }}</h3>
                     <ul class="space-y-2">
                         <li>
-                            <a href="{{ url_for('game', lang=current_lang) }}" class="text-gray-600 hover:text-blue-500 dark:text-gray-400 dark:hover:text-blue-400 transition-colors flex items-center gap-2">
-                                <i data-lucide="play" class="w-4 h-4"></i>
-                                {{ translations['footer']['playGame'] }}
+                            <a href="{{ url_for('about', lang=current_lang) }}" class="text-gray-600 hover:text-blue-500 dark:text-gray-400 dark:hover:text-blue-400 transition-colors">
+                                {{ translations['nav']['about'] }}
                             </a>
                         </li>
                         <li>
-                            <a href="{{ url_for('introduction', lang=current_lang) }}" class="text-gray-600 hover:text-blue-500 dark:text-gray-400 dark:hover:text-blue-400 transition-colors flex items-center gap-2">
-                                <i data-lucide="book-open" class="w-4 h-4"></i>
-                                {{ translations['footer']['guide'] }}
+                            <a href="{{ url_for('game', lang=current_lang) }}" class="text-gray-600 hover:text-blue-500 dark:text-gray-400 dark:hover:text-blue-400 transition-colors">
+                                {{ translations['nav']['game'] }}
                             </a>
                         </li>
                         <li>
-                            <a href="{{ url_for('faq', lang=current_lang) }}" class="text-gray-600 hover:text-blue-500 dark:text-gray-400 dark:hover:text-blue-400 transition-colors flex items-center gap-2">
-                                <i data-lucide="help-circle" class="w-4 h-4"></i>
-                                {{ translations['footer']['faq'] }}
-                            </a>
-                        </li>
-                        <li>
-                            <a href="{{ url_for('blog', lang=current_lang) }}" class="text-gray-600 hover:text-blue-500 dark:text-gray-400 dark:hover:text-blue-400 transition-colors flex items-center gap-2">
-                                <i data-lucide="newspaper" class="w-4 h-4"></i>
-                                {{ translations['footer']['blog'] }}
+                            <a href="{{ url_for('faq', lang=current_lang) }}" class="text-gray-600 hover:text-blue-500 dark:text-gray-400 dark:hover:text-blue-400 transition-colors">
+                                {{ translations['nav']['faq'] }}
                             </a>
                         </li>
                     </ul>
@@ -244,27 +170,18 @@
                     <h3 class="text-lg font-semibold mb-4">{{ translations['footer']['community'] }}</h3>
                     <ul class="space-y-2">
                         <li>
-                            <a href="{{ url_for('community', lang=current_lang) }}" class="text-gray-600 hover:text-blue-500 dark:text-gray-400 dark:hover:text-blue-400 transition-colors flex items-center gap-2">
-                                <i data-lucide="users" class="w-4 h-4"></i>
-                                {{ translations['footer']['communityCenter'] }}
+                            <a href="{{ url_for('community', lang=current_lang) }}" class="text-gray-600 hover:text-blue-500 dark:text-gray-400 dark:hover:text-blue-400 transition-colors">
+                                {{ translations['nav']['community'] }}
                             </a>
                         </li>
                         <li>
-                            <a href="{{ url_for('leaderboard', lang=current_lang) }}" class="text-gray-600 hover:text-blue-500 dark:text-gray-400 dark:hover:text-blue-400 transition-colors flex items-center gap-2">
-                                <i data-lucide="trophy" class="w-4 h-4"></i>
-                                {{ translations['footer']['leaderboard'] }}
+                            <a href="{{ url_for('blog', lang=current_lang) }}" class="text-gray-600 hover:text-blue-500 dark:text-gray-400 dark:hover:text-blue-400 transition-colors">
+                                {{ translations['nav']['blog'] }}
                             </a>
                         </li>
                         <li>
-                            <a href="{{ url_for('events', lang=current_lang) }}" class="text-gray-600 hover:text-blue-500 dark:text-gray-400 dark:hover:text-blue-400 transition-colors flex items-center gap-2">
-                                <i data-lucide="calendar" class="w-4 h-4"></i>
-                                {{ translations['footer']['events'] }}
-                            </a>
-                        </li>
-                        <li>
-                            <a href="{{ url_for('feedback', lang=current_lang) }}" class="text-gray-600 hover:text-blue-500 dark:text-gray-400 dark:hover:text-blue-400 transition-colors flex items-center gap-2">
-                                <i data-lucide="message-square" class="w-4 h-4"></i>
-                                {{ translations['footer']['feedback'] }}
+                            <a href="{{ url_for('events', lang=current_lang) }}" class="text-gray-600 hover:text-blue-500 dark:text-gray-400 dark:hover:text-blue-400 transition-colors">
+                                {{ translations['nav']['events'] }}
                             </a>
                         </li>
                     </ul>
@@ -274,19 +191,15 @@
                 <div class="col-span-1">
                     <h3 class="text-lg font-semibold mb-4">{{ translations['footer']['contact'] }}</h3>
                     <ul class="space-y-2">
-                        <li class="flex items-center gap-2 text-gray-600 dark:text-gray-400">
-                            <i data-lucide="mail" class="w-4 h-4"></i>
-                            <a href="mailto:contact@sprunkr.com" class="hover:text-blue-500 dark:hover:text-blue-400 transition-colors">
-                                contact@sprunkr.com
+                        <li>
+                            <a href="{{ url_for('contact', lang=current_lang) }}" class="text-gray-600 hover:text-blue-500 dark:text-gray-400 dark:hover:text-blue-400 transition-colors">
+                                {{ translations['nav']['contact'] }}
                             </a>
                         </li>
-                        <li class="flex items-center gap-2 text-gray-600 dark:text-gray-400">
-                            <i data-lucide="map-pin" class="w-4 h-4"></i>
-                            <span>{{ translations['footer']['address'] }}</span>
-                        </li>
-                        <li class="flex items-center gap-2 text-gray-600 dark:text-gray-400">
-                            <i data-lucide="clock" class="w-4 h-4"></i>
-                            <span>{{ translations['footer']['workHours'] }}</span>
+                        <li>
+                            <a href="{{ url_for('feedback', lang=current_lang) }}" class="text-gray-600 hover:text-blue-500 dark:text-gray-400 dark:hover:text-blue-400 transition-colors">
+                                {{ translations['nav']['feedback'] }}
+                            </a>
                         </li>
                     </ul>
                 </div>
@@ -295,15 +208,16 @@
             <!-- Bottom Bar -->
             <div class="mt-12 pt-8 border-t border-gray-200 dark:border-gray-700">
                 <div class="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-                    <div class="text-sm text-gray-600 dark:text-gray-400">
-                        {{ translations['footer']['copyright'] }}
-                    </div>
-                    <div class="flex items-center space-x-4 text-sm text-gray-600 dark:text-gray-400">
-                        <a href="/privacy" class="hover:text-blue-500 dark:hover:text-blue-400 transition-colors">{{ translations['footer']['privacy'] }}</a>
-                        <span>•</span>
-                        <a href="/terms" class="hover:text-blue-500 dark:hover:text-blue-400 transition-colors">{{ translations['footer']['terms'] }}</a>
-                        <span>•</span>
-                        <a href="/cookies" class="hover:text-blue-500 dark:hover:text-blue-400 transition-colors">{{ translations['footer']['cookies'] }}</a>
+                    <p class="text-gray-600 dark:text-gray-400">
+                        © 2023 Sprunkr. {{ translations['footer']['rights'] }}
+                    </p>
+                    <div class="flex space-x-6">
+                        <a href="#" class="text-gray-600 hover:text-blue-500 dark:text-gray-400 dark:hover:text-blue-400 transition-colors">
+                            {{ translations['footer']['privacy'] }}
+                        </a>
+                        <a href="#" class="text-gray-600 hover:text-blue-500 dark:text-gray-400 dark:hover:text-blue-400 transition-colors">
+                            {{ translations['footer']['terms'] }}
+                        </a>
                     </div>
                 </div>
             </div>
@@ -313,10 +227,5 @@
     <!-- JavaScript -->
     <script src="{{ url_for('static', filename='js/main.js') }}"></script>
     {% block scripts %}{% endblock %}
-
-    <!-- Initialize Lucide Icons -->
-    <script>
-        lucide.createIcons();
-    </script>
 </body>
 </html>
