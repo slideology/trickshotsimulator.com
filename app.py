@@ -476,6 +476,26 @@ def ads_txt():
 def sprunki_spruted():
     return render_template('sprunki-spruted.html', translations=translations)
 
+@app.route('/privacy-policy')
+def privacy_policy():
+    try:
+        lang = request.args.get('lang', 'en')
+        translations_data = get_translations(lang)
+        return render_template('privacy-policy.html', translations=translations_data)
+    except Exception as e:
+        app.logger.error(f"Error in privacy policy route: {e}")
+        return render_template('error.html', error="An error occurred loading the privacy policy page.")
+
+@app.route('/terms-of-service')
+def terms_of_service():
+    try:
+        lang = request.args.get('lang', 'en')
+        translations_data = get_translations(lang)
+        return render_template('terms-of-service.html', translations=translations_data)
+    except Exception as e:
+        app.logger.error(f"Error in terms of service route: {e}")
+        return render_template('error.html', error="An error occurred loading the terms of service page.")
+
 def send_message():
     try:
         name = request.form.get('name')
