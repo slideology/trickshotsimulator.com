@@ -468,6 +468,10 @@ def sprunki_megalovania():
     })
     return render_template('sprunki-megalovania.html', translations=translations)
 
+@app.route('/ads.txt')
+def ads_txt():
+    return send_from_directory('static', 'ads.txt')
+
 def send_message():
     try:
         name = request.form.get('name')
