@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, flash, redirect, url_for, send_from_directory, session
+from flask import Flask, render_template, request, flash, redirect, url_for, send_from_directory, session, g
 import smtplib
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
@@ -17,6 +17,30 @@ app.logger.setLevel(logging.DEBUG)  # Change to DEBUG level
 handler = logging.StreamHandler()
 handler.setLevel(logging.DEBUG)
 app.logger.addHandler(handler)
+
+# Language settings
+SUPPORTED_LANGUAGES = ['en', 'zh']
+DEFAULT_LANGUAGE = 'en'
+
+@app.before_request
+def before_request():
+    # Get language from URL parameter, cookie, or browser settings
+    lang = request.args.get('lang')
+    if lang not in SUPPORTED_LANGUAGES:
+        lang = request.cookies.get('lang')
+    if lang not in SUPPORTED_LANGUAGES:
+        lang = request.accept_languages.best_match(SUPPORTED_LANGUAGES, default=DEFAULT_LANGUAGE)
+    g.lang = lang
+
+# Language route
+@app.route('/set-language')
+def set_language():
+    lang = request.args.get('lang')
+    if lang in SUPPORTED_LANGUAGES:
+        response = redirect(request.referrer or url_for('home'))
+        response.set_cookie('lang', lang, max_age=60*60*24*365)
+        return response
+    return redirect(request.referrer or url_for('home'))
 
 def load_translations():
     translations_path = os.path.join(app.static_folder, 'data', 'translations.json')
@@ -99,8 +123,7 @@ def get_translations(lang='en'):
 @app.route('/')
 def home():
     try:
-        lang = request.args.get('lang', 'en')
-        trans = get_translations(lang)
+        trans = get_translations(g.lang)
         try:
             faq_data = load_faq_data()
             return render_template('index.html', 
@@ -108,7 +131,7 @@ def home():
                              description='Create amazing music with Sprunkr! Mix beats, compose tunes, and share your musical creations.',
                              faq_data=faq_data,
                              translations=trans,
-                             current_lang=lang)
+                             current_lang=g.lang)
         except Exception as e:
             app.logger.error(f"Error in home route: {str(e)}")
             return render_template('index.html', 
@@ -116,7 +139,7 @@ def home():
                              description='Create amazing music with Sprunkr! Mix beats, compose tunes, and share your musical creations.',
                              faq_data={"faq_sections": []},
                              translations=trans,
-                             current_lang=lang)
+                             current_lang=g.lang)
     except Exception as e:
         app.logger.error(f"Error in home route: {e}")
         return render_template('index.html',
@@ -134,12 +157,11 @@ def home():
 @app.route('/about')
 def about():
     try:
-        lang = request.args.get('lang', 'en')
-        trans = get_translations(lang)
+        trans = get_translations(g.lang)
         return render_template('about.html', 
                          title='About Sprunkr',
                          translations=trans,
-                         current_lang=lang)
+                         current_lang=g.lang)
     except Exception as e:
         app.logger.error(f"Error in about route: {e}")
         return render_template('about.html',
@@ -157,12 +179,11 @@ def about():
 @app.route('/game')
 def game():
     try:
-        lang = request.args.get('lang', 'en')
-        trans = get_translations(lang)
+        trans = get_translations(g.lang)
         return render_template('game.html',
                          title='Play Sprunkr',
                          translations=trans,
-                         current_lang=lang)
+                         current_lang=g.lang)
     except Exception as e:
         app.logger.error(f"Error in game route: {e}")
         return render_template('game.html',
@@ -180,12 +201,11 @@ def game():
 @app.route('/introduction')
 def introduction():
     try:
-        lang = request.args.get('lang', 'en')
-        trans = get_translations(lang)
+        trans = get_translations(g.lang)
         return render_template('introduction.html',
                          title='Game Guide - Sprunkr',
                          translations=trans,
-                         current_lang=lang)
+                         current_lang=g.lang)
     except Exception as e:
         app.logger.error(f"Error in introduction route: {e}")
         return render_template('introduction.html',
@@ -203,14 +223,13 @@ def introduction():
 @app.route('/contact', methods=['GET', 'POST'])
 def contact():
     try:
-        lang = request.args.get('lang', 'en')
-        trans = get_translations(lang)
+        trans = get_translations(g.lang)
         if request.method == 'POST':
             return send_message()
         return render_template('contact.html',
                          title='Contact Sprunkr',
                          translations=trans,
-                         current_lang=lang)
+                         current_lang=g.lang)
     except Exception as e:
         app.logger.error(f"Error in contact route: {e}")
         return render_template('contact.html',
@@ -228,22 +247,21 @@ def contact():
 @app.route('/faq')
 def faq():
     try:
-        lang = request.args.get('lang', 'en')
-        trans = get_translations(lang)
+        trans = get_translations(g.lang)
         try:
-            faq_sections = get_faq_data(lang)
+            faq_sections = get_faq_data(g.lang)
             return render_template('faq.html',
                              title='FAQ - Sprunkr',
                              faq_data={'faq_sections': faq_sections},
                              translations=trans,
-                             current_lang=lang)
+                             current_lang=g.lang)
         except Exception as e:
             app.logger.error(f"Error in faq route: {str(e)}")
             return render_template('faq.html',
                              title='FAQ - Sprunkr',
                              faq_data={"faq_sections": []},
                              translations=trans,
-                             current_lang=lang)
+                             current_lang=g.lang)
     except Exception as e:
         app.logger.error(f"Error in faq route: {e}")
         return render_template('faq.html',
@@ -270,12 +288,11 @@ def robots():
 @app.route('/blog')
 def blog():
     try:
-        lang = request.args.get('lang', 'en')
-        trans = get_translations(lang)
+        trans = get_translations(g.lang)
         return render_template('blog.html',
                          title='Blog - Sprunkr',
                          translations=trans,
-                         current_lang=lang)
+                         current_lang=g.lang)
     except Exception as e:
         app.logger.error(f"Error in blog route: {e}")
         return render_template('blog.html',
@@ -293,12 +310,11 @@ def blog():
 @app.route('/community')
 def community():
     try:
-        lang = request.args.get('lang', 'en')
-        trans = get_translations(lang)
+        trans = get_translations(g.lang)
         return render_template('community.html',
                          title='Community - Sprunkr',
                          translations=trans,
-                         current_lang=lang)
+                         current_lang=g.lang)
     except Exception as e:
         app.logger.error(f"Error in community route: {e}")
         return render_template('community.html',
@@ -316,12 +332,11 @@ def community():
 @app.route('/leaderboard')
 def leaderboard():
     try:
-        lang = request.args.get('lang', 'en')
-        trans = get_translations(lang)
+        trans = get_translations(g.lang)
         return render_template('leaderboard.html',
                          title='Leaderboard - Sprunkr',
                          translations=trans,
-                         current_lang=lang)
+                         current_lang=g.lang)
     except Exception as e:
         app.logger.error(f"Error in leaderboard route: {e}")
         return render_template('leaderboard.html',
@@ -339,12 +354,11 @@ def leaderboard():
 @app.route('/events')
 def events():
     try:
-        lang = request.args.get('lang', 'en')
-        trans = get_translations(lang)
+        trans = get_translations(g.lang)
         return render_template('events.html',
                          title='Events - Sprunkr',
                          translations=trans,
-                         current_lang=lang)
+                         current_lang=g.lang)
     except Exception as e:
         app.logger.error(f"Error in events route: {e}")
         return render_template('events.html',
@@ -362,12 +376,11 @@ def events():
 @app.route('/feedback')
 def feedback():
     try:
-        lang = request.args.get('lang', 'en')
-        trans = get_translations(lang)
+        trans = get_translations(g.lang)
         return render_template('feedback.html',
                          title='Feedback - Sprunkr',
                          translations=trans,
-                         current_lang=lang)
+                         current_lang=g.lang)
     except Exception as e:
         app.logger.error(f"Error in feedback route: {e}")
         return render_template('feedback.html',
@@ -385,7 +398,6 @@ def feedback():
 @app.route('/sprunki-lily')
 def sprunki_lily():
     try:
-        lang = request.args.get('lang', 'en')
         custom_translations = {
             "nav": {
                 "home": "Home",
@@ -419,7 +431,7 @@ def sprunki_lily():
         return render_template('sprunki-lily.html',
                          title='Sprunki Lily - New Character Mod',
                          translations=custom_translations,
-                         current_lang=lang)
+                         current_lang=g.lang)
     except Exception as e:
         app.logger.error(f"Error in sprunki-lily route: {e}")
         return render_template('sprunki-lily.html',
@@ -479,8 +491,7 @@ def sprunki_spruted():
 @app.route('/privacy-policy')
 def privacy_policy():
     try:
-        lang = request.args.get('lang', 'en')
-        translations_data = get_translations(lang)
+        translations_data = get_translations(g.lang)
         return render_template('privacy-policy.html', translations=translations_data)
     except Exception as e:
         app.logger.error(f"Error in privacy policy route: {e}")
@@ -489,8 +500,7 @@ def privacy_policy():
 @app.route('/terms-of-service')
 def terms_of_service():
     try:
-        lang = request.args.get('lang', 'en')
-        translations_data = get_translations(lang)
+        translations_data = get_translations(g.lang)
         return render_template('terms-of-service.html', translations=translations_data)
     except Exception as e:
         app.logger.error(f"Error in terms of service route: {e}")

@@ -10,8 +10,8 @@
             <!-- Navigation Links -->
             <div class="hidden md:block">
                 <div class="ml-10 flex items-baseline space-x-4">
-                    <a href="/" class="px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white">Home</a>
-                    <a href="/faq" class="px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white">FAQ</a>
+                    <a href="/" class="px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white">{{ translations.get('nav', {}).get('home', 'Home') }}</a>
+                    <a href="/faq" class="px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white">{{ translations.get('nav', {}).get('faq', 'FAQ') }}</a>
                 </div>
             </div>
 
@@ -19,38 +19,69 @@
             <div class="relative ml-3">
                 <button id="language-menu-button" type="button" class="relative inline-flex items-center gap-x-1.5 rounded-md bg-white dark:bg-gray-800 px-3 py-2 text-sm font-semibold text-gray-900 dark:text-gray-100 shadow-sm ring-1 ring-inset ring-gray-300 dark:ring-gray-700 hover:bg-gray-50 dark:hover:bg-gray-700">
                     <i data-lucide="globe" class="h-5 w-5"></i>
-                    <span id="selected-language">English</span>
+                    <span id="selected-language">
+                        {% if current_lang == 'zh' %}
+                            中文
+                        {% else %}
+                            English
+                        {% endif %}
+                    </span>
                     <i data-lucide="chevron-down" class="h-5 w-5"></i>
                 </button>
 
                 <!-- Dropdown menu -->
                 <div id="language-menu" class="hidden absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white dark:bg-gray-800 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none" role="menu" aria-orientation="vertical" aria-labelledby="language-menu-button" tabindex="-1">
                     <div class="py-1" role="none">
-                        <a href="#" class="language-option text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 block px-4 py-2 text-sm" role="menuitem" tabindex="-1" data-lang="en">English</a>
-                        <a href="#" class="language-option text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 block px-4 py-2 text-sm" role="menuitem" tabindex="-1" data-lang="ja">日本語</a>
-                        <a href="#" class="language-option text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 block px-4 py-2 text-sm" role="menuitem" tabindex="-1" data-lang="ko">한국어</a>
-                        <a href="#" class="language-option text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 block px-4 py-2 text-sm" role="menuitem" tabindex="-1" data-lang="fr">Français</a>
-                        <a href="#" class="language-option text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 block px-4 py-2 text-sm" role="menuitem" tabindex="-1" data-lang="de">Deutsch</a>
+                        <a href="{{ url_for(request.endpoint, lang='en', **request.view_args) }}" class="language-option text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 block px-4 py-2 text-sm {% if current_lang == 'en' %}font-bold{% endif %}" role="menuitem" tabindex="-1" data-lang="en">English</a>
+                        <a href="{{ url_for(request.endpoint, lang='zh', **request.view_args) }}" class="language-option text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 block px-4 py-2 text-sm {% if current_lang == 'zh' %}font-bold{% endif %}" role="menuitem" tabindex="-1" data-lang="zh">中文</a>
                     </div>
                 </div>
             </div>
 
             <!-- Mobile menu button -->
             <div class="md:hidden">
-                <button type="button" class="mobile-menu-button inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500" aria-controls="mobile-menu" aria-expanded="false">
+                <button type="button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500" aria-controls="mobile-menu" aria-expanded="false">
                     <span class="sr-only">Open main menu</span>
                     <i data-lucide="menu" class="block h-6 w-6"></i>
-                    <i data-lucide="x" class="hidden h-6 w-6"></i>
                 </button>
             </div>
         </div>
     </div>
 
     <!-- Mobile menu -->
-    <div class="hidden md:hidden" id="mobile-menu">
+    <div class="md:hidden hidden" id="mobile-menu">
         <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-            <a href="/" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50 dark:text-gray-300 dark:hover:text-white dark:hover:bg-gray-700">Home</a>
-            <a href="/faq" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50 dark:text-gray-300 dark:hover:text-white dark:hover:bg-gray-700">FAQ</a>
+            <a href="/" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white">{{ translations.get('nav', {}).get('home', 'Home') }}</a>
+            <a href="/faq" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white">{{ translations.get('nav', {}).get('faq', 'FAQ') }}</a>
         </div>
     </div>
 </nav>
+
+<!-- Language Selector Script -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const languageButton = document.getElementById('language-menu-button');
+    const languageMenu = document.getElementById('language-menu');
+    const mobileMenuButton = document.querySelector('[aria-controls="mobile-menu"]');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    // Language menu toggle
+    languageButton.addEventListener('click', function() {
+        languageMenu.classList.toggle('hidden');
+    });
+
+    // Close language menu when clicking outside
+    document.addEventListener('click', function(event) {
+        if (!languageButton.contains(event.target) && !languageMenu.contains(event.target)) {
+            languageMenu.classList.add('hidden');
+        }
+    });
+
+    // Mobile menu toggle
+    mobileMenuButton.addEventListener('click', function() {
+        mobileMenu.classList.toggle('hidden');
+        const expanded = mobileMenu.classList.contains('hidden') ? 'false' : 'true';
+        mobileMenuButton.setAttribute('aria-expanded', expanded);
+    });
+});
+</script>
