@@ -20,8 +20,8 @@
                 <button id="language-menu-button" type="button" class="relative inline-flex items-center gap-x-1.5 rounded-md bg-white dark:bg-gray-800 px-3 py-2 text-sm font-semibold text-gray-900 dark:text-gray-100 shadow-sm ring-1 ring-inset ring-gray-300 dark:ring-gray-700 hover:bg-gray-50 dark:hover:bg-gray-700">
                     <i data-lucide="globe" class="h-5 w-5"></i>
                     <span id="selected-language">
-                        {% if current_lang == 'zh' %}
-                            中文
+                        {% if current_lang == 'es' %}
+                            Español
                         {% else %}
                             English
                         {% endif %}
@@ -33,7 +33,7 @@
                 <div id="language-menu" class="hidden absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white dark:bg-gray-800 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none" role="menu" aria-orientation="vertical" aria-labelledby="language-menu-button" tabindex="-1">
                     <div class="py-1" role="none">
                         <a href="{{ url_for(request.endpoint, lang='en', **request.view_args) }}" class="language-option text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 block px-4 py-2 text-sm {% if current_lang == 'en' %}font-bold{% endif %}" role="menuitem" tabindex="-1" data-lang="en">English</a>
-                        <a href="{{ url_for(request.endpoint, lang='zh', **request.view_args) }}" class="language-option text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 block px-4 py-2 text-sm {% if current_lang == 'zh' %}font-bold{% endif %}" role="menuitem" tabindex="-1" data-lang="zh">中文</a>
+                        <a href="{{ url_for(request.endpoint, lang='es', **request.view_args) }}" class="language-option text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 block px-4 py-2 text-sm {% if current_lang == 'es' %}font-bold{% endif %}" role="menuitem" tabindex="-1" data-lang="es">Español</a>
                     </div>
                 </div>
             </div>

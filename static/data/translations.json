@@ -1,39 +1,4 @@
 {
-    "zh": {
-        "nav": {
-            "home": "首页",
-            "guide": "游戏指南",
-            "faq": "常见问题",
-            "play": "开始游戏",
-            "about": "关于我们",
-            "contact": "联系我们"
-        },
-        "hero": {
-            "title_highlight": "创作音乐",
-            "title_regular": "前所未有的体验",
-            "description": "用 Sprunkr 将您的音乐创意变为现实。混音节拍，创作旋律，与世界分享您的音乐。"
-        },
-        "footer": {
-            "description": "创新的音乐创作平台，让每个人都能轻松制作属于自己的音乐。",
-            "quickLinks": "快速链接",
-            "community": "社区",
-            "contact": "联系我们",
-            "playGame": "开始游戏",
-            "gameGuide": "游戏指南",
-            "faq": "常见问题",
-            "blog": "博客资讯",
-            "communityCenter": "社区中心",
-            "leaderboard": "排行榜",
-            "events": "活动",
-            "feedback": "反馈",
-            "address": "硅谷, 加利福尼亚",
-            "workHours": "周一至周五 9:00-18:00",
-            "copyright": " 2024 Sprunkr - 让音乐创作更简单",
-            "privacy": "隐私政策",
-            "terms": "服务条款",
-            "cookies": "Cookie 政策"
-        }
-    },
     "en": {
         "nav": {
             "home": "Home",
@@ -47,6 +12,17 @@
             "title_highlight": "Create Music",
             "title_regular": "Like Never Before",
             "description": "Transform your musical ideas into reality with Sprunkr. Mix beats, create melodies, and share your music with the world."
+        },
+        "game": {
+            "title": "Sprunkr",
+            "subtitle": "Sprunki Online Horror Music Game",
+            "description": "Unleash haunting melodies with our special glitch music system. Stack sounds, witness their digital distortion transformation. Embrace Horror Aesthetics."
+        },
+        "trending": {
+            "title": "Trending Games",
+            "sprunki_lily": "Sprunki - Lily",
+            "sprunki_megalovania": "Sprunki - Megalovania",
+            "sprunki_spruted": "Sprunki - Spruted"
         },
         "footer": {
             "description": "An innovative music creation platform that makes it easy for everyone to create their own music.",
@@ -63,45 +39,56 @@
             "feedback": "Feedback",
             "address": "Silicon Valley, California",
             "workHours": "Mon-Fri 9:00-18:00",
-            "copyright": " 2024 Sprunkr - Making Music Creation Easier",
+            "copyright": "2024 Sprunkr - Making Music Creation Easier",
             "privacy": "Privacy Policy",
             "terms": "Terms of Service",
             "cookies": "Cookie Policy"
         }
     },
-    "ja": {
+    "es": {
         "nav": {
-            "home": "ホーム",
-            "guide": "ゲームガイド",
-            "faq": "よくある質問",
-            "play": "プレイ",
-            "about": "概要",
-            "contact": "お問い合わせ"
+            "home": "Inicio",
+            "guide": "Guía del Juego",
+            "faq": "Preguntas Frecuentes",
+            "play": "Jugar",
+            "about": "Acerca de",
+            "contact": "Contacto"
         },
         "hero": {
-            "title_highlight": "音楽を作ろう",
-            "title_regular": "新しい体験",
-            "description": "Sprunkrで音楽のアイデアを現実に。ビートをミックスし、メロディーを作り、世界中とあなたの音楽を共有しましょう。"
+            "title_highlight": "Crea Música",
+            "title_regular": "Como Nunca Antes",
+            "description": "Transforma tus ideas musicales en realidad con Sprunkr. Mezcla ritmos, crea melodías y comparte tu música con el mundo."
+        },
+        "game": {
+            "title": "Sprunkr",
+            "subtitle": "Juego Musical de Terror Sprunki Online",
+            "description": "Libera melodías inquietantes con nuestro sistema especial de música glitch. Apila sonidos, observa su transformación digital distorsionada. Abraza la Estética del Terror."
+        },
+        "trending": {
+            "title": "Juegos en Tendencia",
+            "sprunki_lily": "Sprunki - Lily",
+            "sprunki_megalovania": "Sprunki - Megalovania",
+            "sprunki_spruted": "Sprunki - Spruted"
         },
         "footer": {
-            "description": "誰もが簡単に自分の音楽を作れる革新的な音楽制作プラットフォーム。",
-            "quickLinks": "クイックリンク",
-            "community": "コミュニティ",
-            "contact": "お問い合わせ",
-            "playGame": "ゲームを始める",
-            "gameGuide": "ゲームガイド",
-            "faq": "よくある質問",
-            "blog": "ブログ",
-            "communityCenter": "コミュニティセンター",
-            "leaderboard": "リーダーボード",
-            "events": "イベント",
-            "feedback": "フィードバック",
-            "address": "シリコンバレー、カリフォルニア",
-            "workHours": "月-金 9:00-18:00",
-            "copyright": " 2024 Sprunkr - 音楽制作をもっと簡単に",
-            "privacy": "プライバシーポリシー",
-            "terms": "利用規約",
-            "cookies": "Cookie ポリシー"
+            "description": "Una plataforma innovadora de creación musical que facilita a todos crear su propia música.",
+            "quickLinks": "Enlaces Rápidos",
+            "community": "Comunidad",
+            "contact": "Contacto",
+            "playGame": "Jugar",
+            "gameGuide": "Guía del Juego",
+            "faq": "Preguntas Frecuentes",
+            "blog": "Blog",
+            "communityCenter": "Centro Comunitario",
+            "leaderboard": "Tabla de Clasificación",
+            "events": "Eventos",
+            "feedback": "Comentarios",
+            "address": "Silicon Valley, California",
+            "workHours": "Lun-Vie 9:00-18:00",
+            "copyright": "2024 Sprunkr - Haciendo más Fácil la Creación Musical",
+            "privacy": "Política de Privacidad",
+            "terms": "Términos de Servicio",
+            "cookies": "Política de Cookies"
         }
     }
 }

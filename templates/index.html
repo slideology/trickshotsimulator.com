@@ -27,13 +27,13 @@
                     <div class="pr-12">
                         <h1 class="text-5xl md:text-6xl font-bold leading-tight mb-6">
                             <span class="bg-gradient-to-r from-red-600 via-red-500 to-black bg-clip-text text-transparent">
-                                Sprunkr
+                                {{ translations.get('game', {}).get('title', 'Sprunkr') }}
                             </span>
                             <br>
-                            <span class="text-gray-800 dark:text-white">Sprunki Online Horror Music Game</span>
+                            <span class="text-gray-800 dark:text-white">{{ translations.get('game', {}).get('subtitle', 'Sprunki Online Horror Music Game') }}</span>
                         </h1>
                         <p class="mt-4 text-lg text-gray-600 dark:text-gray-300">
-                            Unleash haunting melodies with our special glitch music system. Stack sounds, witness their digital distortion transformation. Embrace Horror Aesthetics.
+                            {{ translations.get('game', {}).get('description', 'Unleash haunting melodies with our special glitch music system. Stack sounds, witness their digital distortion transformation. Embrace Horror Aesthetics.') }}
                         </p>
                     </div>
                 </div>
@@ -66,7 +66,7 @@
     <div class="py-24 bg-gray-50 dark:bg-gray-900">
         <div class="container mx-auto px-4">
             <h2 class="text-4xl font-bold mb-12 text-center bg-gradient-to-r from-red-600 via-red-500 to-black bg-clip-text text-transparent">
-                Trending Games
+                {{ translations.get('trending', {}).get('title', 'Trending Games') }}
             </h2>
             <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6">
                 <!-- Sprunki Lily Card -->
@@ -78,7 +78,7 @@
                         <div class="absolute bottom-0 left-0 right-0 h-12 bg-gradient-to-t from-pink-500 via-purple-500 to-transparent opacity-0 group-hover:opacity-80 transition-opacity duration-300"></div>
                         <div class="absolute bottom-0 left-0 right-0 p-3">
                             <h3 class="text-sm font-semibold text-gray-800 dark:text-gray-200 group-hover:text-white group-hover:drop-shadow-lg transition-colors duration-300">
-                                Sprunki - Lily
+                                {{ translations.get('trending', {}).get('sprunki_lily', 'Sprunki - Lily') }}
                             </h3>
                         </div>
                     </div>
@@ -93,7 +93,7 @@
                         <div class="absolute bottom-0 left-0 right-0 h-12 bg-gradient-to-t from-gray-900 via-gray-700 to-transparent opacity-0 group-hover:opacity-80 transition-opacity duration-300"></div>
                         <div class="absolute bottom-0 left-0 right-0 p-3">
                             <h3 class="text-sm font-semibold text-gray-800 dark:text-gray-200 group-hover:text-white group-hover:drop-shadow-lg transition-colors duration-300">
-                                Sprunki - Megalovania
+                                {{ translations.get('trending', {}).get('sprunki_megalovania', 'Sprunki - Megalovania') }}
                             </h3>
                         </div>
                     </div>
@@ -108,7 +108,7 @@
                         <div class="absolute bottom-0 left-0 right-0 h-12 bg-gradient-to-t from-green-500 via-emerald-500 to-transparent opacity-0 group-hover:opacity-80 transition-opacity duration-300"></div>
                         <div class="absolute bottom-0 left-0 right-0 p-3">
                             <h3 class="text-sm font-semibold text-gray-800 dark:text-gray-200 group-hover:text-white group-hover:drop-shadow-lg transition-colors duration-300">
-                                Sprunki - Spruted
+                                {{ translations.get('trending', {}).get('sprunki_spruted', 'Sprunki - Spruted') }}
                             </h3>
                         </div>
                     </div>

@@ -19,7 +19,7 @@ handler.setLevel(logging.DEBUG)
 app.logger.addHandler(handler)
 
 # Language settings
-SUPPORTED_LANGUAGES = ['en', 'zh']
+SUPPORTED_LANGUAGES = ['en', 'es']
 DEFAULT_LANGUAGE = 'en'
 
 @app.before_request
@@ -101,22 +101,44 @@ def get_translations(lang='en'):
     try:
         if lang not in translations:
             return translations.get('en', {
-                "nav": {"home": "Home", "faq": "FAQ"},
+                "nav": {"home": "Home", "guide": "Game Guide", "faq": "FAQ", "play": "Play", "about": "About", "contact": "Contact"},
                 "hero": {
                     "title_highlight": "Create Music",
                     "title_regular": "Like Never Before",
                     "description": "Transform your musical ideas into reality with Sprunkr. Mix beats, create melodies, and share your music with the world."
+                },
+                "game": {
+                    "title": "Sprunkr",
+                    "subtitle": "Sprunki Online Horror Music Game",
+                    "description": "Unleash haunting melodies with our special glitch music system. Stack sounds, witness their digital distortion transformation. Embrace Horror Aesthetics."
+                },
+                "trending": {
+                    "title": "Trending Games",
+                    "sprunki_lily": "Sprunki - Lily",
+                    "sprunki_megalovania": "Sprunki - Megalovania",
+                    "sprunki_spruted": "Sprunki - Spruted"
                 }
             })
         return translations[lang]
     except Exception as e:
         app.logger.error(f"Error getting translations for {lang}: {e}")
         return {
-            "nav": {"home": "Home", "faq": "FAQ"},
+            "nav": {"home": "Home", "guide": "Game Guide", "faq": "FAQ", "play": "Play", "about": "About", "contact": "Contact"},
             "hero": {
                 "title_highlight": "Create Music",
                 "title_regular": "Like Never Before",
                 "description": "Transform your musical ideas into reality with Sprunkr. Mix beats, create melodies, and share your music with the world."
+            },
+            "game": {
+                "title": "Sprunkr",
+                "subtitle": "Sprunki Online Horror Music Game",
+                "description": "Unleash haunting melodies with our special glitch music system. Stack sounds, witness their digital distortion transformation. Embrace Horror Aesthetics."
+            },
+            "trending": {
+                "title": "Trending Games",
+                "sprunki_lily": "Sprunki - Lily",
+                "sprunki_megalovania": "Sprunki - Megalovania",
+                "sprunki_spruted": "Sprunki - Spruted"
             }
         }
 
@@ -145,11 +167,22 @@ def home():
         return render_template('index.html',
                              title='Sprunkr - Interactive Music Creation Game',
                              translations={
-                                 "nav": {"home": "Home", "faq": "FAQ"},
+                                 "nav": {"home": "Home", "guide": "Game Guide", "faq": "FAQ", "play": "Play", "about": "About", "contact": "Contact"},
                                  "hero": {
                                      "title_highlight": "Create Music",
                                      "title_regular": "Like Never Before",
                                      "description": "Transform your musical ideas into reality with Sprunkr. Mix beats, create melodies, and share your music with the world."
+                                 },
+                                 "game": {
+                                     "title": "Sprunkr",
+                                     "subtitle": "Sprunki Online Horror Music Game",
+                                     "description": "Unleash haunting melodies with our special glitch music system. Stack sounds, witness their digital distortion transformation. Embrace Horror Aesthetics."
+                                 },
+                                 "trending": {
+                                     "title": "Trending Games",
+                                     "sprunki_lily": "Sprunki - Lily",
+                                     "sprunki_megalovania": "Sprunki - Megalovania",
+                                     "sprunki_spruted": "Sprunki - Spruted"
                                  }
                              },
                              current_lang='en')
