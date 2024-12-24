@@ -99,5 +99,9 @@
             </ul>
         </div>
     </div>
+
+    {% with current_page='lily' %}
+    {% include 'components/trending_games.html' %}
+    {% endwith %}
 </div>
 {% endblock %}

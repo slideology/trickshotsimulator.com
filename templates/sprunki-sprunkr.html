@@ -63,59 +63,8 @@
         </div>
     </div>
 
-    <!-- Trending Games Section -->
-    <div class="py-24 bg-gray-50 dark:bg-gray-900">
-        <div class="container mx-auto px-4">
-            <h2 class="text-4xl font-bold mb-12 text-center bg-gradient-to-r from-red-600 via-red-500 to-black bg-clip-text text-transparent">
-                {{ translations.get('trending', {}).get('title', 'Trending Games') }}
-            </h2>
-            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6">
-                <!-- Sprunki Lily Card -->
-                <a href="https://www.sprunkr.online/sprunki-lily" class="group relative rounded-lg overflow-hidden shadow-lg transition-transform duration-300 hover:transform hover:scale-105">
-                    <div class="relative aspect-[4/3]">
-                        <img src="{{ url_for('static', filename='images/games/sprunki-lily.png') }}" 
-                             alt="Sprunki Lily" 
-                             class="w-full h-full object-cover">
-                        <div class="absolute bottom-0 left-0 right-0 h-12 bg-gradient-to-t from-pink-500 via-purple-500 to-transparent opacity-0 group-hover:opacity-80 transition-opacity duration-300"></div>
-                        <div class="absolute bottom-0 left-0 right-0 p-3">
-                            <h3 class="text-sm font-semibold text-gray-800 dark:text-gray-200 group-hover:text-white group-hover:drop-shadow-lg transition-colors duration-300">
-                                {{ translations.get('trending', {}).get('sprunki_lily', 'Sprunki - Lily') }}
-                            </h3>
-                        </div>
-                    </div>
-                </a>
-
-                <!-- Sprunki Megalovania Card -->
-                <a href="https://www.sprunkr.online/sprunki-megalovania" class="group relative rounded-lg overflow-hidden shadow-lg transition-transform duration-300 hover:transform hover:scale-105">
-                    <div class="relative aspect-[4/3]">
-                        <img src="{{ url_for('static', filename='images/games/sprunki-megalovania.png') }}" 
-                             alt="Sprunki Megalovania" 
-                             class="w-full h-full object-cover">
-                        <div class="absolute bottom-0 left-0 right-0 h-12 bg-gradient-to-t from-gray-900 via-gray-700 to-transparent opacity-0 group-hover:opacity-80 transition-opacity duration-300"></div>
-                        <div class="absolute bottom-0 left-0 right-0 p-3">
-                            <h3 class="text-sm font-semibold text-gray-800 dark:text-gray-200 group-hover:text-white group-hover:drop-shadow-lg transition-colors duration-300">
-                                {{ translations.get('trending', {}).get('sprunki_megalovania', 'Sprunki - Megalovania') }}
-                            </h3>
-                        </div>
-                    </div>
-                </a>
-
-                <!-- Sprunki Spruted Card -->
-                <a href="https://www.sprunkr.online/sprunki-spruted" class="group relative rounded-lg overflow-hidden shadow-lg transition-transform duration-300 hover:transform hover:scale-105">
-                    <div class="relative aspect-[4/3]">
-                        <img src="{{ url_for('static', filename='images/sprunki-spruted.png') }}" 
-                             alt="Sprunki Spruted" 
-                             class="w-full h-full object-cover">
-                        <div class="absolute bottom-0 left-0 right-0 h-12 bg-gradient-to-t from-green-500 via-emerald-500 to-transparent opacity-0 group-hover:opacity-80 transition-opacity duration-300"></div>
-                        <div class="absolute bottom-0 left-0 right-0 p-3">
-                            <h3 class="text-sm font-semibold text-gray-800 dark:text-gray-200 group-hover:text-white group-hover:drop-shadow-lg transition-colors duration-300">
-                                {{ translations.get('trending', {}).get('sprunki_spruted', 'Sprunki - Spruted') }}
-                            </h3>
-                        </div>
-                    </div>
-                </a>
-            </div>
-        </div>
-    </div>
+    {% with current_page='sprunkr' %}
+    {% include 'components/trending_games.html' %}
+    {% endwith %}
 </div>
 {% endblock %}

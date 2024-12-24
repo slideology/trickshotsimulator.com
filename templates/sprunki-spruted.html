@@ -68,5 +68,9 @@
             </div>
         </div>
     </div>
+
+    {% with current_page='spruted' %}
+    {% include 'components/trending_games.html' %}
+    {% endwith %}
 </div>
 {% endblock %}
