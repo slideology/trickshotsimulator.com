@@ -1,0 +1,121 @@
+{% extends "base.html" %}
+
+{% block title %}Sprunkr: Online Horror Music Creation Game - Home{% endblock %}
+
+{% block meta_description %}
+<meta name="description" content="Explore the world of horror music with Sprunkr. Create unique horror compositions, experience spine-chilling sound effects, and immerse yourself in our innovative music creation platform. Join our growing community of horror music creators.">
+{% endblock %}
+
+{% block meta_keywords %}
+<meta name="keywords" content="Sprunkr,horror music game,online music creation,sound effects,interactive music,music community,horror aesthetics">
+{% endblock %}
+
+{% block og_title %}Sprunkr: Online Horror Music Creation Game - Home{% endblock %}
+{% block og_description %}Explore the world of horror music with Sprunkr. Create unique horror compositions, experience spine-chilling sound effects, and immerse yourself in our innovative music creation platform.{% endblock %}
+
+{% block content %}
+<div class="relative overflow-hidden">
+    <!-- Hero Section -->
+    <div class="relative pt-16 pb-32 flex content-center items-center justify-center min-h-screen">
+        <!-- 背景渐变 -->
+        <div class="absolute top-0 w-full h-full bg-gradient-to-br from-red-900 via-red-700 to-black opacity-10"></div>
+        
+        <div class="container relative mx-auto px-4">
+            <div class="flex flex-wrap items-center">
+                <!-- 左侧文案区域 -->
+                <div class="w-full lg:w-5/12 px-4 ml-auto mr-auto text-center lg:text-left">
+                    <div class="pr-12">
+                        <h1 class="text-5xl md:text-6xl font-bold leading-tight mb-6">
+                            <span class="bg-gradient-to-r from-red-600 via-red-500 to-black bg-clip-text text-transparent">
+                                {{ translations.get('game', {}).get('title', 'Sprunkr') }}
+                            </span>
+                            <br>
+                            <span class="text-gray-800 dark:text-white">{{ translations.get('game', {}).get('subtitle', 'Sprunki Online Horror Music Game') }}</span>
+                        </h1>
+                        <p class="mt-4 text-lg text-gray-600 dark:text-gray-300">
+                            {{ translations.get('game', {}).get('description', 'Unleash haunting melodies with our special glitch music system. Stack sounds, witness their digital distortion transformation. Embrace Horror Aesthetics.') }}
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- 右侧游戏区域 -->
+                <div class="w-full lg:w-7/12 px-4 ml-auto mr-auto mt-12 lg:mt-0">
+                    <div class="relative">
+                        <!-- 装饰效果 -->
+                        <div class="absolute -top-4 -left-4 w-72 h-72 bg-gradient-to-r from-red-900 to-red-700 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob"></div>
+                        <div class="absolute -bottom-4 -right-4 w-72 h-72 bg-gradient-to-r from-red-700 to-black rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-2000"></div>
+                        
+                        <!-- 游戏区域 -->
+                        <div class="relative rounded-2xl overflow-hidden shadow-2xl border border-gray-200 dark:border-gray-700">
+                            <div class="w-full bg-gray-100 dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden">
+                                <iframe 
+                                    src="https://wowtbc.net/sprunkin/phase5-original/index.html"
+                                    style="width: 800px; height: 635px;"
+                                    class="w-full border-0"
+                                    scrolling="no"
+                                    allowfullscreen>
+                                </iframe>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Trending Games Section -->
+    <div class="py-24 bg-gray-50 dark:bg-gray-900">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold mb-12 text-center bg-gradient-to-r from-red-600 via-red-500 to-black bg-clip-text text-transparent">
+                {{ translations.get('trending', {}).get('title', 'Trending Games') }}
+            </h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6">
+                <!-- Sprunki Lily Card -->
+                <a href="https://www.sprunkr.online/sprunki-lily" class="group relative rounded-lg overflow-hidden shadow-lg transition-transform duration-300 hover:transform hover:scale-105">
+                    <div class="relative aspect-[4/3]">
+                        <img src="{{ url_for('static', filename='images/games/sprunki-lily.png') }}" 
+                             alt="Sprunki Lily" 
+                             class="w-full h-full object-cover">
+                        <div class="absolute bottom-0 left-0 right-0 h-12 bg-gradient-to-t from-pink-500 via-purple-500 to-transparent opacity-0 group-hover:opacity-80 transition-opacity duration-300"></div>
+                        <div class="absolute bottom-0 left-0 right-0 p-3">
+                            <h3 class="text-sm font-semibold text-gray-800 dark:text-gray-200 group-hover:text-white group-hover:drop-shadow-lg transition-colors duration-300">
+                                {{ translations.get('trending', {}).get('sprunki_lily', 'Sprunki - Lily') }}
+                            </h3>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Sprunki Megalovania Card -->
+                <a href="https://www.sprunkr.online/sprunki-megalovania" class="group relative rounded-lg overflow-hidden shadow-lg transition-transform duration-300 hover:transform hover:scale-105">
+                    <div class="relative aspect-[4/3]">
+                        <img src="{{ url_for('static', filename='images/games/sprunki-megalovania.png') }}" 
+                             alt="Sprunki Megalovania" 
+                             class="w-full h-full object-cover">
+                        <div class="absolute bottom-0 left-0 right-0 h-12 bg-gradient-to-t from-gray-900 via-gray-700 to-transparent opacity-0 group-hover:opacity-80 transition-opacity duration-300"></div>
+                        <div class="absolute bottom-0 left-0 right-0 p-3">
+                            <h3 class="text-sm font-semibold text-gray-800 dark:text-gray-200 group-hover:text-white group-hover:drop-shadow-lg transition-colors duration-300">
+                                {{ translations.get('trending', {}).get('sprunki_megalovania', 'Sprunki - Megalovania') }}
+                            </h3>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Sprunki Spruted Card -->
+                <a href="https://www.sprunkr.online/sprunki-spruted" class="group relative rounded-lg overflow-hidden shadow-lg transition-transform duration-300 hover:transform hover:scale-105">
+                    <div class="relative aspect-[4/3]">
+                        <img src="{{ url_for('static', filename='images/sprunki-spruted.png') }}" 
+                             alt="Sprunki Spruted" 
+                             class="w-full h-full object-cover">
+                        <div class="absolute bottom-0 left-0 right-0 h-12 bg-gradient-to-t from-green-500 via-emerald-500 to-transparent opacity-0 group-hover:opacity-80 transition-opacity duration-300"></div>
+                        <div class="absolute bottom-0 left-0 right-0 p-3">
+                            <h3 class="text-sm font-semibold text-gray-800 dark:text-gray-200 group-hover:text-white group-hover:drop-shadow-lg transition-colors duration-300">
+                                {{ translations.get('trending', {}).get('sprunki_spruted', 'Sprunki - Spruted') }}
+                            </h3>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

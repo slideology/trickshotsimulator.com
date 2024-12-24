@@ -517,6 +517,10 @@ def sprunki_megalovania():
 def ads_txt():
     return send_from_directory('static', 'ads.txt')
 
+@app.route('/sprunki-sprunkr')
+def sprunki_sprunkr():
+    return render_template('sprunki-sprunkr.html', translations=translations)
+
 @app.route('/sprunki-spruted')
 def sprunki_spruted():
     return render_template('sprunki-spruted.html', translations=translations)
