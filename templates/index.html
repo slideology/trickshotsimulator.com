@@ -16,7 +16,7 @@
 {% block content %}
 <div class="relative overflow-hidden">
     <!-- Hero Section -->
-    <div class="relative pt-16 pb-32 flex content-center items-center justify-center" style="min-height: 60vh;">
+    <div class="relative pt-16 pb-32 flex content-center items-center justify-center min-h-screen">
         <!-- 背景渐变 -->
         <div class="absolute top-0 w-full h-full bg-gradient-to-br from-red-900 via-red-700 to-black opacity-10"></div>
         
@@ -38,7 +38,7 @@
                     </div>
                 </div>
                 
-                <!-- 右侧图片区域 -->
+                <!-- 右侧游戏区域 -->
                 <div class="w-full lg:w-7/12 px-4 ml-auto mr-auto mt-12 lg:mt-0">
                     <div class="relative">
                         <!-- 装饰效果 -->
@@ -50,7 +50,8 @@
                             <div class="w-full bg-gray-100 dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden">
                                 <iframe 
                                     src="https://wowtbc.net/sprunkin/phase5-original/index.html"
-                                    class="w-full aspect-[800/635] border-0"
+                                    style="width: 800px; height: 635px;"
+                                    class="w-full border-0"
                                     scrolling="no"
                                     allowfullscreen>
                                 </iframe>

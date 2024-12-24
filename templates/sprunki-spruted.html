@@ -33,16 +33,14 @@
         </div>
         
         <!-- Game Iframe -->
-        <div class="w-full flex justify-center">
-            <div class="w-[200%] aspect-w-16 aspect-h-9 rounded-lg overflow-hidden shadow-xl">
-                <div class="w-full h-[624px] relative bg-black rounded-lg">
+        <div id="game" class="w-full flex justify-center">
+            <div class="w-full max-w-5xl rounded-lg overflow-hidden shadow-xl">
+                <div class="w-full relative bg-black rounded-lg" style="height: 624px;" x-data="gamecover">
                     <iframe
-                        data-game-cover-target="iframe"
-                        data-fullscreen-target="iframe"
-                        data-action="load->game-cover#handleLoad"
+                        x-ref="iframe"
                         id="game-iframe"
                         src="https://www.cocrea.world/@Dupyshome/Spruted"
-                        class="w-full h-full absolute inset-0"
+                        style="width: 100%; height: 100%;"
                         frameborder="0"
                         loading="lazy"
                         allowfullscreen
