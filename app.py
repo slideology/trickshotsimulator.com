@@ -60,27 +60,6 @@ def load_translations():
             }
         }
 
-def load_faq_data():
-    faq_path = os.path.join(app.static_folder, 'data', 'faq.json')
-    try:
-        with open(faq_path, 'r', encoding='utf-8') as f:
-            return json.load(f)
-    except Exception as e:
-        app.logger.error(f"Error loading FAQ data: {e}")
-        return {
-            "en": {
-                "faq_sections": []
-            }
-        }
-
-def get_faq_data(lang='en'):
-    try:
-        faq_data = load_faq_data()
-        return faq_data.get(lang, faq_data.get('en', {})).get('faq_sections', [])
-    except Exception as e:
-        app.logger.error(f"Error getting FAQ data: {e}")
-        return []
-
 # Load translations
 try:
     translations = load_translations()
@@ -146,46 +125,35 @@ def get_translations(lang='en'):
 def home():
     try:
         trans = get_translations(g.lang)
-        try:
-            faq_data = load_faq_data()
-            return render_template('index.html', 
-                             title='Sprunkr - Interactive Music Experience',
-                             description='Create amazing music with Sprunkr! Mix beats, compose tunes, and share your musical creations.',
-                             faq_data=faq_data,
-                             translations=trans,
-                             current_lang=g.lang)
-        except Exception as e:
-            app.logger.error(f"Error in home route: {str(e)}")
-            return render_template('index.html', 
-                             title='Sprunkr - Interactive Music Experience',
-                             description='Create amazing music with Sprunkr! Mix beats, compose tunes, and share your musical creations.',
-                             faq_data={"faq_sections": []},
-                             translations=trans,
-                             current_lang=g.lang)
+        return render_template('index.html', 
+                         title='Sprunkr - Interactive Music Experience',
+                         description='Create amazing music with Sprunkr! Mix beats, compose tunes, and share your musical creations.',
+                         translations=trans,
+                         current_lang=g.lang)
     except Exception as e:
         app.logger.error(f"Error in home route: {e}")
         return render_template('index.html',
-                             title='Sprunkr - Interactive Music Creation Game',
-                             translations={
-                                 "nav": {"home": "Home", "guide": "Game Guide", "faq": "FAQ", "play": "Play", "about": "About", "contact": "Contact"},
-                                 "hero": {
-                                     "title_highlight": "Create Music",
-                                     "title_regular": "Like Never Before",
-                                     "description": "Transform your musical ideas into reality with Sprunkr. Mix beats, create melodies, and share your music with the world."
-                                 },
-                                 "game": {
-                                     "title": "Sprunkr",
-                                     "subtitle": "Sprunki Online Horror Music Game",
-                                     "description": "Unleash haunting melodies with our special glitch music system. Stack sounds, witness their digital distortion transformation. Embrace Horror Aesthetics."
-                                 },
-                                 "trending": {
-                                     "title": "Trending Games",
-                                     "sprunki_lily": "Sprunki - Lily",
-                                     "sprunki_megalovania": "Sprunki - Megalovania",
-                                     "sprunki_spruted": "Sprunki - Spruted"
-                                 }
+                         title='Sprunkr - Interactive Music Creation Game',
+                         translations={
+                             "nav": {"home": "Home", "guide": "Game Guide", "faq": "FAQ", "play": "Play", "about": "About", "contact": "Contact"},
+                             "hero": {
+                                 "title_highlight": "Create Music",
+                                 "title_regular": "Like Never Before",
+                                 "description": "Transform your musical ideas into reality with Sprunkr. Mix beats, create melodies, and share your music with the world."
                              },
-                             current_lang='en')
+                             "game": {
+                                 "title": "Sprunkr",
+                                 "subtitle": "Sprunki Online Horror Music Game",
+                                 "description": "Unleash haunting melodies with our special glitch music system. Stack sounds, witness their digital distortion transformation. Embrace Horror Aesthetics."
+                             },
+                             "trending": {
+                                 "title": "Trending Games",
+                                 "sprunki_lily": "Sprunki - Lily",
+                                 "sprunki_megalovania": "Sprunki - Megalovania",
+                                 "sprunki_spruted": "Sprunki - Spruted"
+                             }
+                         },
+                         current_lang='en')
 
 @app.route('/about')
 def about():
@@ -281,25 +249,14 @@ def contact():
 def faq():
     try:
         trans = get_translations(g.lang)
-        try:
-            faq_sections = get_faq_data(g.lang)
-            return render_template('faq.html',
-                             title='FAQ - Sprunkr',
-                             faq_data={'faq_sections': faq_sections},
-                             translations=trans,
-                             current_lang=g.lang)
-        except Exception as e:
-            app.logger.error(f"Error in faq route: {str(e)}")
-            return render_template('faq.html',
-                             title='FAQ - Sprunkr',
-                             faq_data={"faq_sections": []},
-                             translations=trans,
-                             current_lang=g.lang)
+        return render_template('faq.html',
+                         title='FAQ - Sprunkr',
+                         translations=trans,
+                         current_lang=g.lang)
     except Exception as e:
         app.logger.error(f"Error in faq route: {e}")
         return render_template('faq.html',
                          title='FAQ - Sprunkr',
-                         faq_data={"faq_sections": []},
                          translations={
                              "nav": {"home": "Home", "faq": "FAQ"},
                              "hero": {
