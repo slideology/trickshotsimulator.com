@@ -1,0 +1,63 @@
+<!-- Trending Videos Section -->
+<div class="py-24 bg-white dark:bg-gray-800">
+    <div class="container mx-auto px-4">
+        <h2 class="text-4xl font-bold mb-12 text-center bg-gradient-to-r from-purple-600 via-pink-500 to-red-500 bg-clip-text text-transparent">
+            {{ translations.get('trending_videos', {}).get('title', 'Trending Videos') }}
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Video Container 1 -->
+            <div class="relative rounded-xl overflow-hidden shadow-lg bg-gray-100 dark:bg-gray-900">
+                <div id="player1" class="w-full" style="height: calc(100vh / 3);"></div>
+            </div>
+            
+            <!-- 预留的视频容器 2 -->
+            <div class="relative rounded-xl overflow-hidden shadow-lg bg-gray-100 dark:bg-gray-900">
+                <div class="w-full bg-gray-200 dark:bg-gray-700 flex items-center justify-center" style="height: calc(100vh / 3);">
+                    <span class="text-gray-400 dark:text-gray-500">Coming Soon</span>
+                </div>
+            </div>
+            
+            <!-- 预留的视频容器 3 -->
+            <div class="relative rounded-xl overflow-hidden shadow-lg bg-gray-100 dark:bg-gray-900">
+                <div class="w-full bg-gray-200 dark:bg-gray-700 flex items-center justify-center" style="height: calc(100vh / 3);">
+                    <span class="text-gray-400 dark:text-gray-500">Coming Soon</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- YouTube API Script -->
+<script src="https://www.youtube.com/iframe_api"></script>
+<script>
+var player1;
+function onYouTubeIframeAPIReady() {
+    player1 = new YT.Player('player1', {
+        height: '100%',
+        width: '100%',
+        videoId: 'h-_1-kztU8A',
+        playerVars: {
+            'playsinline': 1,
+            'modestbranding': 1,
+            'rel': 0
+        }
+    });
+}
+
+// 响应式调整
+function adjustVideoHeight() {
+    const containers = document.querySelectorAll('.video-container');
+    containers.forEach(container => {
+        if (window.innerWidth < 768) { // 移动端
+            container.style.height = 'calc(100vh / 3)';
+        } else {
+            container.style.height = 'calc(100vh / 3)';
+        }
+    });
+}
+
+// 监听窗口大小变化
+window.addEventListener('resize', adjustVideoHeight);
+// 初始调整
+document.addEventListener('DOMContentLoaded', adjustVideoHeight);
+</script>
