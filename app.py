@@ -496,6 +496,15 @@ def sprunki_banana():
         app.logger.error(f"Error in banana route: {str(e)}")
         return render_template('sprunki-banana.html', translations=get_default_translations(), current_page='banana')
 
+@app.route('/sprunki-ketchup')
+def sprunki_ketchup():
+    try:
+        trans = get_translations(g.lang)
+        return render_template('sprunki-ketchup.html', translations=trans, current_page='ketchup')
+    except Exception as e:
+        app.logger.error(f"Error in ketchup route: {str(e)}")
+        return render_template('sprunki-ketchup.html', translations=get_default_translations(), current_page='ketchup')
+
 @app.route('/privacy-policy')
 def privacy_policy():
     try:
