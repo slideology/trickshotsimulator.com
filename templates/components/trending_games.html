@@ -66,7 +66,41 @@
                     <div class="absolute bottom-0 left-0 right-0 h-12 bg-gradient-to-t from-red-600 via-red-500 to-transparent opacity-0 group-hover:opacity-80 transition-opacity duration-300"></div>
                     <div class="absolute bottom-0 left-0 right-0 p-3">
                         <h3 class="text-sm font-semibold text-gray-800 dark:text-gray-200 group-hover:text-white group-hover:drop-shadow-lg transition-colors duration-300">
-                            Sprunki - Sprunkr
+                            {{ translations.get('trending', {}).get('sprunki_sprunkr', 'Sprunki - Sprunkr') }}
+                        </h3>
+                    </div>
+                </div>
+            </a>
+            {% endif %}
+
+            {% if current_page != 'banana' %}
+            <!-- Sprunki Banana Card -->
+            <a href="https://www.sprunkr.online/sprunki-banana" class="group relative rounded-lg overflow-hidden shadow-lg transition-transform duration-300 hover:transform hover:scale-105">
+                <div class="relative aspect-[4/3]">
+                    <img src="{{ url_for('static', filename='images/games/sprunki-banana.png') }}" 
+                         alt="Sprunki Banana" 
+                         class="w-full h-full object-cover">
+                    <div class="absolute bottom-0 left-0 right-0 h-12 bg-gradient-to-t from-yellow-500 via-yellow-400 to-transparent opacity-0 group-hover:opacity-80 transition-opacity duration-300"></div>
+                    <div class="absolute bottom-0 left-0 right-0 p-3">
+                        <h3 class="text-sm font-semibold text-gray-800 dark:text-gray-200 group-hover:text-white group-hover:drop-shadow-lg transition-colors duration-300">
+                            {{ translations.get('trending', {}).get('sprunki_banana', 'Sprunki - Banana') }}
+                        </h3>
+                    </div>
+                </div>
+            </a>
+            {% endif %}
+
+            {% if current_page != 'ketchup' %}
+            <!-- Sprunki Ketchup Card -->
+            <a href="https://www.sprunkr.online/sprunki-ketchup" class="group relative rounded-lg overflow-hidden shadow-lg transition-transform duration-300 hover:transform hover:scale-105">
+                <div class="relative aspect-[4/3]">
+                    <img src="{{ url_for('static', filename='images/games/sprunki-ketchup.png') }}" 
+                         alt="Sprunki Ketchup" 
+                         class="w-full h-full object-cover">
+                    <div class="absolute bottom-0 left-0 right-0 h-12 bg-gradient-to-t from-red-900 via-red-700 to-transparent opacity-0 group-hover:opacity-80 transition-opacity duration-300"></div>
+                    <div class="absolute bottom-0 left-0 right-0 p-3">
+                        <h3 class="text-sm font-semibold text-gray-800 dark:text-gray-200 group-hover:text-white group-hover:drop-shadow-lg transition-colors duration-300">
+                            {{ translations.get('trending', {}).get('sprunki_ketchup', 'Sprunki - Ketchup') }}
                         </h3>
                     </div>
                 </div>
