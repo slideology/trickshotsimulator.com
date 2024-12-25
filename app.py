@@ -480,7 +480,21 @@ def sprunki_sprunkr():
 
 @app.route('/sprunki-spruted')
 def sprunki_spruted():
-    return render_template('sprunki-spruted.html', translations=translations)
+    try:
+        trans = get_translations(g.lang)
+        return render_template('sprunki-spruted.html', translations=trans, current_page='spruted')
+    except Exception as e:
+        app.logger.error(f"Error in spruted route: {str(e)}")
+        return render_template('sprunki-spruted.html', translations=get_default_translations(), current_page='spruted')
+
+@app.route('/sprunki-banana')
+def sprunki_banana():
+    try:
+        trans = get_translations(g.lang)
+        return render_template('sprunki-banana.html', translations=trans, current_page='banana')
+    except Exception as e:
+        app.logger.error(f"Error in banana route: {str(e)}")
+        return render_template('sprunki-banana.html', translations=get_default_translations(), current_page='banana')
 
 @app.route('/privacy-policy')
 def privacy_policy():

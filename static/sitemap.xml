@@ -44,7 +44,13 @@
     </url>
     <url>
         <loc>https://sprunkr.online/sprunki-sprunkr</loc>
-        <lastmod>2024-12-24</lastmod>
+        <lastmod>2024-12-25</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+    <url>
+        <loc>https://sprunkr.online/sprunki-banana</loc>
+        <lastmod>2024-12-25</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
     </url>
