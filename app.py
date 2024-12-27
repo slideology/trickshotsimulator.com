@@ -505,6 +505,22 @@ def sprunki_ketchup():
         app.logger.error(f"Error in ketchup route: {str(e)}")
         return render_template('sprunki-ketchup.html', translations=get_default_translations(), current_page='ketchup')
 
+@app.route('/sprunki-retake-but-human')
+def sprunki_retake_but_human():
+    try:
+        trans = get_translations(g.lang)
+        return render_template('sprunki-retake-but-human.html',
+                         title='Sprunki Retake But Human All Characters Mod For the Sprunki Play Online in 2025',
+                         description='Sprunki Retake But Human: A Mesmerizing Mod That Transforms Sprunki\'s Animated Characters into Lifelike Humans, Offering a Fresh and Captivating Experience.',
+                         translations=trans,
+                         current_lang=g.lang)
+    except Exception as e:
+        app.logger.error(f"Error in sprunki-retake-but-human route: {e}")
+        return render_template('sprunki-retake-but-human.html',
+                         title='Sprunki Retake But Human All Characters Mod',
+                         translations=get_default_translations(),
+                         current_lang='en')
+
 @app.route('/privacy-policy')
 def privacy_policy():
     try:
