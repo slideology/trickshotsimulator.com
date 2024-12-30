@@ -1,0 +1,114 @@
+{% extends "base.html" %}
+
+{% block title %}Play Sprunki Parodybox Characters Mod of Sprunki on Sprunkr Online in 2025{% endblock %}
+
+{% block meta_description %}
+<meta name="description" content="Sprunki Parodybox is a Spine-Chilling Music Creation Experience. Similar to Incredibox, yet with a Distinctively Eerie Horror Twist, Try it!">
+{% endblock %}
+
+{% block meta_keywords %}
+<meta name="keywords" content="Sprunki Parodybox,horror music game,music creation,Sprunkr,online music game,sound design,artistic creation">
+{% endblock %}
+
+{% block og_title %}Play Sprunki Parodybox Characters Mod of Sprunki on Sprunkr Online in 2025{% endblock %}
+{% block og_description %}Sprunki Parodybox is a Spine-Chilling Music Creation Experience. Similar to Incredibox, yet with a Distinctively Eerie Horror Twist, Try it!{% endblock %}
+{% block og_image %}https://www.sprunkr.online/static/images/games/parodybox-preview.png{% endblock %}
+
+{% block head %}
+<meta name="description" content="Sprunki Parodybox is a Spine-Chilling Music Creation Experience. Similar to Incredibox, yet with a Distinctively Eerie Horror Twist, Try it!">
+<meta name="keywords" content="Sprunki Parodybox,horror music game,music creation,Sprunkr,online music game,sound design,artistic creation">
+{% endblock %}
+
+{% block favicon %}
+<link rel="icon" type="image/png" href="{{ url_for('static', filename='images/games/parodybox.png') }}">
+<link rel="apple-touch-icon" sizes="180x180" href="{{ url_for('static', filename='images/games/parodybox.png') }}">
+{% endblock %}
+
+{% block content %}
+<div class="relative overflow-hidden">
+    <!-- Hero Section -->
+    <div class="relative pt-16 pb-32 flex content-center items-center justify-center" style="min-height: 60vh;">
+        <!-- 背景渐变 -->
+        <div class="absolute top-0 w-full h-full bg-gradient-to-br from-pink-400 via-purple-500 to-indigo-600 opacity-10"></div>
+        
+        <div class="container relative mx-auto px-4">
+            <div class="flex flex-wrap items-center">
+                <!-- 左侧文案区域 -->
+                <div class="w-full lg:w-5/12 px-4 ml-auto mr-auto text-center lg:text-left">
+                    <div class="pr-12">
+                        <h1 class="text-5xl md:text-6xl font-bold leading-tight mb-6">
+                            <span class="bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-500 bg-clip-text text-transparent">
+                                {{ translations['hero']['title_highlight'] }}
+                            </span>
+                            <br>
+                            <span class="text-gray-800 dark:text-white">{{ translations['hero']['title_regular'] }}</span>
+                        </h1>
+                        <p class="mt-4 text-lg text-gray-600 dark:text-gray-300">
+                            {{ translations['hero']['description'] }}
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- 右侧游戏区域 -->
+                <div class="w-full lg:w-7/12 px-4 ml-auto mr-auto mt-12 lg:mt-0">
+                    <div class="relative">
+                        <!-- 装饰效果 -->
+                        <div class="absolute -top-4 -left-4 w-72 h-72 bg-gradient-to-r from-pink-500 to-purple-500 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob"></div>
+                        <div class="absolute -bottom-4 -right-4 w-72 h-72 bg-gradient-to-r from-purple-500 to-indigo-500 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-2000"></div>
+                        
+                        <!-- 游戏区域 -->
+                        <div class="relative rounded-2xl overflow-hidden shadow-2xl border border-gray-200 dark:border-gray-700">
+                            <div class="w-full bg-gray-100 dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden" style="aspect-ratio: 16/9;">
+                                <iframe src="https://www.cocrea.world/@Jeanz/WIP_parodybox_sprunki" class="w-full h-full" frameborder="0" allowfullscreen></iframe>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Known Issues Section -->
+    <div class="container mx-auto px-4 py-16">
+        <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-8">
+            <h2 class="text-3xl font-bold mb-6 bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-500 bg-clip-text text-transparent">Known Issues</h2>
+            <ul class="space-y-3 text-gray-600 dark:text-gray-300">
+                <li class="flex items-start">
+                    <svg class="w-6 h-6 text-pink-500 mr-2 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/>
+                    </svg>
+                    <span>some characters not moving in parodybox</span>
+                </li>
+                <li class="flex items-start">
+                    <svg class="w-6 h-6 text-pink-500 mr-2 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/>
+                    </svg>
+                    <span>some characters not appearing in parodybox</span>
+                </li>
+                <li class="flex items-start">
+                    <svg class="w-6 h-6 text-pink-500 mr-2 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/>
+                    </svg>
+                    <span>SmithTails and Ellie make Evelyn's sound in Phase 1 (They are experimental characters for a reason.)</span>
+                </li>
+                <li class="flex items-start">
+                    <svg class="w-6 h-6 text-pink-500 mr-2 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/>
+                    </svg>
+                    <span>some characters making no sound in parodybox</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Adsterra Native Banner Ad -->
+    <div class="container mx-auto px-4 py-8">
+        <script async="async" data-cfasync="false" src="//pl25386595.profitablecpmrate.com/f978f53d3a3690a179256f47ca12dd04/invoke.js"></script>
+        <div id="container-f978f53d3a3690a179256f47ca12dd04"></div>
+    </div>
+
+    {% with current_page='parodybox' %}
+    {% include 'components/trending_games.html' %}
+    {% endwith %}
+</div>
+{% endblock %}

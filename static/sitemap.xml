@@ -2,61 +2,73 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
         <loc>https://sprunkr.online/</loc>
-        <lastmod>2024-12-24</lastmod>
+        <lastmod>2024-12-30</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
         <loc>https://sprunkr.online/faq</loc>
-        <lastmod>2024-12-24</lastmod>
+        <lastmod>2024-12-30</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://sprunkr.online/privacy-policy</loc>
-        <lastmod>2024-12-24</lastmod>
+        <lastmod>2024-12-30</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
     </url>
     <url>
         <loc>https://sprunkr.online/terms-of-service</loc>
-        <lastmod>2024-12-24</lastmod>
+        <lastmod>2024-12-30</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
     </url>
     <url>
         <loc>https://sprunkr.online/sprunki-lily</loc>
-        <lastmod>2024-12-24</lastmod>
+        <lastmod>2024-12-30</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
         <loc>https://sprunkr.online/sprunki-megalovania</loc>
-        <lastmod>2024-12-24</lastmod>
+        <lastmod>2024-12-30</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
         <loc>https://sprunkr.online/sprunki-spruted</loc>
-        <lastmod>2024-12-24</lastmod>
+        <lastmod>2024-12-30</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
         <loc>https://sprunkr.online/sprunki-sprunkr</loc>
-        <lastmod>2024-12-25</lastmod>
+        <lastmod>2024-12-30</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
         <loc>https://sprunkr.online/sprunki-banana</loc>
-        <lastmod>2024-12-25</lastmod>
+        <lastmod>2024-12-30</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
         <loc>https://sprunkr.online/sprunki-ketchup</loc>
-        <lastmod>2024-12-25</lastmod>
+        <lastmod>2024-12-30</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+     <url>
+        <loc>https://sprunkr.online/sprunki-retake-but-human</loc>
+        <lastmod>2024-12-30</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+     <url>
+        <loc>https://sprunkr.online/sprunki-parodybox</loc>
+        <lastmod>2024-12-30</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
     </url>

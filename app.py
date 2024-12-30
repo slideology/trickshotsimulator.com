@@ -505,6 +505,78 @@ def sprunki_ketchup():
         app.logger.error(f"Error in ketchup route: {str(e)}")
         return render_template('sprunki-ketchup.html', translations=get_default_translations(), current_page='ketchup')
 
+@app.route('/sprunki-parodybox')
+def sprunki_parodybox():
+    try:
+        custom_translations = {
+            "nav": {
+                "home": "Home",
+                "about": "About",
+                "game": "Game",
+                "introduction": "Introduction",
+                "contact": "Contact",
+                "faq": "FAQ",
+                "blog": "Blog",
+                "community": "Community",
+                "leaderboard": "Leaderboard",
+                "events": "Events",
+                "feedback": "Feedback",
+                "sprunki-parodybox": "Sprunki Parodybox"
+            },
+            "hero": {
+                "title_highlight": "Sprunki Parodybox",
+                "title_regular": " All new Characters Mod",
+                "description": "Sprunki Parodybox is a Spine-Chilling Music Creation Experience. Similar to Incredibox, yet with a Distinctively Eerie Horror Twist, Try it!"
+            },
+            "footer": {
+                "description": "Experience the joy of music creation with Sprunkr's innovative platform.",
+                "copyright": " 2024 Sprunkr. All rights reserved.",
+                "links": {
+                    "privacy": "Privacy Policy",
+                    "terms": "Terms of Service",
+                    "contact": "Contact Us"
+                }
+            }
+        }
+        return render_template('sprunki-parodybox.html',
+                         title='Play Sprunki Parodybox Characters Mod of Sprunki on Sprunkr Online in 2025',
+                         translations=custom_translations,
+                         current_lang=g.lang)
+    except Exception as e:
+        app.logger.error(f"Error in sprunki-parodybox route: {e}")
+        return render_template('sprunki-parodybox.html',
+                         title='Play Sprunki Parodybox Characters Mod of Sprunki on Sprunkr Online in 2025',
+                         translations={
+                             "nav": {
+                                "home": "Home",
+                                "about": "About",
+                                "game": "Game",
+                                "introduction": "Introduction",
+                                "contact": "Contact",
+                                "faq": "FAQ",
+                                "blog": "Blog",
+                                "community": "Community",
+                                "leaderboard": "Leaderboard",
+                                "events": "Events",
+                                "feedback": "Feedback",
+                                "sprunki-parodybox": "Sprunki Parodybox"
+                             },
+                             "hero": {
+                                 "title_highlight": "Sprunki Parodybox",
+                                 "title_regular": "All new Characters Mod",
+                                 "description": "Sprunki Parodybox is a Spine-Chilling Music Creation Experience. Similar to Incredibox, yet with a Distinctively Eerie Horror Twist, Try it!"
+                             },
+                             "footer": {
+                                 "description": "Experience the joy of music creation with Sprunkr's innovative platform.",
+                                 "copyright": " 2024 Sprunkr. All rights reserved.",
+                                 "links": {
+                                     "privacy": "Privacy Policy",
+                                     "terms": "Terms of Service",
+                                     "contact": "Contact Us"
+                                 }
+                             }
+                         },
+                         current_lang='en')
 @app.route('/sprunki-retake-but-human')
 def sprunki_retake_but_human():
     try:
