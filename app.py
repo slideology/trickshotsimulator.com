@@ -577,6 +577,21 @@ def sprunki_parodybox():
                              }
                          },
                          current_lang='en')
+@app.route('/sprunki-pyramixed')
+def sprunki_pyramixed():
+    try:
+        trans = get_translations(g.lang)
+        return render_template('sprunki-pyramixed.html',
+                         title='Sprunki Pyramixed New Horror Characters Mod of Sprunki in 2025',
+                         description='Sprunki Pyramixed is A Whole new Horror Mode of Sprunki, And Maybe The Best Horror Version, Try It!',
+                         translations=trans,
+                         current_lang=g.lang)
+    except Exception as e:
+        app.logger.error(f"Error in sprunki-pyramixed: {e}")
+        return render_template('sprunki-pyramixed.html',
+                         title='Sprunki Pyramixed New Horror Characters Mod of Sprunki in 2025',
+                         translations=get_default_translations(),
+                         current_lang='en')
 @app.route('/sprunki-retake-but-human')
 def sprunki_retake_but_human():
     try:
