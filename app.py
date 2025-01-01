@@ -592,6 +592,21 @@ def sprunki_pyramixed():
                          title='Sprunki Pyramixed New Horror Characters Mod of Sprunki in 2025',
                          translations=get_default_translations(),
                          current_lang='en')
+@app.route('/sprunki-garnold')
+def sprunki_garnold():
+    try:
+        trans = get_translations(g.lang)
+        return render_template('sprunki-garnold.html',
+                         title='Sprunki Garnold - New Character Mod',
+                         description='Sprunki Garnold,New Character Mod,Sprunki new mod adds new characters like Garnold (Gold), and they are so cool',
+                         translations=trans,
+                         current_lang=g.lang)
+    except Exception as e:
+        app.logger.error(f"Error in sprunki-garnold: {e}")
+        return render_template('sprunki-garnold.html',
+                         title='Sprunki Garnold - New Character Mod',
+                         translations=get_default_translations(),
+                         current_lang='en')
 @app.route('/sprunki-retake-but-human')
 def sprunki_retake_but_human():
     try:
