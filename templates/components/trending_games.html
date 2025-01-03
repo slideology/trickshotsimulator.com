@@ -1,20 +1,21 @@
 <!-- Trending Games Section -->
-<div class="py-24 bg-gray-50 dark:bg-gray-900">
-    <div class="container mx-auto px-4">
-        <h2 class="text-4xl font-bold mb-12 text-center bg-gradient-to-r from-red-600 via-red-500 to-black bg-clip-text text-transparent">
+<div class="py-16 sm:py-24 bg-gray-50 dark:bg-gray-900">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="text-3xl sm:text-4xl font-bold mb-8 sm:mb-12 text-center bg-gradient-to-r from-red-600 via-red-500 to-black bg-clip-text text-transparent">
             {{ translations.get('trending', {}).get('title', 'Trending Games') }}
         </h2>
-        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6">
             {% if current_page != 'lily' %}
             <!-- Sprunki Lily Card -->
             <a href="https://www.sprunkr.online/sprunki-lily" class="group relative rounded-lg overflow-hidden shadow-lg transition-transform duration-300 hover:transform hover:scale-105">
                 <div class="relative aspect-[4/3]">
                     <img src="{{ url_for('static', filename='images/games/sprunki-lily.png') }}" 
-                         alt="Sprunki Lily" 
+                         alt="Sprunki Lily"
+                         loading="lazy" 
                          class="w-full h-full object-cover">
-                    <div class="absolute bottom-0 left-0 right-0 h-12 bg-gradient-to-t from-gray-900 via-gray-700 to-transparent opacity-0 group-hover:opacity-80 transition-opacity duration-300"></div>
-                    <div class="absolute bottom-0 left-0 right-0 p-3">
-                        <h3 class="text-sm font-semibold text-gray-800 dark:text-gray-200 group-hover:text-white group-hover:drop-shadow-lg transition-colors duration-300">
+                    <div class="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-700/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    <div class="absolute bottom-0 left-0 right-0 p-4">
+                        <h3 class="text-sm sm:text-base font-semibold text-gray-800 dark:text-gray-200 group-hover:text-white group-hover:drop-shadow-lg transition-colors duration-300">
                             {{ translations.get('trending', {}).get('sprunki_lily', 'Sprunki - Lily') }}
                         </h3>
                     </div>
@@ -27,11 +28,12 @@
             <a href="https://www.sprunkr.online/sprunki-megalovania" class="group relative rounded-lg overflow-hidden shadow-lg transition-transform duration-300 hover:transform hover:scale-105">
                 <div class="relative aspect-[4/3]">
                     <img src="{{ url_for('static', filename='images/games/sprunki-megalovania.png') }}" 
-                         alt="Sprunki Megalovania" 
+                         alt="Sprunki Megalovania"
+                         loading="lazy" 
                          class="w-full h-full object-cover">
-                    <div class="absolute bottom-0 left-0 right-0 h-12 bg-gradient-to-t from-gray-900 via-gray-700 to-transparent opacity-0 group-hover:opacity-80 transition-opacity duration-300"></div>
-                    <div class="absolute bottom-0 left-0 right-0 p-3">
-                        <h3 class="text-sm font-semibold text-gray-800 dark:text-gray-200 group-hover:text-white group-hover:drop-shadow-lg transition-colors duration-300">
+                    <div class="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-700/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    <div class="absolute bottom-0 left-0 right-0 p-4">
+                        <h3 class="text-sm sm:text-base font-semibold text-gray-800 dark:text-gray-200 group-hover:text-white group-hover:drop-shadow-lg transition-colors duration-300">
                             {{ translations.get('trending', {}).get('sprunki_megalovania', 'Sprunki - Megalovania') }}
                         </h3>
                     </div>
@@ -44,11 +46,12 @@
             <a href="https://www.sprunkr.online/sprunki-spruted" class="group relative rounded-lg overflow-hidden shadow-lg transition-transform duration-300 hover:transform hover:scale-105">
                 <div class="relative aspect-[4/3]">
                     <img src="{{ url_for('static', filename='images/sprunki-spruted.png') }}" 
-                         alt="Sprunki Spruted" 
+                         alt="Sprunki Spruted"
+                         loading="lazy" 
                          class="w-full h-full object-cover">
-                    <div class="absolute bottom-0 left-0 right-0 h-12 bg-gradient-to-t from-green-500 via-emerald-500 to-transparent opacity-0 group-hover:opacity-80 transition-opacity duration-300"></div>
-                    <div class="absolute bottom-0 left-0 right-0 p-3">
-                        <h3 class="text-sm font-semibold text-gray-800 dark:text-gray-200 group-hover:text-white group-hover:drop-shadow-lg transition-colors duration-300">
+                    <div class="absolute inset-0 bg-gradient-to-t from-green-500 via-emerald-500 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    <div class="absolute bottom-0 left-0 right-0 p-4">
+                        <h3 class="text-sm sm:text-base font-semibold text-gray-800 dark:text-gray-200 group-hover:text-white group-hover:drop-shadow-lg transition-colors duration-300">
                             {{ translations.get('trending', {}).get('sprunki_spruted', 'Sprunki - Spruted') }}
                         </h3>
                     </div>
@@ -61,11 +64,12 @@
             <a href="https://www.sprunkr.online/" class="group relative rounded-lg overflow-hidden shadow-lg transition-transform duration-300 hover:transform hover:scale-105">
                 <div class="relative aspect-[4/3]">
                     <img src="{{ url_for('static', filename='images/games/sprunki-sprunkr.png') }}" 
-                         alt="Sprunki Sprunkr" 
+                         alt="Sprunki Sprunkr"
+                         loading="lazy" 
                          class="w-full h-full object-cover">
-                    <div class="absolute bottom-0 left-0 right-0 h-12 bg-gradient-to-t from-red-600 via-red-500 to-transparent opacity-0 group-hover:opacity-80 transition-opacity duration-300"></div>
-                    <div class="absolute bottom-0 left-0 right-0 p-3">
-                        <h3 class="text-sm font-semibold text-gray-800 dark:text-gray-200 group-hover:text-white group-hover:drop-shadow-lg transition-colors duration-300">
+                    <div class="absolute inset-0 bg-gradient-to-t from-red-600 via-red-500 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    <div class="absolute bottom-0 left-0 right-0 p-4">
+                        <h3 class="text-sm sm:text-base font-semibold text-gray-800 dark:text-gray-200 group-hover:text-white group-hover:drop-shadow-lg transition-colors duration-300">
                             {{ translations.get('trending', {}).get('sprunki_sprunkr', 'Sprunki - Sprunkr') }}
                         </h3>
                     </div>
@@ -78,11 +82,12 @@
             <a href="https://www.sprunkr.online/sprunki-banana" class="group relative rounded-lg overflow-hidden shadow-lg transition-transform duration-300 hover:transform hover:scale-105">
                 <div class="relative aspect-[4/3]">
                     <img src="{{ url_for('static', filename='images/games/sprunki-banana.png') }}" 
-                         alt="Sprunki Banana" 
+                         alt="Sprunki Banana"
+                         loading="lazy" 
                          class="w-full h-full object-cover">
-                    <div class="absolute bottom-0 left-0 right-0 h-12 bg-gradient-to-t from-yellow-500 via-yellow-400 to-transparent opacity-0 group-hover:opacity-80 transition-opacity duration-300"></div>
-                    <div class="absolute bottom-0 left-0 right-0 p-3">
-                        <h3 class="text-sm font-semibold text-gray-800 dark:text-gray-200 group-hover:text-white group-hover:drop-shadow-lg transition-colors duration-300">
+                    <div class="absolute inset-0 bg-gradient-to-t from-yellow-500 via-yellow-400 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    <div class="absolute bottom-0 left-0 right-0 p-4">
+                        <h3 class="text-sm sm:text-base font-semibold text-gray-800 dark:text-gray-200 group-hover:text-white group-hover:drop-shadow-lg transition-colors duration-300">
                             {{ translations.get('trending', {}).get('sprunki_banana', 'Sprunki - Banana') }}
                         </h3>
                     </div>
@@ -95,11 +100,12 @@
             <a href="https://www.sprunkr.online/sprunki-ketchup" class="group relative rounded-lg overflow-hidden shadow-lg transition-transform duration-300 hover:transform hover:scale-105">
                 <div class="relative aspect-[4/3]">
                     <img src="{{ url_for('static', filename='images/games/sprunki-ketchup.png') }}" 
-                         alt="Sprunki Ketchup" 
+                         alt="Sprunki Ketchup"
+                         loading="lazy" 
                          class="w-full h-full object-cover">
-                    <div class="absolute bottom-0 left-0 right-0 h-12 bg-gradient-to-t from-red-900 via-red-700 to-transparent opacity-0 group-hover:opacity-80 transition-opacity duration-300"></div>
-                    <div class="absolute bottom-0 left-0 right-0 p-3">
-                        <h3 class="text-sm font-semibold text-gray-800 dark:text-gray-200 group-hover:text-white group-hover:drop-shadow-lg transition-colors duration-300">
+                    <div class="absolute inset-0 bg-gradient-to-t from-red-900 via-red-700 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    <div class="absolute bottom-0 left-0 right-0 p-4">
+                        <h3 class="text-sm sm:text-base font-semibold text-gray-800 dark:text-gray-200 group-hover:text-white group-hover:drop-shadow-lg transition-colors duration-300">
                             {{ translations.get('trending', {}).get('sprunki_ketchup', 'Sprunki - Ketchup') }}
                         </h3>
                     </div>
@@ -112,10 +118,11 @@
     <div class="relative aspect-[4/3]">
         <img src="{{ url_for('static', filename='images/games/sprunki-retake-but-human.png') }}"
              alt="Sprunki Retake But Human"
+             loading="lazy" 
              class="w-full h-full object-cover">
-        <div class="absolute bottom-0 left-0 right-0 h-12 bg-gradient-to-t from-blue-500 via-cyan-500 to-transparent opacity-0 group-hover:opacity-80 transition-opacity duration-300"></div>
-        <div class="absolute bottom-0 left-0 right-0 p-3">
-            <h3 class="text-sm font-semibold text-gray-800 dark:text-gray-200 group-hover:text-white group-hover:drop-shadow-lg transition-colors duration-300">
+        <div class="absolute inset-0 bg-gradient-to-t from-blue-500 via-cyan-500 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+        <div class="absolute bottom-0 left-0 right-0 p-4">
+            <h3 class="text-sm sm:text-base font-semibold text-gray-800 dark:text-gray-200 group-hover:text-white group-hover:drop-shadow-lg transition-colors duration-300">
                 {{ translations.get('trending', {}).get('sprunki_retake_but_human', 'Sprunki - Retake But Human') }}
             </h3>
         </div>
@@ -128,10 +135,11 @@
     <div class="relative aspect-[4/3]">
         <img src="{{ url_for('static', filename='images/games/sprunki-parodybox.png') }}"
              alt="Sprunki Parodybox"
+             loading="lazy" 
              class="w-full h-full object-cover">
-        <div class="absolute bottom-0 left-0 right-0 h-12 bg-gradient-to-t from-blue-500 via-cyan-500 to-transparent opacity-0 group-hover:opacity-80 transition-opacity duration-300"></div>
-        <div class="absolute bottom-0 left-0 right-0 p-3">
-            <h3 class="text-sm font-semibold text-gray-800 dark:text-gray-200 group-hover:text-white group-hover:drop-shadow-lg transition-colors duration-300">
+        <div class="absolute inset-0 bg-gradient-to-t from-blue-500 via-cyan-500 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+        <div class="absolute bottom-0 left-0 right-0 p-4">
+            <h3 class="text-sm sm:text-base font-semibold text-gray-800 dark:text-gray-200 group-hover:text-white group-hover:drop-shadow-lg transition-colors duration-300">
                 {{ translations.get('trending', {}).get('sprunki_parodybox', 'Sprunki - Parodybox') }}
             </h3>
         </div>
@@ -144,10 +152,11 @@
     <div class="relative aspect-[4/3]">
         <img src="{{ url_for('static', filename='images/games/sprunki-pyramixed.png') }}"
              alt="Sprunki Pyramixed"
+             loading="lazy" 
              class="w-full h-full object-cover">
-        <div class="absolute bottom-0 left-0 right-0 h-12 bg-gradient-to-t from-blue-500 via-cyan-500 to-transparent opacity-0 group-hover:opacity-80 transition-opacity duration-300"></div>
-        <div class="absolute bottom-0 left-0 right-0 p-3">
-            <h3 class="text-sm font-semibold text-gray-800 dark:text-gray-200 group-hover:text-white group-hover:drop-shadow-lg transition-colors duration-300">
+        <div class="absolute inset-0 bg-gradient-to-t from-blue-500 via-cyan-500 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+        <div class="absolute bottom-0 left-0 right-0 p-4">
+            <h3 class="text-sm sm:text-base font-semibold text-gray-800 dark:text-gray-200 group-hover:text-white group-hover:drop-shadow-lg transition-colors duration-300">
                 {{ translations.get('trending', {}).get('sprunki_pyramixed', 'Sprunki - Pyramixed') }}
             </h3>
         </div>
