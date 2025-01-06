@@ -134,129 +134,142 @@ def get_translations(lang='en'):
 
 def get_faqs_for_page(page_name):
     faqs_data = {
-        'banana': [
-            {
-                'question': 'What is Sprunki Banana?',
-                'answer': 'Sprunki Banana is a unique mod featuring banana-themed characters and tropical soundscapes in the Sprunki universe.'
-            },
-            {
-                'question': 'What makes Banana mod special?',
-                'answer': 'The Banana mod brings a fun and tropical twist to Sprunki, with unique sound effects and cheerful character designs.'
-            }
-        ],
-        'garnold': [
-            {
-                'question': 'Who is Garnold in Sprunki?',
-                'answer': 'Garnold (Gold) is one of the main characters in Sprunki, known for his distinctive golden appearance and unique sound effects.'
-            },
-            {
-                'question': 'What are Garnold\'s special features?',
-                'answer': 'Garnold brings unique golden-themed sound effects and visual elements to the game, creating a premium music experience.'
-            }
-        ],
-        'ketchup': [
-            {
-                'question': 'What is Sprunki Ketchup mod?',
-                'answer': 'Sprunki Ketchup is a creative mod that adds a fun food-themed twist to the game with unique characters and sounds.'
-            },
-            {
-                'question': 'What makes Ketchup mod unique?',
-                'answer': 'The Ketchup mod features food-inspired characters and sound effects, creating a playful and appetizing musical experience.'
-            }
-        ],
-        'lily': [
-            {
-                'question': 'Who is Lily in Sprunki?',
-                'answer': 'Lily is a beloved character in the Sprunki universe, bringing a unique blend of floral themes and melodic sounds.'
-            },
-            {
-                'question': 'What are Lily\'s special features?',
-                'answer': 'Lily\'s mod includes nature-inspired sounds and visual elements, creating a peaceful and harmonious musical atmosphere.'
-            }
-        ],
-        'megalovania': [
-            {
-                'question': 'What is Sprunki Megalovania?',
-                'answer': 'Sprunki Megalovania is an epic crossover mod that brings the iconic Undertale track into the Sprunki universe.'
-            },
-            {
-                'question': 'How does Megalovania mod work?',
-                'answer': 'This mod allows players to create remixes and variations of the famous Megalovania theme using Sprunki\'s unique sound system.'
-            }
-        ],
-        'parodybox': [
-            {
-                'question': 'What is Sprunki Mod?',
-                'answer': 'Sprunki Mod is a fan-made adaptation of the <strong>Incredibox game</strong>, featuring unique characters, sounds, and themes that enhance the music-mixing experience.'
-            },
-            {
-                'question': 'What is Sprunki Game?',
-                'answer': 'Sprunki Game is a modified version of <strong>Incredibox</strong>, allowing players to create custom music tracks using creative characters and unique soundscapes.'
-            },
-            {
-                'question': 'How do I download Sprunki Incredibox?',
-                'answer': 'You can download Sprunki Incredibox from its <strong>official website</strong>, <strong>Google Play Store</strong>, <strong>Apple App Store</strong>, or as an APK for Android.'
-            }
-        ],
-        'pyramixed': [
-            {
-                'question': 'What is PyraMixed?',
-                'answer': 'PyraMixed is a unique version that combines pyramid-themed elements with music creation, offering a distinctive visual and audio experience.'
-            },
-            {
-                'question': 'What makes PyraMixed special?',
-                'answer': 'PyraMixed features Egyptian-inspired characters, desert soundscapes, and mystical themes that create an immersive musical journey.'
-            }
-        ],
-        'retake-but-human': [
-            {
-                'question': 'What is Retake But Human mod?',
-                'answer': 'Retake But Human is a unique mod that reimagines Sprunki characters with a more humanized approach.'
-            },
-            {
-                'question': 'What makes this mod different?',
-                'answer': 'This mod offers a fresh perspective on familiar characters, with human-like characteristics while maintaining the core Sprunki experience.'
-            }
-        ],
-        'sprunkr': [
-            {
-                'question': 'What is Sprunkr?',
-                'answer': 'Sprunkr is the main platform for all Sprunki mods and games, offering a unique horror-themed music creation experience.'
-            },
-            {
-                'question': 'What can I do on Sprunkr?',
-                'answer': 'On Sprunkr, you can play various Sprunki mods, create music, share your creations, and join a community of music enthusiasts.'
-            }
-        ],
-        'spruted': [
-            {
-                'question': 'What is Sprunki Spruted?',
-                'answer': 'Sprunki Spruted is a nature-themed mod that brings plant and growth elements into the Sprunki universe.'
-            },
-            {
-                'question': 'What features does Spruted offer?',
-                'answer': 'Spruted includes plant-themed characters, natural sound effects, and growth-inspired visual elements for a unique musical experience.'
-            }
-        ]
+        'banana': {
+            'faqs': [
+                {
+                    'question': 'What is Sprunki Banana?',
+                    'answer': 'Sprunki Banana is a unique mod featuring banana-themed characters and tropical soundscapes in the Sprunki universe.'
+                },
+                {
+                    'question': 'What makes Banana mod special?',
+                    'answer': 'The Banana mod brings a fun and tropical twist to Sprunki, with unique sound effects and cheerful character designs.'
+                }
+            ],
+            'conclusion': 'Sprunki Banana offers a delightful and tropical musical experience that stands out in the Sprunki universe.'
+        },
+        'garnold': {
+            'faqs': [
+                {
+                    'question': 'Who is Garnold in Sprunki?',
+                    'answer': 'Garnold (Gold) is one of the main characters in Sprunki, known for his distinctive golden appearance and unique sound effects.'
+                },
+                {
+                    'question': 'What are Garnold\'s special features?',
+                    'answer': 'Garnold brings unique golden-themed sound effects and visual elements to the game, creating a premium music experience.'
+                }
+            ],
+            'conclusion': 'Garnold adds a touch of golden luxury to the Sprunki universe with his unique sound effects and visual elements.'
+        },
+        'ketchup': {
+            'faqs': [
+                {
+                    'question': 'What is Sprunki Ketchup mod?',
+                    'answer': 'Sprunki Ketchup is a creative mod that adds a fun food-themed twist to the game with unique characters and sounds.'
+                },
+                {
+                    'question': 'What makes Ketchup mod unique?',
+                    'answer': 'The Ketchup mod features food-inspired characters and sound effects, creating a playful and appetizing musical experience.'
+                }
+            ],
+            'conclusion': 'Sprunki Ketchup brings a tasty twist to music creation with its food-themed characters and sounds.'
+        },
+        'lily': {
+            'faqs': [
+                {
+                    'question': 'Who is Lily in Sprunki?',
+                    'answer': 'Lily is a beloved character in the Sprunki universe, bringing a unique blend of floral themes and melodic sounds.'
+                },
+                {
+                    'question': 'What are Lily\'s special features?',
+                    'answer': 'Lily\'s mod includes nature-inspired sounds and visual elements, creating a peaceful and harmonious musical atmosphere.'
+                }
+            ],
+            'conclusion': 'Lily brings a touch of natural beauty and harmony to the Sprunki universe.'
+        },
+        'megalovania': {
+            'faqs': [
+                {
+                    'question': 'What is Sprunki Megalovania?',
+                    'answer': 'Sprunki Megalovania is an epic crossover mod that brings the iconic Undertale track into the Sprunki universe.'
+                },
+                {
+                    'question': 'How does Megalovania mod work?',
+                    'answer': 'This mod allows players to create remixes and variations of the famous Megalovania theme using Sprunki\'s unique sound system.'
+                }
+            ],
+            'conclusion': 'Experience the legendary Megalovania in a whole new way with this unique Sprunki mod.'
+        },
+        'parodybox': {
+            'faqs': [
+                {
+                    'question': 'What is Sprunki Mod?',
+                    'answer': 'Sprunki Mod is a fan-made adaptation of the <strong>Incredibox game</strong>, featuring unique characters, sounds, and themes that enhance the music-mixing experience.'
+                },
+                {
+                    'question': 'What is Sprunki Game?',
+                    'answer': 'Sprunki Game is a modified version of <strong>Incredibox</strong>, allowing players to create custom music tracks using creative characters and unique soundscapes.'
+                },
+                {
+                    'question': 'How do I download Sprunki Incredibox?',
+                    'answer': 'You can download Sprunki Incredibox from its <strong>official website</strong>, <strong>Google Play Store</strong>, <strong>Apple App Store</strong>, or as an APK for Android.'
+                }
+            ],
+            'conclusion': 'Join the Sprunki community and start creating your own unique music today!'
+        },
+        'pyramixed': {
+            'faqs': [
+                {
+                    'question': 'What is PyraMixed?',
+                    'answer': 'PyraMixed is a unique version that combines pyramid-themed elements with music creation, offering a distinctive visual and audio experience.'
+                },
+                {
+                    'question': 'What makes PyraMixed special?',
+                    'answer': 'PyraMixed features Egyptian-inspired characters, desert soundscapes, and mystical themes that create an immersive musical journey.'
+                }
+            ],
+            'conclusion': 'Discover the mysteries of ancient Egypt through music with PyraMixed.'
+        },
+        'retake-but-human': {
+            'faqs': [
+                {
+                    'question': 'What is Retake But Human mod?',
+                    'answer': 'Retake But Human is a unique mod that reimagines Sprunki characters with a more humanized approach.'
+                },
+                {
+                    'question': 'What makes this mod different?',
+                    'answer': 'This mod offers a fresh perspective on familiar characters, with human-like characteristics while maintaining the core Sprunki experience.'
+                }
+            ],
+            'conclusion': 'Experience Sprunki characters in a whole new light with the Retake But Human mod.'
+        },
+        'sprunkr': {
+            'faqs': [
+                {
+                    'question': 'What is Sprunkr?',
+                    'answer': 'Sprunkr is the main platform for all Sprunki mods and games, offering a unique horror-themed music creation experience.'
+                },
+                {
+                    'question': 'What can I do on Sprunkr?',
+                    'answer': 'On Sprunkr, you can play various Sprunki mods, create music, share your creations, and join a community of music enthusiasts.'
+                }
+            ],
+            'conclusion': 'Join Sprunkr today and become part of our growing community of music creators!'
+        },
+        'spruted': {
+            'faqs': [
+                {
+                    'question': 'What is Sprunki Spruted?',
+                    'answer': 'Sprunki Spruted is a nature-themed mod that brings plant and growth elements into the Sprunki universe.'
+                },
+                {
+                    'question': 'What makes Spruted unique?',
+                    'answer': 'Spruted features organic sound effects and growth-themed visuals, creating a natural and evolving musical experience.'
+                }
+            ],
+            'conclusion': 'Let your music grow and evolve with Sprunki Spruted!'
+        }
     }
-    
-    conclusions = {
-        'banana': 'Experience the tropical vibes of Sprunki Banana, where fun meets music in a unique banana-themed adventure.',
-        'garnold': 'Garnold brings a golden touch to the Sprunki universe, offering players a premium music creation experience.',
-        'ketchup': 'Dive into the tasty world of Sprunki Ketchup, where food and music come together in perfect harmony.',
-        'lily': 'Join Lily in creating beautiful, nature-inspired musical compositions in this peaceful corner of the Sprunki universe.',
-        'megalovania': 'Experience the epic fusion of Undertale\'s Megalovania with Sprunki\'s unique sound system.',
-        'parodybox': '<strong>Sprunki Incredibox</strong> game offers an immersive and creative musical experience where you can mix beats, experiment with sounds, and share your creations with a thriving community.',
-        'pyramixed': 'PyraMixed brings a unique blend of ancient Egyptian themes and modern music creation, offering players an unforgettable experience in rhythm and sound design.',
-        'retake-but-human': 'Explore the humanized version of your favorite Sprunki characters while creating amazing music in this unique mod.',
-        'sprunkr': 'Join the Sprunkr community today and discover endless possibilities in music creation with our collection of unique Sprunki mods.',
-        'spruted': 'Grow your musical creativity with Sprunki Spruted, where nature and music blend into a unique artistic experience.'
-    }
-    
-    return {
-        'faqs': faqs_data.get(page_name, []),
-        'conclusion': conclusions.get(page_name, '')
-    }
+    return faqs_data.get(page_name, {'faqs': [], 'conclusion': ''})
 
 @app.route('/')
 def home():
