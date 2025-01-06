@@ -1,188 +1,42 @@
 <!-- FAQ Section Component -->
-<div class="py-24 bg-gray-100 dark:bg-gray-800">
+<div class="py-12 bg-gray-100 dark:bg-gray-800">
     <div class="container mx-auto px-4">
         <h2 class="text-4xl font-bold mb-12 text-center bg-gradient-to-r from-red-600 via-red-500 to-black bg-clip-text text-transparent">
-            {{ translations.get('faq', {}).get('title', 'Frequently Asked Questions') }}
+            {% if page_title %}
+                FAQs for {{ page_title }}
+            {% else %}
+                {{ translations.get('faq', {}).get('title', 'Frequently Asked Questions') }}
+            {% endif %}
         </h2>
 
         <div class="max-w-4xl mx-auto space-y-8">
-            <!-- Getting Started Section -->
-            <section>
-                <h3 class="text-2xl font-bold mb-6 text-gray-800 dark:text-white">
-                    {{ translations.get('faq', {}).get('getting_started_title', 'Getting Started') }}
-                </h3>
+            {% if dynamic_faqs %}
+                <!-- Dynamic FAQs -->
                 <div class="space-y-6">
+                    {% for faq in dynamic_faqs %}
                     <div class="bg-white dark:bg-gray-700 rounded-lg p-6 shadow-md">
-                        <h4 class="text-xl font-semibold mb-3 text-gray-700 dark:text-gray-200">
-                            {{ translations.get('faq', {}).get('what_is_sprunkr_title', 'What is Sprunkr?') }}
-                        </h4>
-                        <p class="text-gray-600 dark:text-gray-300">
-                            {{ translations.get('faq', {}).get('what_is_sprunkr_content', 'Sprunkr is an innovative music creation game that combines rhythm gaming with creative music production.') }}
-                        </p>
-                    </div>
-
-                    <div class="bg-white dark:bg-gray-700 rounded-lg p-6 shadow-md">
-                        <h4 class="text-xl font-semibold mb-3 text-gray-700 dark:text-gray-200">
-                            {{ translations.get('faq', {}).get('what_makes_unique_title', 'What makes Sprunkr unique?') }}
-                        </h4>
-                        <p class="text-gray-600 dark:text-gray-300">
-                            {{ translations.get('faq', {}).get('what_makes_unique_intro', 'Sprunkr stands out with its:') }}
-                        </p>
-                        <ul class="list-disc ml-6 mt-2 space-y-2 text-gray-600 dark:text-gray-300">
-                            <li>{{ translations.get('faq', {}).get('unique_feature_1', 'Gamified learning approach to music theory') }}</li>
-                            <li>{{ translations.get('faq', {}).get('unique_feature_2', 'Real-time visual feedback on your musical creations') }}</li>
-                            <li>{{ translations.get('faq', {}).get('unique_feature_3', 'AI-powered music suggestions and harmonization') }}</li>
-                            <li>{{ translations.get('faq', {}).get('unique_feature_4', 'Community features for sharing and collaborating') }}</li>
-                            <li>{{ translations.get('faq', {}).get('unique_feature_5', 'Progressive skill development system') }}</li>
-                        </ul>
-                    </div>
-
-                    <div class="bg-white dark:bg-gray-700 rounded-lg p-6 shadow-md">
-                        <h4 class="text-xl font-semibold mb-3 text-gray-700 dark:text-gray-200">
-                            {{ translations.get('faq', {}).get('how_to_start_title', 'How do I get started with Sprunkr?') }}
-                        </h4>
-                        <p class="text-gray-600 dark:text-gray-300">
-                            {{ translations.get('faq', {}).get('how_to_start_intro', 'Getting started is easy:') }}
-                        </p>
-                        <ol class="list-decimal ml-6 mt-2 space-y-2 text-gray-600 dark:text-gray-300">
-                            <li>{{ translations.get('faq', {}).get('start_step_1', 'Click the "Play" button in the navigation menu') }}</li>
-                            <li>{{ translations.get('faq', {}).get('start_step_2', 'Choose a game mode (Tutorial recommended for beginners)') }}</li>
-                            <li>{{ translations.get('faq', {}).get('start_step_3', 'Follow the interactive tutorial to learn the basics') }}</li>
-                            <li>{{ translations.get('faq', {}).get('start_step_4', 'Start creating your own music!') }}</li>
-                        </ol>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Game Modes Section -->
-            <section>
-                <h3 class="text-2xl font-bold mb-6 text-gray-800 dark:text-white">
-                    {{ translations.get('faq', {}).get('game_modes_title', 'Game Modes') }}
-                </h3>
-                <div class="space-y-6">
-                    <div class="bg-white dark:bg-gray-700 rounded-lg p-6 shadow-md">
-                        <h4 class="text-xl font-semibold mb-3 text-gray-700 dark:text-gray-200">
-                            {{ translations.get('faq', {}).get('available_modes_title', 'What game modes are available?') }}
-                        </h4>
-                        <p class="text-gray-600 dark:text-gray-300 mb-4">
-                            {{ translations.get('faq', {}).get('available_modes_intro', 'Sprunkr offers several engaging modes:') }}
-                        </p>
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                            <!-- Tutorial Mode -->
-                            <div class="p-4 bg-gray-50 dark:bg-gray-600 rounded-lg">
-                                <h5 class="font-medium text-gray-700 dark:text-gray-200 mb-2">
-                                    {{ translations.get('faq', {}).get('mode_tutorial', 'Tutorial Mode') }}
-                                </h5>
-                                <p class="text-sm text-gray-600 dark:text-gray-300">
-                                    {{ translations.get('faq', {}).get('mode_tutorial_desc', 'Interactive lessons teaching music basics') }}
-                                </p>
-                            </div>
-                            
-                            <!-- Freestyle Mode -->
-                            <div class="p-4 bg-gray-50 dark:bg-gray-600 rounded-lg">
-                                <h5 class="font-medium text-gray-700 dark:text-gray-200 mb-2">
-                                    {{ translations.get('faq', {}).get('mode_freestyle', 'Freestyle Mode') }}
-                                </h5>
-                                <p class="text-sm text-gray-600 dark:text-gray-300">
-                                    {{ translations.get('faq', {}).get('mode_freestyle_desc', 'Create music without restrictions') }}
-                                </p>
-                            </div>
-                            
-                            <!-- Challenge Mode -->
-                            <div class="p-4 bg-gray-50 dark:bg-gray-600 rounded-lg">
-                                <h5 class="font-medium text-gray-700 dark:text-gray-200 mb-2">
-                                    {{ translations.get('faq', {}).get('mode_challenge', 'Challenge Mode') }}
-                                </h5>
-                                <p class="text-sm text-gray-600 dark:text-gray-300">
-                                    {{ translations.get('faq', {}).get('mode_challenge_desc', 'Complete musical tasks to earn rewards') }}
-                                </p>
-                            </div>
-                            
-                            <!-- Collaboration Mode -->
-                            <div class="p-4 bg-gray-50 dark:bg-gray-600 rounded-lg">
-                                <h5 class="font-medium text-gray-700 dark:text-gray-200 mb-2">
-                                    {{ translations.get('faq', {}).get('mode_collab', 'Collaboration Mode') }}
-                                </h5>
-                                <p class="text-sm text-gray-600 dark:text-gray-300">
-                                    {{ translations.get('faq', {}).get('mode_collab_desc', 'Create music with other players') }}
-                                </p>
-                            </div>
-                            
-                            <!-- Battle Mode -->
-                            <div class="p-4 bg-gray-50 dark:bg-gray-600 rounded-lg">
-                                <h5 class="font-medium text-gray-700 dark:text-gray-200 mb-2">
-                                    {{ translations.get('faq', {}).get('mode_battle', 'Battle Mode') }}
-                                </h5>
-                                <p class="text-sm text-gray-600 dark:text-gray-300">
-                                    {{ translations.get('faq', {}).get('mode_battle_desc', 'Compete in real-time music creation') }}
-                                </p>
-                            </div>
+                        <h3 class="text-xl font-semibold mb-3 text-gray-700 dark:text-gray-200">
+                            {{ loop.index }}. <strong>{{ faq.question }}</strong>
+                        </h3>
+                        <div class="text-gray-600 dark:text-gray-300">
+                            {{ faq.answer|safe }}
                         </div>
                     </div>
+                    {% endfor %}
+                </div>
 
-                    <div class="bg-white dark:bg-gray-700 rounded-lg p-6 shadow-md">
-                        <h4 class="text-xl font-semibold mb-3 text-gray-700 dark:text-gray-200">
-                            {{ translations.get('faq', {}).get('challenge_mode_title', '') }}
-                        </h4>
-                        <p class="text-gray-600 dark:text-gray-300">
-                            {{ translations.get('faq', {}).get('challenge_mode_intro', '') }}
-                        </p>
-                        <ul class="list-disc ml-6 mt-2 space-y-2 text-gray-600 dark:text-gray-300">
-                            <li>{{ translations.get('faq', {}).get('challenge_feature_1', '') }}</li>
-                            <li>{{ translations.get('faq', {}).get('challenge_feature_2', '') }}</li>
-                            <li>{{ translations.get('faq', {}).get('challenge_feature_3', '') }}</li>
-                            <li>{{ translations.get('faq', {}).get('challenge_feature_4', '') }}</li>
-                            <li>{{ translations.get('faq', {}).get('challenge_feature_5', '') }}</li>
-                        </ul>
+                {% if conclusion %}
+                <div class="mt-12 pt-8 border-t border-gray-200 dark:border-gray-700">
+                    <h3 class="text-2xl font-bold mb-4 text-gray-800 dark:text-white">Conclusion</h3>
+                    <div class="text-gray-600 dark:text-gray-300">
+                        {{ conclusion|safe }}
                     </div>
                 </div>
-            </section>
-
-            <!-- Music Creation Features -->
-            <section>
-                <h3 class="text-2xl font-bold mb-6 text-gray-800 dark:text-white">
-                    {{ translations.get('faq', {}).get('music_features_title', 'Music Creation Features') }}
-                </h3>
-                <div class="space-y-6">
-                    <div class="bg-white dark:bg-gray-700 rounded-lg p-6 shadow-md">
-                        <h4 class="text-xl font-semibold mb-3 text-gray-700 dark:text-gray-200">
-                            {{ translations.get('faq', {}).get('available_instruments_title', 'What instruments and sounds are available?') }}
-                        </h4>
-                        <p class="text-gray-600 dark:text-gray-300">
-                            {{ translations.get('faq', {}).get('available_instruments_content', 'Sprunkr provides a wide range of virtual instruments and sound effects:') }}
-                        </p>
-                        <ul class="list-disc ml-6 mt-2 space-y-2 text-gray-600 dark:text-gray-300">
-                            <li>{{ translations.get('faq', {}).get('instrument_1', 'Digital synthesizers with customizable parameters') }}</li>
-                            <li>{{ translations.get('faq', {}).get('instrument_2', 'Virtual drum machines and percussion kits') }}</li>
-                            <li>{{ translations.get('faq', {}).get('instrument_3', 'Sample-based instruments from various genres') }}</li>
-                            <li>{{ translations.get('faq', {}).get('instrument_4', 'Effect processors and modulators') }}</li>
-                        </ul>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Account & Pricing -->
-            <section>
-                <h3 class="text-2xl font-bold mb-6 text-gray-800 dark:text-white">
-                    {{ translations.get('faq', {}).get('account_pricing_title', 'Account & Pricing') }}
-                </h3>
-                <div class="space-y-6">
-                    <div class="bg-white dark:bg-gray-700 rounded-lg p-6 shadow-md">
-                        <h4 class="text-xl font-semibold mb-3 text-gray-700 dark:text-gray-200">
-                            {{ translations.get('faq', {}).get('account_required_title', 'Do I need an account to play?') }}
-                        </h4>
-                        <p class="text-gray-600 dark:text-gray-300">
-                            {{ translations.get('faq', {}).get('account_required_content', 'You can try the basic features without an account, but registering unlocks:') }}
-                        </p>
-                        <ul class="list-disc ml-6 mt-2 space-y-2 text-gray-600 dark:text-gray-300">
-                            <li>{{ translations.get('faq', {}).get('account_feature_1', 'Saving and sharing your creations') }}</li>
-                            <li>{{ translations.get('faq', {}).get('account_feature_2', 'Access to all game modes') }}</li>
-                            <li>{{ translations.get('faq', {}).get('account_feature_3', 'Progress tracking and achievements') }}</li>
-                            <li>{{ translations.get('faq', {}).get('account_feature_4', 'Community features and collaboration') }}</li>
-                        </ul>
-                    </div>
-                </div>
-            </section>
+                {% endif %}
+            {% else %}
+                <!-- Default FAQ Content -->
+                {{ translations.get('faq', {}).get('content', '') }}
+            {% endif %}
         </div>
     </div>
 </div>
