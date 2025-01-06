@@ -1,0 +1,42 @@
+<!-- FAQ Section Component -->
+<div class="py-12 bg-gray-100 dark:bg-gray-800">
+    <div class="container mx-auto px-4">
+        <h2 class="text-4xl font-bold mb-12 text-center bg-gradient-to-r from-red-600 via-red-500 to-black bg-clip-text text-transparent">
+            {% if page_title %}
+                FAQs for {{ page_title }}
+            {% else %}
+                {{ translations.get('faq', {}).get('title', 'Frequently Asked Questions') }}
+            {% endif %}
+        </h2>
+
+        <div class="max-w-4xl mx-auto space-y-8">
+            {% if dynamic_faqs %}
+                <!-- Dynamic FAQs -->
+                <div class="space-y-6">
+                    {% for faq in dynamic_faqs %}
+                    <div class="bg-white dark:bg-gray-700 rounded-lg p-6 shadow-md">
+                        <h3 class="text-xl font-semibold mb-3 text-gray-700 dark:text-gray-200">
+                            {{ loop.index }}. <strong>{{ faq.question }}</strong>
+                        </h3>
+                        <div class="text-gray-600 dark:text-gray-300">
+                            {{ faq.answer|safe }}
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+
+                {% if conclusion %}
+                <div class="mt-12 pt-8 border-t border-gray-200 dark:border-gray-700">
+                    <h3 class="text-2xl font-bold mb-4 text-gray-800 dark:text-white">Conclusion</h3>
+                    <div class="text-gray-600 dark:text-gray-300">
+                        {{ conclusion|safe }}
+                    </div>
+                </div>
+                {% endif %}
+            {% else %}
+                <!-- Default FAQ Content -->
+                {{ translations.get('faq', {}).get('content', '') }}
+            {% endif %}
+        </div>
+    </div>
+</div>
