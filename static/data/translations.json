@@ -6,7 +6,8 @@
             "faq": "FAQ",
             "play": "Play",
             "about": "About",
-            "contact": "Contact"
+            "contact": "Contact",
+            "games": "Games"
         },
         "hero": {
             "title_highlight": "Create Music",
@@ -147,7 +148,8 @@
             "faq": "Preguntas Frecuentes",
             "play": "Jugar",
             "about": "Acerca de",
-            "contact": "Contacto"
+            "contact": "Contacto",
+            "games": "Juegos"
         },
         "hero": {
             "title_highlight": "Crea Música",
