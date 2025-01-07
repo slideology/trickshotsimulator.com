@@ -143,6 +143,22 @@ def get_faqs_for_page(page_name):
                 {
                     'question': 'What makes Banana mod special?',
                     'answer': 'The Banana mod brings a fun and tropical twist to Sprunki, with unique sound effects and cheerful character designs.'
+                },
+                {
+                    "question": "What makes the Sprunki Sprungle Banana Mod special?",
+                    "answer": "It brings a whimsical twist to classic Sprunki gameplay by immersing players in a banana-themed world. Every Sprunki character is transformed into vibrant yellow avatars with banana-inspired outfits, accessories, and animations, accompanied by lighthearted sound effects and fun melodies."
+                },
+                {
+                    "question": "How do you play the Sprunki Sprungle Banana Mod?",
+                    "answer": "To play, first select characters by dragging and dropping banana-themed Sprunki avatars onto the stage to create your unique mix. Then build tracks by combining different characters to layer beats, melodies, and effects for a tropical-inspired musical experience. Also, discover bonuses by experimenting with various combinations and save and share your fun, banana-infused tracks with the Sprunki community."
+                },
+                {
+                    "question": "What are the features of the Sprunti Sprungle Banana Mod?",
+                    "answer": "The features include banana-themed characters that are creatively redesigned with banana-inspired visuals, tropical sound effects that are upbeat and cheerful tunes adding a sunny vibe to your compositions, a bright aesthetic with a vibrant yellow interface enhancing the playful theme, and interactive gameplay allowing you to explore the joy of mixing lighthearted sounds in a fresh, fruity setting."
+                },
+                {
+                    "question": "Why is the Sprunki Sprungle Banana Mod suitable for some players?",
+                    "answer": "It's a fun and cheerful take on the Sprunki universe, perfect for players seeking a lighthearted musical adventure!"
                 }
             ],
             'conclusion': 'Sprunki Banana offers a delightful and tropical musical experience that stands out in the Sprunki universe.'
@@ -169,6 +185,22 @@ def get_faqs_for_page(page_name):
                 {
                     'question': 'What makes Ketchup mod unique?',
                     'answer': 'The Ketchup mod features food-inspired characters and sound effects, creating a playful and appetizing musical experience.'
+                },
+                {
+                    "question": "What new aspects does Sprunki Ketchup 2 Mod bring compared to its predecessor?",
+                    "answer": "Sprunki Ketchup 2 Mod ventures deeper into the unsettling realm, heightening the horror elements and tension. The atmosphere is darker, the visuals are more haunting, and the loops are more unnerving. It replaces catchy beats with eerie whispers, hollow tones, and unsettling rhythms."
+                },
+                {
+                    "question": "What are the key features of Sprunki Ketchup 2 Mod?",
+                    "answer": "The key features include intensified horror aesthetics with characters having a more menacing look, sharper silhouettes, ominous color schemes, and disquieting animations. It also has darker soundscapes with loops and effects like distant shrieks, low drones, and heart-thumping percussion, and heightened suspense that makes every arrangement feel like a step into the unknown."
+                },
+                {
+                    "question": "How do you play Sprunki Ketchup 2 Mod?",
+                    "answer": "To play, first select characters that seem haunted, each representing loops from quietly unnerving to outright chilling. Then drag and drop them on the screen to layer spooky elements until your track hums with tension. After that, experiment and refine by adjusting volumes, adding effects, and shuffling characters. Finally, save and share your haunting composition with other brave players."
+                },
+                {
+                    "question": "Why would players choose to play Sprunki Ketchup 2 Mod?",
+                    "answer": "Players who enjoy a challenging and spooky music-making experience, and those who want to explore the intensified horror elements and share their creations with like-minded brave players would choose this mod."
                 }
             ],
             'conclusion': 'Sprunki Ketchup brings a tasty twist to music creation with its food-themed characters and sounds.'
@@ -182,6 +214,66 @@ def get_faqs_for_page(page_name):
                 {
                     'question': 'What are Lily\'s special features?',
                     'answer': 'Lily\'s mod includes nature-inspired sounds and visual elements, creating a peaceful and harmonious musical atmosphere.'
+                },
+                {
+                    "question": "Where can I find most of the Spurunki Lily features?",
+                    "answer": "Most features are in the settings menu, so you should go there."
+                },
+                {
+                    "question": "What are the transparent icons in the Spurunki Lily and how can I toggle them?",
+                    "answer": "The transparent icons are experimental icons. You can toggle them by pressing [\], or typing 'imsosprunki'."
+                },
+                {
+                    "question": "How can I change the flash speed in the Spurunki Lily game?",
+                    "answer": "You can change the flash speed by holding L and pressing the arrow keys."
+                },
+                {
+                    "question": "What happens when I re-focus the Spurunki Lily window?",
+                    "answer": "There is a 1 in 5 chance when you re-focus the window, the phase switches."
+                },
+                {
+                    "question": "How can I set a custom speed in the Spurunki Lily game?",
+                    "answer": "If you shift-click the speed button, you can set a custom speed!"
+                },
+                {
+                    "question": "How do I remove the characters on the stage of the Spurunki Lily game?",
+                    "answer": "Shift + Delete removes the characters up on the stage. Also, shift-click the switch button to remove the characters as well."
+                },
+                {
+                    "question": "How do I turn on advanced mode in the Spurunki Lily game?",
+                    "answer": "Shift-click the info button to turn on advanced mode."
+                },
+                {
+                    "question": "How can I add a new costume for the custom cursor in the Spurunki Lily game?",
+                    "answer": "Control-click the custom cursor button to add a new costume."
+                },
+                {
+                    "question": "How can I switch my custom cursor and rearrange the downloaded cursors in the Spurunki Lily game?",
+                    "answer": "Hold C and the arrow keys to switch your custom cursor. Shift-click to rearrange the downloaded cursors."
+                },
+                {
+                    "question": "What's the plan for the goreless characters in Phase 2 in the Spurunki Lily game?",
+                    "answer": "The goreless characters in Phase 2 are planned to have gore, or survive. That is the characters will receive that in any later update. (Don't take this the wrong way)"
+                },
+                {
+                    "question": "How up-to-date is the game description in the Spurunki Lily game?",
+                    "answer": "The description of this game is accordingly up to date of unreleased updates."
+                },
+                {
+                    "question": "How can I undo spawned character in the Spurunki Lily game?",
+                    "answer": "Shift-click the spawn character button to undo spawned character."
+                },
+                {
+                    "question": "What should I do when starting a polo to stack in the Spurunki Lily game?",
+                    "answer": "Press Control while starting a polo to stack."
+                },
+                {
+                    "question": "What are the names of the extra characters and in what order in the Spurunki Lily game?",
+                    "answer": "Extra Characters' Names in order: Turquoise (Tyla), Dark purple (Evi, Evelyn), Saturated orange (SmithTails), Rose (Ellie), Lilac (Lily), Cream/Butter (Smol, Butterscotch), Brownish gray (Estyne, grud), White (Baba), Dark purple (Elpruia), Light blurple (Elprud), Dark indigo (Echo), Cyan (Bubbles), Tan (Izuku Midoriya, Deku), Purple (Iridiana)"
+                },
+                {
+                    "question": "How do I open the file to play in the Spurunki Lily game?",
+                    "answer": "To open the file, use Turbowarp and load the file in the editor by pressing 'File', then 'Load from your computer'. Locate the file and load it. Then, play!"
                 }
             ],
             'conclusion': 'Lily brings a touch of natural beauty and harmony to the Sprunki universe.'
@@ -195,6 +287,22 @@ def get_faqs_for_page(page_name):
                 {
                     'question': 'How does Megalovania mod work?',
                     'answer': 'This mod allows players to create remixes and variations of the famous Megalovania theme using Sprunki\'s unique sound system.'
+                },
+                {
+                    "question": "What is special about Sprunki MEGALOVANIA Mod?",
+                    "answer": "Sprunki MEGALOVANIA Mod brings the iconic 'Megalovania' track into the Sprunki universe, transforming the standard Sprunki environment into a high-octane music lab where characters and loops pay homage to the track's signature intensity."
+                },
+                {   
+                    "question": "What are the key features of Sprunki MEGALOVANIA Mod?",
+                    "answer": "The key features include Megalovania-Themed Characters where each represents a sonic element like driving percussion, eerie synth lines, and rapid-fire motifs. It also has High-Energy Soundscapes that encourage experimenting with fast beats, bold melodies, and layered harmonies, and a Distinct Visual Flair with flashes of bold colors and references for a dynamic experience."
+                },
+                {
+                    "question": "How do you play Sprunki MEGALOVANIA Mod?",
+                    "answer": "To play, first select characters from a cast aligned with Megalovania's pacing and tonality. Then drag and drop them to form loops that echo the tune's famous patterns or create new variations. After that, refine your mix by adjusting volumes and effects to balance intensity with clarity. Finally, save and share your Megalovania-inspired masterpiece with the community."
+                },
+                {
+                    "question": "Why would players be interested in Sprunki MEGALOVANIA Mod?",
+                    "answer": "Players would be interested because it allows them to craft their own twists on the legendary 'Megalovania' theme, combining the excitement of the original composition with the creative freedom in the Sprunki universe, and share their unique creations with the community."
                 }
             ],
             'conclusion': 'Experience the legendary Megalovania in a whole new way with this unique Sprunki mod.'
@@ -202,16 +310,44 @@ def get_faqs_for_page(page_name):
         'parodybox': {
             'faqs': [
                 {
-                    'question': 'What is Sprunki Mod?',
-                    'answer': 'Sprunki Mod is a fan-made adaptation of the <strong>Incredibox game</strong>, featuring unique characters, sounds, and themes that enhance the music-mixing experience.'
+                    "question": "What is Parodybox Sprunki?",
+                    "answer": "Parodybox Sprunki is a creative music remix game where you can mix different character sounds and beats to create unique musical compositions. It has both Normal and Horror modes with distinctive characters and sounds."
                 },
                 {
-                    'question': 'What is Sprunki Game?',
-                    'answer': 'Sprunki Game is a modified version of <strong>Incredibox</strong>, allowing players to create custom music tracks using creative characters and unique soundscapes.'
+                    "question": "How do I play Parodybox Sprunki?",
+                    "answer": "Simply click on different characters to add their unique sounds to the mix. You can combine multiple characters to create your own musical masterpiece. Try both Normal and Horror modes for different experiences."
                 },
                 {
-                    'question': 'How do I download Sprunki Incredibox?',
-                    'answer': 'You can download Sprunki Incredibox from its <strong>official website</strong>, <strong>Google Play Store</strong>, <strong>Apple App Store</strong>, or as an APK for Android.'
+                    "question": "Is Parodybox Sprunki free to play?",
+                    "answer": "Yes! Parodybox Sprunki is completely free to play in your web browser. No downloads or installations are required."
+                },
+                {
+                    "question": "Can I create my own Sprunki mods?",
+                    "answer": "Yes! The community actively creates and shares custom mods. You can create your own characters, animations, and sounds to share with other players."
+                },
+                {
+                    "question": "What's the difference between Normal and Horror modes?",
+                    "answer": "Normal mode features cheerful melodies and upbeat characters, while Horror mode transforms the experience with darker themes, unique animations, and spooky sound effects."
+                },
+                {
+                    "question": "Who are the main characters in Sprunki?",
+                    "answer": "Popular characters include Clukr, Wenda, OWAKCX, Durple, and many others. Each character has their own unique sounds and animations in both Normal and Horror modes."
+                },
+                {
+                    "question": "How can I share my Parodybox creations?",
+                    "answer": "You can record your mixes and share them with the community through our platform or social media. Many players also create videos showcasing their creative remixes."
+                },
+                {
+                    "question": "What are the system requirements?",
+                    "answer": "Parodybox Sprunki runs in any modern web browser with audio support. Make sure your sound is enabled for the best experience."
+                },
+                {
+                    "question": "Can I play Parodybox Sprunki offline?",
+                    "answer": "Currently, Parodybox Sprunki requires an internet connection to play as it's a browser-based game. However, you can access it from any device with a web browser."
+                },
+                {
+                    "question": "How often are new mods released?",
+                    "answer": "The Parodybox Sprunki community regularly creates and shares new mods. Check our community section frequently to discover the latest fan-made content and updates."
                 }
             ],
             'conclusion': 'Join the Sprunki community and start creating your own unique music today!'
@@ -225,6 +361,26 @@ def get_faqs_for_page(page_name):
                 {
                     'question': 'What makes PyraMixed special?',
                     'answer': 'PyraMixed features Egyptian-inspired characters, desert soundscapes, and mystical themes that create an immersive musical journey.'
+                },
+                {
+                    "question": "What makes Sprunki Pyramixed Mod unique?",
+                    "answer": "Sprunki Pyramixed Mod introduces a twist to the Sprunki universe with characters and themes inspired by ancient pyramids and Egyptian culture, blending music-making gameplay with a mysterious and historical aesthetic for an immersive experience."
+                },
+                {
+                    "question": "How can I unlock the locked character in Sprunki Pyramixed Mod?",
+                    "answer": "Write a Pyramix in the below bar to unlock the Sprunki Pyramixed Character."
+                },
+                {
+                    "question": "What are the features of Sprunki Pyramixed Game?",
+                    "answer": "The features include Ancient-Themed Characters designed with pyramid-inspired outfits, symbols, and animations and having unique sound loops; Mystical Soundscapes inspired by ancient Egyptian music; Atmospheric Visuals with desert backdrops, pyramids, and golden tones; and Interactive Gameplay that encourages sound combination experimentation."
+                },
+                {
+                    "question": "How do you play Sprunki Pyramixed Mod?",
+                    "answer": "To play, first select characters from the pyramid-inspired roster with distinct sound loops and animations. Then drag and drop them on the stage to layer melodies, rhythms, and effects into cohesive compositions. After that, experiment and adjust by mixing loops creatively, exploring sound combinations, and adjusting volumes to create tracks with a mystical vibe. Finally, save and share your creations with the Sprunki community."
+                },
+                {
+                    "question": "Why is Sprunki Pyramixed Mod suitable for certain fans?",
+                    "answer": "It's suitable for fans seeking a blend of history and creativity in their music-making adventures as it allows them to uncover the mysteries of the pyramids through sound and imagination."
                 }
             ],
             'conclusion': 'Discover the mysteries of ancient Egypt through music with PyraMixed.'
@@ -236,8 +392,28 @@ def get_faqs_for_page(page_name):
                     'answer': 'Retake But Human is a unique mod that reimagines Sprunki characters with a more humanized approach.'
                 },
                 {
-                    'question': 'What makes this mod different?',
+                    'question': 'What makes this Retake But Human mod different?',
                     'answer': 'This mod offers a fresh perspective on familiar characters, with human-like characteristics while maintaining the core Sprunki experience.'
+                },
+                {
+                    "question": "What are the main features of the Sprunki But Human (ALL CHARACTERS) Mod?",
+                    "answer": "The main features include humanized characters, where each beloved Sprunki character is redesigned as a human with unique outfits, expressions, and styles inspired by their originals. It also has enhanced visuals, providing detailed and realistic elements while keeping core personalities intact. Additionally, there's a familiar soundscape with a twist, as the sounds stay true to the classic Sprunki vibes but blend with a touch of realism."
+                },
+                {
+                    "question": "How do you play the Sprunki But Human (ALL CHARACTERS) Mod?",
+                    "answer": "To play, first select characters from a variety of newly humanized ones, each bringing a unique musical sound. Then, drag and drop sounds to your chosen characters to create your own music mix. Finally, combine humanized characters and sounds to explore a realistic yet classic Sprunki experience."
+                },
+                {
+                    "question": "Why is the Sprunki But Human (ALL CHARACTERS) Mod appealing to players?",
+                    "answer": "This mod is appealing because it offers a new way for players to connect with the Sprunki characters they know and love. By reimagining the cast as human, it adds a creative twist, bringing depth and relatability to the iconic Incredibox style, making it engaging for both new and longtime fans."
+                },
+                {
+                    "question": "What kind of visual changes does the Sprunki But Human (ALL CHARACTERS) Mod bring?",
+                    "answer": "The mod brings enhanced visuals. It transforms all the quirky, animated Sprunki characters into lifelike human forms, adding a new visual dimension. The humanized characters have detailed designs with unique outfits, expressions, and styles that are inspired by their original forms."
+                },
+                {
+                    "question": "How does the soundscape in the Sprunki But Human (ALL CHARACTERS) Mod differ from the original?",
+                    "answer": "While the characters have taken on a human look, the sounds in the Sprunki But Human (ALL CHARACTERS) Mod stay true to the classic Sprunki vibes. It blends iconic beats with a touch of realism, maintaining familiarity while adding something new."
                 }
             ],
             'conclusion': 'Experience Sprunki characters in a whole new light with the Retake But Human mod.'
@@ -251,6 +427,22 @@ def get_faqs_for_page(page_name):
                 {
                     'question': 'What can I do on Sprunkr?',
                     'answer': 'On Sprunkr, you can play various Sprunki mods, create music, share your creations, and join a community of music enthusiasts.'
+                },
+                {
+                    "question": "What is Sprunkr But Sprunki Mod?",
+                    "answer": "Sprunkr But Sprunki Mod is a creative twist on the original Sprunkr mod. It replaces existing characters with Sprunki figures, retains Sprunkr's gameplay charm, and introduces Sprunki-inspired designs, bridging two popular worlds with vibrant visuals and dynamic soundscapes."
+                },
+                {
+                    "question": "What are the features of Sprunki But Sprunkr Game?",
+                    "answer": "The features include Sprunki Characters that replace the original Sprunkr ones, each with unique sound loops and animations; Dynamic Soundscapes with rhythmic beats and melodies of a distinct Sprunki flair; Bright Visuals enhanced by Sprunki-themed designs and animations; and Engaging Gameplay that combines Sprunkr's mechanics with Sprunki characters' creativity."
+                },
+                {
+                    "question": "How do you play Sprunkr But Sprunki Mod?",
+                    "answer": "To play, first select characters from the Sprunki-themed roster, each offering unique sounds and animations. Then drag and drop them on the stage to layer beats, melodies, and effects into cohesive compositions. After that, experiment and refine by mixing loops creatively and exploring new combinations. Finally, save and share your tracks with the Sprunki community."
+                },
+                {
+                    "question": "Why is Sprunkr But Sprunki Mod appealing?",
+                    "answer": "It's appealing because it's a delightful crossover that adds a refreshing twist to the original gameplay, allowing players to experience the best of both worlds."
                 }
             ],
             'conclusion': 'Join Sprunkr today and become part of our growing community of music creators!'
@@ -264,7 +456,23 @@ def get_faqs_for_page(page_name):
                 {
                     'question': 'What makes Spruted unique?',
                     'answer': 'Spruted features organic sound effects and growth-themed visuals, creating a natural and evolving musical experience.'
-                }
+                },
+                {
+                    "question": "What makes Sprunki Spruted Mod unique?",
+                    "answer": "Sprunki Spruted Mod transforms characters into slim, baby-like versions of themselves, introducing a playful twist to the Sprunki universe. It gives them a fresh, adorable appearance while retaining the original charm, along with updated visuals, lighthearted soundscapes, and a fun theme."
+                },
+                {
+                    "question": "What are the key features of Sprunki Spruted Mod?",
+                    "answer": "The key features include baby-like characters that are redesigned to be slim and youthful, adding a cute aesthetic; playful soundscapes with light, cheerful beats and melodies; vibrant visuals with bright and colorful animations complementing the character designs; and lighthearted gameplay that encourages creativity and is accessible to all ages."
+                },
+                {
+                    "question": "How do you play Sprunki Spruted Mod?",
+                    "answer": "To play, first select characters from the slim, baby-like lineup, each offering unique loops and effects. Then drag and drop them on the screen to layer playful beats, melodies, and rhythms into your track. After that, experiment and adjust by combining loops creatively, tweaking volumes, and exploring sound combinations. Finally, save and share your track with the Sprunki community."
+                },
+                {
+                    "question": "Why is Sprunki Spruted Mod suitable for fans of all ages?",
+                    "answer": "It's suitable because of its lighthearted gameplay that encourages creativity and fun, along with its cute and engaging design elements like the baby-like characters, playful soundscapes, and vibrant visuals."
+                }   
             ],
             'conclusion': 'Let your music grow and evolve with Sprunki Spruted!'
         }
@@ -273,37 +481,15 @@ def get_faqs_for_page(page_name):
 
 @app.route('/')
 def home():
-    try:
-        trans = get_translations(g.lang)
-        return render_template('index.html', 
+    translations_data = get_translations(g.lang)
+    faq_data = get_faqs_for_page('sprunkr')  # 使用sprunkr的FAQ数据作为主页FAQ
+    return render_template('index.html',
                          title='Sprunkr - Interactive Music Experience',
                          description='Create amazing music with Sprunkr! Mix beats, compose tunes, and share your musical creations.',
-                         translations=trans,
+                         translations=translations_data,
+                         dynamic_faqs=faq_data['faqs'],
+                         conclusion=faq_data['conclusion'],
                          current_lang=g.lang)
-    except Exception as e:
-        app.logger.error(f"Error in home route: {e}")
-        return render_template('index.html',
-                         title='Sprunkr - Interactive Music Creation Game',
-                         translations={
-                             "nav": {"home": "Home", "guide": "Game Guide", "faq": "FAQ", "play": "Play", "about": "About", "contact": "Contact"},
-                             "hero": {
-                                 "title_highlight": "Create Music",
-                                 "title_regular": "Like Never Before",
-                                 "description": "Transform your musical ideas into reality with Sprunkr. Mix beats, create melodies, and share your music with the world."
-                             },
-                             "game": {
-                                 "title": "Sprunkr",
-                                 "subtitle": "Sprunki Online Horror Music Game",
-                                 "description": "Unleash haunting melodies with our special glitch music system. Stack sounds, witness their digital distortion transformation. Embrace Horror Aesthetics."
-                             },
-                             "trending": {
-                                 "title": "Trending Games",
-                                 "sprunki_lily": "Sprunki - Lily",
-                                 "sprunki_megalovania": "Sprunki - Megalovania",
-                                 "sprunki_spruted": "Sprunki - Spruted"
-                             }
-                         },
-                         current_lang='en')
 
 @app.route('/about')
 def about():
