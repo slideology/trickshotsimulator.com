@@ -447,6 +447,47 @@ def get_faqs_for_page(page_name):
             ],
             'conclusion': 'Join Sprunkr today and become part of our growing community of music creators!'
         },
+        'index': {
+            'faqs': [
+                {
+    "question": "What is Sprunki Sprunkr Game?",
+    "answer": "Sprunki Sprunkr Game is a fan-made expansion of the popular Incredibox music-mixing game, introducing Sprunki Sprunkr mods, Sprunki Sprunkr phases, and unique gameplay elements. It offers endless opportunities to craft personal tracks and is a creative journey into rhythm and sound, playable for free."
+},
+{
+    "question": "What are the key features of Sprunki Sprunkr Game?",
+    "answer": "The key features include Sprunki Sprunkr Mods which are fan-made modifications with custom characters, beats, and animations; Sprunki Sprunkr Phases like themed expansions for enhanced gameplay; Interactive Gameplay with drag-and-drop controls for creating soundtracks; and Creative Freedom to combine sounds, experiment with visuals, and share creations with the community."
+},
+{
+    "question": "Who is the creator of the original Sprunki Sprunkr Mod and what's their background?",
+    "answer": "The creator is NyankoBfLol. They are 15 years old from Thailand, have been active on the Scratch platform for over 2 years, enjoy creating fun and imaginative content, and are currently focusing on the Sprunki Sprunkr mod. Their YouTube Channel is https://www.youtube.com/@nyankobflol8390 and they also have other profiles like Cocrea Profile and Scratch Profile."
+},
+{
+    "question": "How do you play Incredibox Sprunki Sprunkr Game?",
+    "answer": "To play, start the game by visiting platforms like sprunkr.online or spranki.art and hitting the play button. Then choose your characters from the Sprunki Sprunkr game crew, create your mix by dragging and dropping sound icons onto the characters, unlock special features by combining certain sounds, and finally save and share your mix with friends or the community."
+},
+{
+    "question": "What are some tips for success in playing Sprunki Sprunkr Incredibox Game?",
+    "answer": "Tips include experimenting with sound combinations, following the beat for a more harmonious track, exploring tutorials on YouTube, and engaging with the community by sharing mixes, joining contests, and collaborating with other players."
+},
+{
+    "question": "What are Sprunki Sprunkr Mods and their types?",
+    "answer": "Sprunki Sprunkr Mods are fan-made modifications of the original Incredibox Sprunki Sprunkr game, adding unique twists like new character designs, custom soundtracks, and thematic changes. Popular types include Original-Style Mods, Sprunki Sprunkr Horror, Thematic Mod, Crossover Sprunki Sprunkr Games, Sprunki Sprunkr Funny or Parody Mods, Advanced/Complex Mods, Gender-Based Mods, Reskin Mods, Sprunki Sprunkr Phase-Based Mods, Custom Sound Mods etc."
+},
+{
+    "question": "What are some of the top trending Sprunki Mods?",
+    "answer": "Some of the top trending Sprunki Mods are Sprunki Retake Mod, Sprunki Mustard Mod, Sprunki  Remastered, Sprunki Swapped Mod, Sprunki Parasite Mod."
+},
+{
+    "question": "What are the FAQs about Sprunki Sprunkr Incredibox?",
+    "answer": "FAQs cover aspects like what Sprunki Sprunkr Mod is (a fan-made adaptation of Incredibox with unique features), how to download Sprunki Sprunkr Incredibox (from official sites or as APK for Android), where to play Sprunki Sprunkr Mod online (on various platforms), what makes Sprunki Sprunkr Mods unique (creative twists etc.), what Sprunki Sprunkr Phases are (themed expansions), and more questions related to aspects like horror-themed mods, main characters, differences from Incredibox, collaboration possibilities, submitting fan games, and creating custom characters."
+},
+{
+    "question": "What's the conclusion about Sprunki Sprunkr Incredibox game?",
+    "answer": "Sprunki Sprunkr Incredibox game offers an immersive and creative musical experience where you can mix beats, experiment with sounds, and share creations with a thriving community. Sprunki Sprunkr and players can enjoy various versions and creations within the Sprunki Sprunkr world."
+} 
+    ],
+    'conclusion': "Sprunki Sprunkr Incredibox game offers an immersive and creative musical experience where you can mix beats, experiment with sounds, and share creations with a thriving community. Sprunki Sprunkr and players can enjoy various versions and creations within the Sprunki Sprunkr world."
+},
         'spruted': {
             'faqs': [
                 {
@@ -482,7 +523,7 @@ def get_faqs_for_page(page_name):
 @app.route('/')
 def home():
     translations_data = get_translations(g.lang)
-    faq_data = get_faqs_for_page('sprunkr')  # 使用sprunkr的FAQ数据作为主页FAQ
+    faq_data = get_faqs_for_page('index')  # 使用sprunkr的FAQ数据作为主页FAQ
     return render_template('index.html',
                          title='Sprunkr - Interactive Music Experience',
                          description='Create amazing music with Sprunkr! Mix beats, compose tunes, and share your musical creations.',
