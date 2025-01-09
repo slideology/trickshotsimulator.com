@@ -7,7 +7,7 @@
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6">
             {% if current_page != 'lily' %}
             <!-- Sprunki Lily Card -->
-            <a href="https://www.sprunkr.online/sprunki-lily" class="group relative rounded-lg overflow-hidden shadow-lg transition-transform duration-300 hover:transform hover:scale-105">
+            <a href="https://sprunkr.online/sprunki-lily" class="group relative rounded-lg overflow-hidden shadow-lg transition-transform duration-300 hover:transform hover:scale-105">
                 <div class="relative aspect-[4/3]">
                     <img src="{{ url_for('static', filename='images/games/sprunki-lily.png') }}" 
                          alt="Sprunki Lily"
@@ -25,7 +25,7 @@
 
             {% if current_page != 'megalovania' %}
             <!-- Sprunki Megalovania Card -->
-            <a href="https://www.sprunkr.online/sprunki-megalovania" class="group relative rounded-lg overflow-hidden shadow-lg transition-transform duration-300 hover:transform hover:scale-105">
+            <a href="https://sprunkr.online/sprunki-megalovania" class="group relative rounded-lg overflow-hidden shadow-lg transition-transform duration-300 hover:transform hover:scale-105">
                 <div class="relative aspect-[4/3]">
                     <img src="{{ url_for('static', filename='images/games/sprunki-megalovania.png') }}" 
                          alt="Sprunki Megalovania"
@@ -43,7 +43,7 @@
 
             {% if current_page != 'spruted' %}
             <!-- Sprunki Spruted Card -->
-            <a href="https://www.sprunkr.online/sprunki-spruted" class="group relative rounded-lg overflow-hidden shadow-lg transition-transform duration-300 hover:transform hover:scale-105">
+            <a href="https://sprunkr.online/sprunki-spruted" class="group relative rounded-lg overflow-hidden shadow-lg transition-transform duration-300 hover:transform hover:scale-105">
                 <div class="relative aspect-[4/3]">
                     <img src="{{ url_for('static', filename='images/sprunki-spruted.png') }}" 
                          alt="Sprunki Spruted"
@@ -61,7 +61,7 @@
 
             {% if current_page != 'sprunkr' %}
             <!-- Sprunki Sprunkr Card -->
-            <a href="https://www.sprunkr.online/" class="group relative rounded-lg overflow-hidden shadow-lg transition-transform duration-300 hover:transform hover:scale-105">
+            <a href="https://sprunkr.online/" class="group relative rounded-lg overflow-hidden shadow-lg transition-transform duration-300 hover:transform hover:scale-105">
                 <div class="relative aspect-[4/3]">
                     <img src="{{ url_for('static', filename='images/games/sprunki-sprunkr.png') }}" 
                          alt="Sprunki Sprunkr"
@@ -79,7 +79,7 @@
 
             {% if current_page != 'banana' %}
             <!-- Sprunki Banana Card -->
-            <a href="https://www.sprunkr.online/sprunki-banana" class="group relative rounded-lg overflow-hidden shadow-lg transition-transform duration-300 hover:transform hover:scale-105">
+            <a href="https://sprunkr.online/sprunki-banana" class="group relative rounded-lg overflow-hidden shadow-lg transition-transform duration-300 hover:transform hover:scale-105">
                 <div class="relative aspect-[4/3]">
                     <img src="{{ url_for('static', filename='images/games/sprunki-banana.png') }}" 
                          alt="Sprunki Banana"
@@ -97,7 +97,7 @@
 
             {% if current_page != 'ketchup' %}
             <!-- Sprunki Ketchup Card -->
-            <a href="https://www.sprunkr.online/sprunki-ketchup" class="group relative rounded-lg overflow-hidden shadow-lg transition-transform duration-300 hover:transform hover:scale-105">
+            <a href="https://sprunkr.online/sprunki-ketchup" class="group relative rounded-lg overflow-hidden shadow-lg transition-transform duration-300 hover:transform hover:scale-105">
                 <div class="relative aspect-[4/3]">
                     <img src="{{ url_for('static', filename='images/games/sprunki-ketchup.png') }}" 
                          alt="Sprunki Ketchup"
@@ -114,7 +114,7 @@
             {% endif %}
             {% if current_page != 'retake-but-human' %}
 <!-- Sprunki Retake But Human Card -->
-<a href="https://www.sprunkr.online/sprunki-retake-but-human" class="group relative rounded-lg overflow-hidden shadow-lg transition-transform duration-300 hover:transform hover:scale-105">
+<a href="https://sprunkr.online/sprunki-retake-but-human" class="group relative rounded-lg overflow-hidden shadow-lg transition-transform duration-300 hover:transform hover:scale-105">
     <div class="relative aspect-[4/3]">
         <img src="{{ url_for('static', filename='images/games/sprunki-retake-but-human.png') }}"
              alt="Sprunki Retake But Human"
@@ -131,7 +131,7 @@
 {% endif %}
 {% if current_page != 'parodybox' %}
 <!-- Sprunki Parodybox Card -->
-<a href="https://www.sprunkr.online/sprunki-parodybox" class="group relative rounded-lg overflow-hidden shadow-lg transition-transform duration-300 hover:transform hover:scale-105">
+<a href="https://sprunkr.online/sprunki-parodybox" class="group relative rounded-lg overflow-hidden shadow-lg transition-transform duration-300 hover:transform hover:scale-105">
     <div class="relative aspect-[4/3]">
         <img src="{{ url_for('static', filename='images/games/sprunki-parodybox.png') }}"
              alt="Sprunki Parodybox"
@@ -146,9 +146,26 @@
     </div>
 </a>
 {% endif %}
+{% if current_page != 'fiddlebops' %}
+<!-- Sprunki Fiddlebops Card -->
+<a href="https://sprunkr.online/sprunki-fiddlebops" class="group relative rounded-lg overflow-hidden shadow-lg transition-transform duration-300 hover:transform hover:scale-105">
+    <div class="relative aspect-[4/3]">
+        <img src="{{ url_for('static', filename='images/games/sprunki-fiddlebops.png') }}"
+             alt="Sprunki Fiddlebops"
+             loading="lazy" 
+             class="w-full h-full object-cover">
+        <div class="absolute inset-0 bg-gradient-to-t from-blue-500 via-cyan-500 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+        <div class="absolute bottom-0 left-0 right-0 p-4">
+            <h3 class="text-sm sm:text-base font-semibold text-gray-800 dark:text-gray-200 group-hover:text-white group-hover:drop-shadow-lg transition-colors duration-300">
+                {{ translations.get('trending', {}).get('sprunki_fiddlebops', 'Sprunki - Fiddlebops') }}
+            </h3>
+        </div>
+    </div>
+</a>
+{% endif %}
 {% if current_page != 'pyramixed' %}
 <!-- Sprunki Pyramixed Card -->
-<a href="https://www.sprunkr.online/sprunki-pyramixed" class="group relative rounded-lg overflow-hidden shadow-lg transition-transform duration-300 hover:transform hover:scale-105">
+<a href="https://sprunkr.online/sprunki-pyramixed" class="group relative rounded-lg overflow-hidden shadow-lg transition-transform duration-300 hover:transform hover:scale-105">
     <div class="relative aspect-[4/3]">
         <img src="{{ url_for('static', filename='images/games/sprunki-pyramixed.png') }}"
              alt="Sprunki Pyramixed"

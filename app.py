@@ -278,6 +278,31 @@ def get_faqs_for_page(page_name):
             ],
             'conclusion': 'Lily brings a touch of natural beauty and harmony to the Sprunki universe.'
         },
+        'fiddlebops': {
+            'faqs': [
+                {
+                    "question": "What is FiddleBops?",
+                    "answer": "FiddleBops is a fan-made project inspired by the Incredibox universe, hosted on PlayMiniGames. It's an interactive music creator that combines imaginative storytelling, unique characters, and dynamic gameplay for an exciting musical adventure."
+                },
+                {
+                    "question": "Why should one play the FiddleBops game?",
+                    "answer": "One should play it because of its unique characters with distinct personalities and sounds, fresh narratives beyond Incredibox lore, enhanced gameplay with storytelling elements, being free to play online without downloads, and having a vibrant community for engagement and collaboration."
+                },
+                {
+                    "question": "How is the gameplay of Sprunki FiddleBops?",
+                    "answer": "To play, first choose your characters from the lineup. Then use drag and drop to build your track and remove characters by dragging them down or double-clicking. You can enhance tracks by adjusting pitch, layering sounds, etc. Also, explore narratives as you hit milestones and save and share your tracks with the community."
+                },
+                {
+                    "question": "What are the key features of FiddleBops?",
+                    "answer": "The key features include original characters with unique sound profiles, an expanded sound library with a wide range of musical elements, interactive storytelling where musical choices affect narratives, the ability to remix and collaborate, and being community-friendly for sharing and participating in challenges."
+                },
+                {
+                    "question": "What are the benefits of playing FiddleBops?",
+                    "answer": "The benefits are boosting creativity in music-making, improving cognitive skills like memory and problem-solving, building connections with a community of music enthusiasts, having free accessibility to play online, and enjoying endless fun with limitless remix options."
+                }
+            ],
+            'conclusion': 'FiddleBops, a fan-made gem inspired by Incredibox! an interactive music creator. meet unique characters, and engage in dynamic gameplay.'
+        },
         'megalovania': {
             'faqs': [
                 {
@@ -767,6 +792,14 @@ def sprunki_lily():
     faq_data = get_faqs_for_page('lily')
     return render_template('sprunki-lily.html',
                          page_title='Sprunki Lily',
+                         dynamic_faqs=faq_data['faqs'],
+                         conclusion=faq_data['conclusion'],
+                         translations=get_translations())
+@app.route('/sprunki-fiddlebops')
+def sprunki_fiddlebops():
+    faq_data = get_faqs_for_page('fiddlebops')
+    return render_template('sprunki-fiddlebops.html',
+                         page_title='Sprunki Fiddlebops',
                          dynamic_faqs=faq_data['faqs'],
                          conclusion=faq_data['conclusion'],
                          translations=get_translations())
