@@ -22,7 +22,7 @@
     <meta property="og:title" content="{% block og_title %}Sprunkr : Sprunki Online Horror Music Game{% endblock %}">
     <meta property="og:description" content="{% block og_description %}Unleash haunting melodies with our special glitch music system. Stack sounds, witness their digital distortion transformation. Embrace Horror Aesthetics.{% endblock %}">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://sprunkr.vercel.app{{ request.path }}">
+    <meta property="og:url" content="https://sprunkr.online{{ request.path }}">
     <meta property="og:image" content="{% block og_image %}{{ url_for('static', filename='images/og-image.jpg', _external=True) }}{% endblock %}">
     <meta property="og:site_name" content="Sprunkr">
     
@@ -86,10 +86,10 @@
         "@type": "WebSite",
         "name": "Sprunkr",
         "description": "Unleash haunting melodies with our special glitch music system",
-        "url": "https://sprunkr.vercel.app",
+        "url": "https://sprunkr.online",
         "potentialAction": {
             "@type": "SearchAction",
-            "target": "https://sprunkr.vercel.app/search?q={search_term_string}",
+            "target": "https://sprunkr.online/search?q={search_term_string}",
             "query-input": "required name=search_term_string"
         }
     }
