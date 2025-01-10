@@ -32,6 +32,21 @@
         
         <div class="container relative mx-auto px-4">
             <div class="flex flex-wrap items-center">
+                <!-- 右侧游戏区域 -->
+                <div class="w-full lg:w-7/12 px-4 ml-auto mr-auto mt-12 lg:mt-0">
+                    <div class="relative">
+                        <!-- 装饰效果 - Minions主题黄色 -->
+                        <div class="absolute -top-4 -left-4 w-72 h-72 bg-gradient-to-r from-yellow-400 to-blue-400 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob"></div>
+                        <div class="absolute -bottom-4 -right-4 w-72 h-72 bg-gradient-to-r from-yellow-300 to-blue-500 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-2000"></div>
+                        
+                        <!-- 游戏区域 -->
+                        <div class="relative rounded-2xl overflow-hidden shadow-2xl border border-gray-200 dark:border-gray-700">
+                            <div class="w-full bg-gray-100 dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden" style="aspect-ratio: 16/9;">
+                                <iframe src="https://sprunki.org/sprunki-banana-edition-mod.embed" class="w-full h-full" frameborder="0" allowfullscreen></iframe>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <!-- 左侧文案区域 -->
                 <div class="w-full lg:w-5/12 px-4 ml-auto mr-auto text-center lg:text-left">
                     <div class="pr-12">
@@ -48,21 +63,7 @@
                     </div>
                 </div>
                 
-                <!-- 右侧游戏区域 -->
-                <div class="w-full lg:w-7/12 px-4 ml-auto mr-auto mt-12 lg:mt-0">
-                    <div class="relative">
-                        <!-- 装饰效果 - Minions主题黄色 -->
-                        <div class="absolute -top-4 -left-4 w-72 h-72 bg-gradient-to-r from-yellow-400 to-blue-400 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob"></div>
-                        <div class="absolute -bottom-4 -right-4 w-72 h-72 bg-gradient-to-r from-yellow-300 to-blue-500 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-2000"></div>
-                        
-                        <!-- 游戏区域 -->
-                        <div class="relative rounded-2xl overflow-hidden shadow-2xl border border-gray-200 dark:border-gray-700">
-                            <div class="w-full bg-gray-100 dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden" style="aspect-ratio: 16/9;">
-                                <iframe src="https://sprunki.org/sprunki-banana-edition-mod.embed" class="w-full h-full" frameborder="0" allowfullscreen></iframe>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                
             </div>
         </div>
     </div>
@@ -92,12 +93,14 @@
     <script async="async" data-cfasync="false" src="//pl25386595.profitablecpmrate.com/f978f53d3a3690a179256f47ca12dd04/invoke.js"></script>
     <div id="container-f978f53d3a3690a179256f47ca12dd04"></div>
 </div>
+<!-- Trending Games Section -->
+{% with current_page='banana' %}
+{% include 'components/trending_games.html' %}
+{% endwith %}
+
 <!-- FAQ Section -->
 {% include 'components/faq_section.html' %}
-<!-- Trending Games Section -->
-    {% with current_page='banana' %}
-    {% include 'components/trending_games.html' %}
-    {% endwith %}
+
     
    
 </div>
