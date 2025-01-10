@@ -26,28 +26,12 @@
 {% block content %}
 <div class="relative overflow-hidden">
     <!-- Hero Section -->
-    <div class="relative pt-16 pb-32 flex content-center items-center justify-center" style="min-height: 60vh;">
+    <div class="relative pt-16 pb-32 flex content-center items-center justify-center" style="min-height: 50vh;">
         <!-- 背景渐变 - 血腥红色主题 -->
         <div class="absolute top-0 w-full h-full bg-gradient-to-br from-red-900 via-red-700 to-red-500 opacity-10"></div>
         
         <div class="container relative mx-auto px-4">
             <div class="flex flex-wrap items-center">
-                <!-- 左侧文案区域 -->
-                <div class="w-full lg:w-5/12 px-4 ml-auto mr-auto text-center lg:text-left">
-                    <div class="pr-12">
-                        <h1 class="text-5xl md:text-6xl font-bold leading-tight mb-6">
-                            <span class="bg-gradient-to-r from-red-800 via-red-600 to-red-400 bg-clip-text text-transparent">
-                                Sprunki Ketchup
-                            </span>
-                            <br>
-                            <span class="text-gray-800 dark:text-white">Horror Mod</span>
-                        </h1>
-                        <p class="mt-4 text-lg text-gray-600 dark:text-gray-300">
-                            Sprunki Ketchup Horror Mod: A Thrilling Twist on the Sprunki Universe. With a bold red theme, it reimagines characters and gameplay, adding spooky elements for an unforgettable gaming experience in 2025.
-                        </p>
-                    </div>
-                </div>
-                
                 <!-- 右侧游戏区域 -->
                 <div class="w-full lg:w-7/12 px-4 ml-auto mr-auto mt-12 lg:mt-0">
                     <div class="relative">
@@ -61,6 +45,21 @@
                                 <iframe src="https://wowtbc.net/sprunkin/katchup/index.html" class="w-full h-full" frameborder="0" allowfullscreen></iframe>
                             </div>
                         </div>
+                    </div>
+                </div>
+                <!-- 左侧文案区域 -->
+                <div class="w-full lg:w-5/12 px-4 ml-auto mr-auto text-center lg:text-left">
+                    <div class="pr-12">
+                        <h1 class="text-5xl md:text-6xl font-bold leading-tight mb-6">
+                            <span class="bg-gradient-to-r from-red-800 via-red-600 to-red-400 bg-clip-text text-transparent">
+                                Sprunki Ketchup
+                            </span>
+                            <br>
+                            <span class="text-gray-800 dark:text-white">Horror Mod</span>
+                        </h1>
+                        <p class="mt-4 text-lg text-gray-600 dark:text-gray-300">
+                            Sprunki Ketchup Horror Mod: A Thrilling Twist on the Sprunki Universe. With a bold red theme, it reimagines characters and gameplay, adding spooky elements for an unforgettable gaming experience in 2025.
+                        </p>
                     </div>
                 </div>
             </div>
@@ -92,13 +91,14 @@
     <script async="async" data-cfasync="false" src="//pl25386595.profitablecpmrate.com/f978f53d3a3690a179256f47ca12dd04/invoke.js"></script>
     <div id="container-f978f53d3a3690a179256f47ca12dd04"></div>
 </div>
+<!-- Trending Games Section -->
+{% with current_page='ketchup' %}
+{% include 'components/trending_games.html' %}
+{% endwith %}
 <!-- FAQ Section -->
 {% include 'components/faq_section.html' %}
-    <!-- Trending Games Section -->
-    {% with current_page='ketchup' %}
-    {% include 'components/trending_games.html' %}
-    {% endwith %}
+
     
-    
+   
 </div>
 {% endblock %}
