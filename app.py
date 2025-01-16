@@ -677,115 +677,9 @@ def sitemap():
 def robots():
     return send_from_directory('static', 'robots.txt')
 
-@app.route('/blog')
-def blog():
-    try:
-        trans = get_translations(g.lang)
-        return render_template('blog.html',
-                         title='Blog - Sprunkr',
-                         translations=trans,
-                         current_lang=g.lang)
-    except Exception as e:
-        app.logger.error(f"Error in blog route: {e}")
-        return render_template('blog.html',
-                         title='Blog - Sprunkr',
-                         translations={
-                             "nav": {"home": "Home", "faq": "FAQ"},
-                             "hero": {
-                                 "title_highlight": "Create Music",
-                                 "title_regular": "Like Never Before",
-                                 "description": "Transform your musical ideas into reality with Sprunkr. Mix beats, create melodies, and share your music with the world."
-                             }
-                         },
-                         current_lang='en')
-
-@app.route('/community')
-def community():
-    try:
-        trans = get_translations(g.lang)
-        return render_template('community.html',
-                         title='Community - Sprunkr',
-                         translations=trans,
-                         current_lang=g.lang)
-    except Exception as e:
-        app.logger.error(f"Error in community route: {e}")
-        return render_template('community.html',
-                         title='Community - Sprunkr',
-                         translations={
-                             "nav": {"home": "Home", "faq": "FAQ"},
-                             "hero": {
-                                 "title_highlight": "Create Music",
-                                 "title_regular": "Like Never Before",
-                                 "description": "Transform your musical ideas into reality with Sprunkr. Mix beats, create melodies, and share your music with the world."
-                             }
-                         },
-                         current_lang='en')
-
-@app.route('/leaderboard')
-def leaderboard():
-    try:
-        trans = get_translations(g.lang)
-        return render_template('leaderboard.html',
-                         title='Leaderboard - Sprunkr',
-                         translations=trans,
-                         current_lang=g.lang)
-    except Exception as e:
-        app.logger.error(f"Error in leaderboard route: {e}")
-        return render_template('leaderboard.html',
-                         title='Leaderboard - Sprunkr',
-                         translations={
-                             "nav": {"home": "Home", "faq": "FAQ"},
-                             "hero": {
-                                 "title_highlight": "Create Music",
-                                 "title_regular": "Like Never Before",
-                                 "description": "Transform your musical ideas into reality with Sprunkr. Mix beats, create melodies, and share your music with the world."
-                             }
-                         },
-                         current_lang='en')
-
-@app.route('/events')
-def events():
-    try:
-        trans = get_translations(g.lang)
-        return render_template('events.html',
-                         title='Events - Sprunkr',
-                         translations=trans,
-                         current_lang=g.lang)
-    except Exception as e:
-        app.logger.error(f"Error in events route: {e}")
-        return render_template('events.html',
-                         title='Events - Sprunkr',
-                         translations={
-                             "nav": {"home": "Home", "faq": "FAQ"},
-                             "hero": {
-                                 "title_highlight": "Create Music",
-                                 "title_regular": "Like Never Before",
-                                 "description": "Transform your musical ideas into reality with Sprunkr. Mix beats, create melodies, and share your music with the world."
-                             }
-                         },
-                         current_lang='en')
-
-@app.route('/feedback')
-def feedback():
-    try:
-        trans = get_translations(g.lang)
-        return render_template('feedback.html',
-                         title='Feedback - Sprunkr',
-                         translations=trans,
-                         current_lang=g.lang)
-    except Exception as e:
-        app.logger.error(f"Error in feedback route: {e}")
-        return render_template('feedback.html',
-                         title='Feedback - Sprunkr',
-                         translations={
-                             "nav": {"home": "Home", "faq": "FAQ"},
-                             "hero": {
-                                 "title_highlight": "Create Music",
-                                 "title_regular": "Like Never Before",
-                                 "description": "Transform your musical ideas into reality with Sprunkr. Mix beats, create melodies, and share your music with the world."
-                             }
-                         },
-                         current_lang='en')
+@app.route('/ads.txt')
+def ads_txt():
+    return send_from_directory('static', 'ads.txt')
 
 @app.route('/sprunki-lily')
 def sprunki_lily():
@@ -795,6 +689,7 @@ def sprunki_lily():
                          dynamic_faqs=faq_data['faqs'],
                          conclusion=faq_data['conclusion'],
                          translations=get_translations())
+
 @app.route('/sprunki-fiddlebops')
 def sprunki_fiddlebops():
     faq_data = get_faqs_for_page('fiddlebops')
@@ -812,10 +707,6 @@ def sprunki_megalovania():
                          dynamic_faqs=faq_data['faqs'],
                          conclusion=faq_data['conclusion'],
                          translations=get_translations())
-
-@app.route('/ads.txt')
-def ads_txt():
-    return send_from_directory('static', 'ads.txt')
 
 @app.route('/sprunki-sprunkr')
 def sprunki_sprunkr():
