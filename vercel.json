@@ -16,6 +16,26 @@
     ],
     "routes": [
         {
+            "src": "/(.*)",
+            "status": 301,
+            "headers": { 
+                "Location": "https://sprunkr.online/$1"
+            },
+            "conditions": { 
+                "protocol": "http" 
+            }
+        },
+        {
+            "src": "/(.*)",
+            "status": 301,
+            "headers": { 
+                "Location": "https://sprunkr.online/$1"
+            },
+            "conditions": { 
+                "host": "www.sprunkr.online" 
+            }
+        },
+        {
             "src": "/static/(.*)",
             "dest": "/static/$1"
         },
@@ -32,11 +52,6 @@
             "dest": "wsgi.py"
         }
     ],
-    "git": {
-        "deploymentEnabled": {
-            "main": true
-        }
-    },
     "env": {
         "PYTHONPATH": "."
     }
