@@ -17,22 +17,29 @@
     "routes": [
         {
             "src": "/(.*)",
+            "has": [
+                {
+                    "type": "header",
+                    "key": "x-forwarded-proto",
+                    "value": "http"
+                }
+            ],
             "status": 301,
             "headers": { 
                 "Location": "https://sprunkr.online/$1"
-            },
-            "conditions": { 
-                "protocol": "http" 
             }
         },
         {
             "src": "/(.*)",
+            "has": [
+                {
+                    "type": "host",
+                    "value": "www.sprunkr.online"
+                }
+            ],
             "status": 301,
             "headers": { 
                 "Location": "https://sprunkr.online/$1"
-            },
-            "conditions": { 
-                "host": "www.sprunkr.online" 
             }
         },
         {
