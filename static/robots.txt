@@ -13,6 +13,8 @@ Allow: /sprunki-ketchup
 Allow: /sprunki-retake-but-human
 Allow: /sprunki-parodybox
 Allow: /sprunki-pyramixed
+Allow: /sprunki-sprunksters
+Allow: /sprunki-agents
 
 # 禁止访问的目录
 Disallow: /api/

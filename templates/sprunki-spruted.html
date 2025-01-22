@@ -6,12 +6,13 @@
 <meta name="description" content="Sprunki Spruted, a sprunki-themed mod, is an online fan-made alteration of Incredibox Sprunki rhythm game, enjoy it on sprunkr online">
 {% endblock %}
 
-{% block meta_keywords %}
-<meta name="keywords" content="Sprunki Spruted,Sprunki mod,online rhythm game,Incredibox Sprunki,fan-made game,music creation,Sprunkr">
-{% endblock %}
-
 {% block og_title %}Play Sprunki Spruted Mod on Sprunkr Online{% endblock %}
 {% block og_description %}Sprunki Spruted, a sprunki-themed mod, is an online fan-made alteration of Incredibox Sprunki rhythm game, enjoy it on sprunkr online{% endblock %}
+
+{% block favicon %}
+<link rel="icon" type="image/png" href="{{ url_for('static', filename='images/favicon/spruted-favicon.png') }}">
+<link rel="apple-touch-icon" sizes="180x180" href="{{ url_for('static', filename='images/favicon/spruted-apple-touch-icon.png') }}">
+{% endblock %}
 
 {% block content %}
 <div class="relative overflow-hidden">
@@ -33,7 +34,7 @@
                         <div class="relative rounded-2xl overflow-hidden shadow-2xl border border-gray-200 dark:border-gray-700">
                             <div class="w-full bg-gray-100 dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden">
                                 <iframe 
-                                    src="https://www.cocrea.world/@Dupyshome/Spruted"
+                                    src="https://wowtbc.net/sprunkin/sprunki-spruted1/index.html"
                                     class="w-full border-0 aspect-[4/3] md:aspect-[16/10] lg:aspect-[16/9]"
                                     style="min-height: 300px; max-height: 624px; height: calc(100vw * 0.5625);"
                                     scrolling="no"

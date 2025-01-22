@@ -12,6 +12,10 @@
 {% block og_description %}Incredibox Sprunki Megalovania is a  music-making game which enables gamers to form special rhythms with strange characters and diverse sound components.{% endblock %}
 </head>
 {% block content %}
+{% block favicon %}
+<link rel="icon" type="image/png" href="{{ url_for('static', filename='images/favicon/megalovania-favicon.png') }}">
+<link rel="apple-touch-icon" sizes="180x180" href="{{ url_for('static', filename='images/favicon/megalovania-apple-touch-icon.png') }}">
+{% endblock %}
 <div class="relative overflow-hidden">
     <!-- Hero Section -->
     <div class="relative pt-16 pb-32 flex content-center items-center justify-center" style="min-height: 50vh;">

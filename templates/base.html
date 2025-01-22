@@ -11,10 +11,6 @@
     <meta name="description" content="Incredibox Sprunki Sprunkr - Unleash haunting melodies with our special glitch music system. Stack sounds, witness their digital distortion transformation. Embrace Horror Aesthetics.">
     {% endblock %}
     
-    {% block meta_keywords %}
-    <meta name="keywords" content="Sprunkr,Unleash haunting melodies with our special glitch music system. Stack sounds, witness their digital distortion transformation. Embrace Horror Aesthetics.">
-    {% endblock %}
-    
     <meta name="author" content="Sprunkr">
     <meta name="robots" content="index, follow">
     
@@ -37,7 +33,8 @@
     
     <!-- Favicon -->
     {% block favicon %}
-    <link rel="icon" type="image/png" href="{{ url_for('static', filename='favicon.ico') }}">
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='images/favicon/favicon.png') }}">
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ url_for('static', filename='images/favicon/apple-touch-icon.png') }}">
     {% endblock %}
     
     <!-- Alpine.js -->
