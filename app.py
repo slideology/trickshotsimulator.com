@@ -12,11 +12,11 @@ load_dotenv()
 app = Flask(__name__)
 app.secret_key = os.getenv('SECRET_KEY', 'sprunkr-secret-key-2023')
 
-# Set up logging
-app.logger.setLevel(logging.DEBUG)  # Change to DEBUG level
-handler = logging.StreamHandler()
-handler.setLevel(logging.DEBUG)
-app.logger.addHandler(handler)
+# 导入日志配置
+from config.logging_config import setup_logging
+
+# 设置日志系统
+setup_logging(app)
 
 # Language settings
 SUPPORTED_LANGUAGES = ['en', 'es']
@@ -443,6 +443,35 @@ def get_faqs_for_page(page_name):
             ],
             'conclusion': 'Experience Sprunki characters in a whole new light with the Retake But Human mod.'
         },
+        'sprunksters': {
+            'faqs': [
+                {
+                    "question": "What is Sprunki Sprunksters?",
+                    "answer": "Sprunki Sprunksters is a platform that revolutionizes music creation. It combines advanced sound engineering with intuitive gameplay, offering a rewarding experience for musicians of all levels. It has a carefully designed interface and an extensive sound library to foster creativity."
+                },
+                {
+                    "question": "What makes Sprunki Sprunksters special?",
+                    "answer": "It has an extensive sound library, unique characters, a user - friendly mixing interface, a vibrant community, and a thoughtful design that provides an accessible entry point while maintaining depth for advanced exploration."
+                },
+                {
+                    "question": "How do you play Sprunki Sprunksters?",
+                    "answer": "First, discover your voice by exploring the diverse characters for unique sonic elements. Then, craft your mix by blending sound elements. Next, experiment with combinations to find unique harmonies. Refine your work to capture your artistic vision, and finally, showcase your creation in the community."
+                },
+                {
+                    "question": "What are the essential tips for playing Sprunki Sprunksters?",
+                    "answer": "Start simple, experiment freely, draw inspiration from other creators, and appreciate the journey of musical expression."
+                },
+                {
+                    "question": "What can players do in the Sprunki Sprunksters community?",
+                    "answer": "Players can collaborate with others, share their musical creations, participate in community events, and engage with fellow artists to enrich their experience and strengthen the community."
+                },
+                {
+                    "question": "What are the latest updates and news for Sprunki Sprunksters?",
+                    "answer": "There are regular content updates like new characters, sound collections, and time - limited challenges. The team also innovates with new features and engaging community activities."
+                }
+            ],
+            'conclusion': 'Sprunki Sprunksters captivates players with its blend of innovation and accessibility. It has an enthusiastic community and welcomes all forms of musical creativity from beginners to experts.'
+        },
         'sprunkr': {
             'faqs': [
                 {
@@ -749,6 +778,15 @@ def sprunki_ketchup():
     faq_data = get_faqs_for_page('ketchup')
     return render_template('sprunki-ketchup.html',
                          page_title='Sprunki Ketchup',
+                         dynamic_faqs=faq_data['faqs'],
+                         conclusion=faq_data['conclusion'],
+                         translations=get_translations())
+
+@app.route('/sprunki-sprunksters')
+def sprunki_sprunksters():
+    faq_data = get_faqs_for_page('sprunksters')
+    return render_template('sprunki-sprunksters.html',
+                         page_title='Sprunki Sprunksters',
                          dynamic_faqs=faq_data['faqs'],
                          conclusion=faq_data['conclusion'],
                          translations=get_translations())
