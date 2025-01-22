@@ -1,22 +1,22 @@
 {% extends "base.html" %}
 
-{% block title %}Sprunki Sprunksters New Oc Mod Play On Sprunkr.Online{% endblock %}
+{% block title %}Sprunki Agents New Oc Mod Play On Sprunkr.Online{% endblock %}
 
 {% block meta_description %}
-<meta name="description" content="Sprunki Sprunksters, Created by Bismeowth, Incredibox New Mods, A hand-drawn melancholic platformer packed with action! ">
+<meta name="description" content="Sprunki Agents, Created by AZKA gaming YT, Incredibox New Mods, Gives the Sprunki world an epic spy - themed makeover! ">
 {% endblock %}
 
-{% block og_title %}Sprunki Sprunksters New Oc Mod Play On Sprunkr.Online{% endblock %}
-{% block og_description %}Sprunki Sprunksters, Created by Bismeowth, Incredibox New Mods, A hand-drawn melancholic platformer packed with action!{% endblock %}
-{% block og_image %}https://www.sprunkr.online/static/images/games/sprunki-sprunksters-preview.png{% endblock %}
+{% block og_title %}Sprunki Agents New Oc Mod Play On Sprunkr.Online{% endblock %}
+{% block og_description %}Sprunki Agents, Created by AZKA gaming YT, Incredibox New Mods, Gives the Sprunki world an epic spy - themed makeover! {% endblock %}
+{% block og_image %}https://www.sprunkr.online/static/images/games/sprunki-agents-preview.png{% endblock %}
 
 {% block head %}
-<meta name="description" content="Sprunki Sprunksters, Created by Bismeowth, Incredibox New Mods, A hand-drawn melancholic platformer packed with action!">
+<meta name="description" content="Sprunki Agents, Created by AZKA gaming YT, Incredibox New Mods, Gives the Sprunki world an epic spy - themed makeover! ">
 {% endblock %}
 
 {% block favicon %}
-<link rel="icon" type="image/png" href="{{ url_for('static', filename='images/games/sprunki-sprunksters-favicon.png') }}">
-<link rel="apple-touch-icon" sizes="180x180" href="{{ url_for('static', filename='images/games/sprunki-sprunksters-favicon.png') }}">
+<link rel="icon" type="image/png" href="{{ url_for('static', filename='images/games/sprunki-agents-favicon.png') }}">
+<link rel="apple-touch-icon" sizes="180x180" href="{{ url_for('static', filename='images/games/sprunki-agents-favicon.png') }}">
 {% endblock %}
 
 {% block content %}
@@ -38,7 +38,7 @@
                         <!-- 游戏区域 -->
                         <div class="relative rounded-2xl overflow-hidden shadow-2xl border border-gray-200 dark:border-gray-700">
                             <div class="w-full bg-gray-100 dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden" style="aspect-ratio: 16/9;">
-                                <iframe src="https://html-classic.itch.zone/html/12541837/index.html" class="w-full h-full" frameborder="0" allowfullscreen></iframe>
+                                <iframe src="https://wowtbc.net/sprunkin/agent-sprunkis/index.html" class="w-full h-full" frameborder="0" allowfullscreen></iframe>
                             </div>
                         </div>
                     </div>
@@ -48,13 +48,13 @@
                     <div class="pr-12">
                         <h1 class="text-5xl md:text-6xl font-bold leading-tight mb-6">
                             <span class="bg-gradient-to-r from-teal-500 via-cyan-500 to-blue-500 bg-clip-text text-transparent">
-                                Sprunki Sprunksters New Oc Mod
+                                Sprunki Agents New Oc Mod
                             </span>
                             <br>
-                            <span class="text-gray-800 dark:text-white">Sprunki Sprunksters</span>
+                            <span class="text-gray-800 dark:text-white">Sprunki Agents</span>
                         </h1>
                         <p class="mt-4 text-lg text-gray-600 dark:text-gray-300">
-                            Sprunki Sprunksters, Created by by Bismeowth, Incredibox New Mods, A hand-drawn melancholic platformer packed with action! 
+                            Sprunki Agents, Created by AZKA gaming YT, Incredibox New Mods, Gives the Sprunki world an epic spy - themed makeover! 
                         </p>
                     </div>
                 </div>
@@ -70,7 +70,7 @@
     </div>
 
     <!-- Trending Games Section -->
-    {% with current_page='sprunksters' %}
+    {% with current_page='agents' %}
     {% include 'components/trending_games.html' %}
     {% endwith %}
 

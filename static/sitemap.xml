@@ -86,7 +86,19 @@
     </url>
     <url>
         <loc>https://sprunkr.online/sprunki-fiddlebops</loc>
-        <lastmod>2025-01-09</lastmod>
+        <lastmod>2025-01-22</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+    <url>
+        <loc>https://sprunkr.online/sprunki-agents</loc>
+        <lastmod>2025-01-22</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+    <url>
+        <loc>https://sprunkr.online/sprunki-sprunksters</loc>
+        <lastmod>2025-01-22</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
     </url>

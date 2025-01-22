@@ -472,6 +472,27 @@ def get_faqs_for_page(page_name):
             ],
             'conclusion': 'Sprunki Sprunksters captivates players with its blend of innovation and accessibility. It has an enthusiastic community and welcomes all forms of musical creativity from beginners to experts.'
         },
+        'agents': {
+            'faqs': [
+                {
+                    "question": "What is Sprunkis Agent Mod?",
+                    "answer": "Sprunkis Agent Mod brings a spy - inspired twist to the Sprunki universe. It transforms characters into secret agents with sleek designs, mysterious personas, and action - packed soundscapes, immersing players in an espionage - themed world for the music - making experience."
+                },
+                {
+                    "question": "What are the features of Sprunki Agent Game?",
+                    "answer": "The features include agent - themed characters reimagined as secret agents with unique sound loops, stealthy soundscapes with tense rhythms and suspenseful melodies, dynamic visuals creating an immersive spy atmosphere, and exciting gameplay due to the combination of stealth - themed elements."
+                },
+                {
+                    "question": "How do you play Sprunkis Agent Mod?",
+                    "answer": "First, select characters from the agent - themed lineup. Then, use the drag - and - drop method to arrange them on the screen to layer spy - inspired sounds. Next, experiment and adjust by mixing loops, tweaking volumes, and exploring combinations. Finally, save your track and share it with the Sprunki community."
+                },
+                {
+                    "question": "Who is Sprunkis Agent Mod suitable for?",
+                    "answer": "Sprunkis Agent Mod is suitable for players who love thrilling and adventurous themes, as it offers a fresh and exciting way to create music in an espionage - themed setting."
+                }
+            ],
+            'conclusion': 'Sprunki Agent Gives the Sprunki world an epic spy - themed makeover! Characters turn into super cool secret agents. They got sleek looks, mysterious personalities, and the sound is so exciting, it will get your heart pounding!'
+        },
         'sprunkr': {
             'faqs': [
                 {
@@ -787,6 +808,14 @@ def sprunki_sprunksters():
     faq_data = get_faqs_for_page('sprunksters')
     return render_template('sprunki-sprunksters.html',
                          page_title='Sprunki Sprunksters',
+                         dynamic_faqs=faq_data['faqs'],
+                         conclusion=faq_data['conclusion'],
+                         translations=get_translations())
+@app.route('/sprunki-agents')
+def sprunki_agents():
+    faq_data = get_faqs_for_page('agents')
+    return render_template('sprunki-agents.html',
+                         page_title='Sprunki Agents',
                          dynamic_faqs=faq_data['faqs'],
                          conclusion=faq_data['conclusion'],
                          translations=get_translations())
