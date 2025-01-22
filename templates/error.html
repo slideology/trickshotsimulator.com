@@ -1,20 +1,51 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Error - AI Chat</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
-</head>
-<body>
-    <div class="error-container">
-        <div class="error-box">
-            <h1>Oops!</h1>
-            <p>{{ error }}</p>
-            <a href="{{ url_for('home') }}" class="back-button">
-                <i class="fas fa-arrow-left"></i> Back to Home
+{% extends "base.html" %}
+
+{% block title %}{{ error_code }} - {{ error_message }} | Sprunkr{% endblock %}
+
+{% block head %}
+<meta name="description" content="{{ error_message }} - Sprunkr">
+{% endblock %}
+
+{% block content %}
+<div class="min-h-screen flex items-center justify-center bg-gray-100 dark:bg-gray-800 py-12 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-md w-full space-y-8 text-center">
+        <!-- 错误图标 -->
+        <div class="mx-auto w-24 h-24 rounded-full bg-red-100 dark:bg-red-900 flex items-center justify-center">
+            <svg class="w-12 h-12 text-red-600 dark:text-red-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                {% if error_code == 404 %}
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                {% else %}
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path>
+                {% endif %}
+            </svg>
+        </div>
+
+        <!-- 错误信息 -->
+        <div>
+            <h2 class="mt-6 text-5xl font-extrabold text-gray-900 dark:text-white">
+                {{ error_code }}
+            </h2>
+            <p class="mt-2 text-xl text-gray-600 dark:text-gray-300">
+                {{ error_message }}
+            </p>
+            <p class="mt-2 text-sm text-gray-500 dark:text-gray-400">
+                {% if error_code == 404 %}
+                抱歉，您请求的页面不存在。
+                {% else %}
+                抱歉，服务器出现了一些问题。我们正在努力修复。
+                {% endif %}
+            </p>
+        </div>
+
+        <!-- 返回按钮 -->
+        <div class="mt-8">
+            <a href="{{ url_for('home') }}" class="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-gradient-to-r from-red-600 to-red-800 hover:from-red-700 hover:to-red-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500 transition-colors duration-200">
+                <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
+                </svg>
+                返回首页
             </a>
         </div>
     </div>
-</body>
-</html>
+</div>
+{% endblock %}
