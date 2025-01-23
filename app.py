@@ -18,102 +18,25 @@ from config.logging_config import setup_logging
 # 设置日志系统
 setup_logging(app)
 
-# Language settings
-SUPPORTED_LANGUAGES = ['en', 'es']
-DEFAULT_LANGUAGE = 'en'
-
-@app.before_request
-def before_request():
-    # Get language from URL parameter, cookie, or browser settings
-    lang = request.args.get('lang')
-    if lang not in SUPPORTED_LANGUAGES:
-        lang = request.cookies.get('lang')
-    if lang not in SUPPORTED_LANGUAGES:
-        lang = request.accept_languages.best_match(SUPPORTED_LANGUAGES, default=DEFAULT_LANGUAGE)
-    g.lang = lang
-
-# Language route
-@app.route('/set-language')
-def set_language():
-    lang = request.args.get('lang')
-    if lang in SUPPORTED_LANGUAGES:
-        response = redirect(request.referrer or url_for('home'))
-        response.set_cookie('lang', lang, max_age=60*60*24*365)
-        return response
-    return redirect(request.referrer or url_for('home'))
-
-def load_translations():
-    translations_path = os.path.join(app.static_folder, 'data', 'translations.json')
+def get_translations():
+    """Get translations dictionary."""
     try:
+        translations_path = os.path.join(app.static_folder, 'data', 'translations.json')
         with open(translations_path, 'r', encoding='utf-8') as f:
-            return json.load(f)
+            translations = json.load(f)
+            return translations.get('en', {})
     except Exception as e:
-        app.logger.error(f"Error loading translations: {e}")
+        app.logger.error(f"Error getting translations: {e}")
         return {
-            "en": {
-                "nav": {"home": "Home", "faq": "FAQ"},
-                "hero": {
-                    "title_highlight": "Create Music",
-                    "title_regular": "Like Never Before",
-                    "description": "Transform your musical ideas into reality with Sprunkr. Mix beats, create melodies, and share your music with the world."
-                }
-            }
-        }
-
-# Load translations
-try:
-    translations = load_translations()
-except Exception as e:
-    app.logger.error(f"Error loading initial translations: {e}")
-    translations = {
-        "en": {
-            "nav": {"home": "Home", "guide": "Game Guide", "faq": "FAQ", "play": "Play", "about": "About", "contact": "Contact"},
-            "hero": {
-                "title_highlight": "Create Music",
-                "title_regular": "Like Never Before",
-                "description": "Transform your musical ideas into reality with Sprunkr. Mix beats, create melodies, and share your music with the world."
+            'nav': {
+                'home': 'Home',
+                'guide': 'Game Guide',
+                'faq': 'FAQ',
+                'play': 'Play',
+                'about': 'About',
+                'contact': 'Contact',
+                'games': 'Games'
             },
-            "game": {
-                "title": "Sprunkr",
-                "subtitle": "Sprunki Online Horror Music Game",
-                "description": "Unleash haunting melodies with our special glitch music system. Stack sounds, witness their digital distortion transformation. Embrace Horror Aesthetics."
-            },
-            "trending": {
-                "title": "Trending Games",
-                "sprunki_lily": "Sprunki - Lily",
-                "sprunki_megalovania": "Sprunki - Megalovania",
-                "sprunki_spruted": "Sprunki - Spruted"
-            }
-        }
-    }
-
-def get_translations(lang='en'):
-    try:
-        if lang not in translations:
-            return translations.get('en', {
-                "nav": {"home": "Home", "guide": "Game Guide", "faq": "FAQ", "play": "Play", "about": "About", "contact": "Contact"},
-                "hero": {
-                    "title_highlight": "Create Music",
-                    "title_regular": "Like Never Before",
-                    "description": "Transform your musical ideas into reality with Sprunkr. Mix beats, create melodies, and share your music with the world."
-                },
-                "game": {
-                    "title": "Sprunkr",
-                    "subtitle": "Sprunki Online Horror Music Game",
-                    "description": "Unleash haunting melodies with our special glitch music system. Stack sounds, witness their digital distortion transformation. Embrace Horror Aesthetics."
-                },
-                "trending": {
-                    "title": "Trending Games",
-                    "sprunki_lily": "Sprunki - Lily",
-                    "sprunki_megalovania": "Sprunki - Megalovania",
-                    "sprunki_spruted": "Sprunki - Spruted"
-                }
-            })
-        return translations[lang]
-    except Exception as e:
-        app.logger.error(f"Error getting translations for {lang}: {e}")
-        return {
-            "nav": {"home": "Home", "guide": "Game Guide", "faq": "FAQ", "play": "Play", "about": "About", "contact": "Contact"},
             "hero": {
                 "title_highlight": "Create Music",
                 "title_regular": "Like Never Before",
@@ -597,24 +520,22 @@ def get_faqs_for_page(page_name):
 
 @app.route('/')
 def home():
-    translations_data = get_translations(g.lang)
+    translations_data = get_translations()
     faq_data = get_faqs_for_page('index')  # 使用sprunkr的FAQ数据作为主页FAQ
     return render_template('index.html',
                          title='Sprunkr - Interactive Music Experience',
                          description='Create amazing music with Sprunkr! Mix beats, compose tunes, and share your musical creations.',
                          translations=translations_data,
                          dynamic_faqs=faq_data['faqs'],
-                         conclusion=faq_data['conclusion'],
-                         current_lang=g.lang)
+                         conclusion=faq_data['conclusion'])
 
 @app.route('/about')
 def about():
     try:
-        trans = get_translations(g.lang)
+        trans = get_translations()
         return render_template('about.html', 
                          title='About Sprunkr',
-                         translations=trans,
-                         current_lang=g.lang)
+                         translations=trans)
     except Exception as e:
         app.logger.error(f"Error in about route: {e}")
         return render_template('about.html',
@@ -626,17 +547,15 @@ def about():
                                  "title_regular": "Like Never Before",
                                  "description": "Transform your musical ideas into reality with Sprunkr. Mix beats, create melodies, and share your music with the world."
                              }
-                         },
-                         current_lang='en')
+                         })
 
 @app.route('/game')
 def game():
     try:
-        trans = get_translations(g.lang)
+        trans = get_translations()
         return render_template('game.html',
                          title='Play Sprunkr',
-                         translations=trans,
-                         current_lang=g.lang)
+                         translations=trans)
     except Exception as e:
         app.logger.error(f"Error in game route: {e}")
         return render_template('game.html',
@@ -648,17 +567,15 @@ def game():
                                  "title_regular": "Like Never Before",
                                  "description": "Transform your musical ideas into reality with Sprunkr. Mix beats, create melodies, and share your music with the world."
                              }
-                         },
-                         current_lang='en')
+                         })
 
 @app.route('/introduction')
 def introduction():
     try:
-        trans = get_translations(g.lang)
+        trans = get_translations()
         return render_template('introduction.html',
                          title='Game Guide - Sprunkr',
-                         translations=trans,
-                         current_lang=g.lang)
+                         translations=trans)
     except Exception as e:
         app.logger.error(f"Error in introduction route: {e}")
         return render_template('introduction.html',
@@ -670,19 +587,17 @@ def introduction():
                                  "title_regular": "Like Never Before",
                                  "description": "Transform your musical ideas into reality with Sprunkr. Mix beats, create melodies, and share your music with the world."
                              }
-                         },
-                         current_lang='en')
+                         })
 
 @app.route('/contact', methods=['GET', 'POST'])
 def contact():
     try:
-        trans = get_translations(g.lang)
+        trans = get_translations()
         if request.method == 'POST':
             return send_message()
         return render_template('contact.html',
                          title='Contact Sprunkr',
-                         translations=trans,
-                         current_lang=g.lang)
+                         translations=trans)
     except Exception as e:
         app.logger.error(f"Error in contact route: {e}")
         return render_template('contact.html',
@@ -694,17 +609,15 @@ def contact():
                                  "title_regular": "Like Never Before",
                                  "description": "Transform your musical ideas into reality with Sprunkr. Mix beats, create melodies, and share your music with the world."
                              }
-                         },
-                         current_lang='en')
+                         })
 
 @app.route('/faq')
 def faq():
     try:
-        trans = get_translations(g.lang)
+        trans = get_translations()
         return render_template('faq.html',
                          title='FAQ - Sprunkr',
-                         translations=trans,
-                         current_lang=g.lang)
+                         translations=trans)
     except Exception as e:
         app.logger.error(f"Error in faq route: {e}")
         return render_template('faq.html',
@@ -716,8 +629,7 @@ def faq():
                                  "title_regular": "Like Never Before",
                                  "description": "Transform your musical ideas into reality with Sprunkr. Mix beats, create melodies, and share your music with the world."
                              }
-                         },
-                         current_lang='en')
+                         })
 
 @app.route('/sitemap.xml')
 def sitemap():
@@ -850,7 +762,7 @@ def sprunki_pyramixed():
 @app.route('/privacy-policy')
 def privacy_policy():
     try:
-        translations_data = get_translations(g.lang)
+        translations_data = get_translations()
         return render_template('privacy-policy.html', translations=translations_data)
     except Exception as e:
         app.logger.error(f"Error in privacy policy route: {e}")
@@ -859,7 +771,7 @@ def privacy_policy():
 @app.route('/terms-of-service')
 def terms_of_service():
     try:
-        translations_data = get_translations(g.lang)
+        translations_data = get_translations()
         return render_template('terms-of-service.html', translations=translations_data)
     except Exception as e:
         app.logger.error(f"Error in terms of service route: {e}")
