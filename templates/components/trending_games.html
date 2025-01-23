@@ -5,12 +5,11 @@
             {{ translations.get('trending', {}).get('title', 'Trending Games') }}
         </h2>
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6">
-            {% if current_page != 'lily' %}
             <!-- Sprunki Lily Card -->
             <a href="https://sprunkr.online/sprunki-lily" class="group relative rounded-lg overflow-hidden shadow-lg transition-transform duration-300 hover:transform hover:scale-105">
                 <div class="relative aspect-[4/3]">
                     <img src="{{ url_for('static', filename='images/games/sprunki-lily.png') }}" 
-                         alt="Sprunki Lily"
+                         alt="Sprunki Lily img"
                          loading="lazy" 
                          class="w-full h-full object-cover">
                     <div class="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-700/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
@@ -21,14 +20,86 @@
                     </div>
                 </div>
             </a>
-            {% endif %}
-
-            {% if current_page != 'megalovania' %}
+            <!-- Sprunki Retake But Human Card -->
+            <a href="https://sprunkr.online/sprunki-retake-but-human" class="group relative rounded-lg overflow-hidden shadow-lg transition-transform duration-300 hover:transform hover:scale-105">
+                <div class="relative aspect-[4/3]">
+                    <img src="{{ url_for('static', filename='images/games/sprunki-retake-but-human.png') }}"
+                        alt="Sprunki Retake But Human img"
+                        loading="lazy" 
+                        class="w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-gradient-to-t from-blue-500 via-cyan-500 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    <div class="absolute bottom-0 left-0 right-0 p-4">
+                    <p class="text-sm sm:text-base font-semibold text-gray-800 dark:text-gray-200 group-hover:text-white group-hover:drop-shadow-lg transition-colors duration-300">
+                        {{ translations.get('trending', {}).get('sprunki_retake_but_human', 'Sprunki - Retake But Human') }}
+                    </p>
+                    </div>
+                    </div>
+            </a>
+            <!-- Sprunki Pyramixed Card -->
+<a href="https://sprunkr.online/sprunki-pyramixed" class="group relative rounded-lg overflow-hidden shadow-lg transition-transform duration-300 hover:transform hover:scale-105">
+    <div class="relative aspect-[4/3]">
+        <img src="{{ url_for('static', filename='images/games/sprunki-pyramixed.png') }}"
+             alt="Sprunki Pyramixed img"
+             loading="lazy" 
+             class="w-full h-full object-cover">
+        <div class="absolute inset-0 bg-gradient-to-t from-blue-500 via-cyan-500 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+        <div class="absolute bottom-0 left-0 right-0 p-4">
+            <p class="text-sm sm:text-base font-semibold text-gray-800 dark:text-gray-200 group-hover:text-white group-hover:drop-shadow-lg transition-colors duration-300">
+                {{ translations.get('trending', {}).get('sprunki_pyramixed', 'Sprunki - Pyramixed') }}
+            </p>
+        </div>
+    </div>
+</a>
+  <!-- Sprunki Spruted Card -->
+  <a href="https://sprunkr.online/sprunki-spruted" class="group relative rounded-lg overflow-hidden shadow-lg transition-transform duration-300 hover:transform hover:scale-105">
+    <div class="relative aspect-[4/3]">
+        <img src="{{ url_for('static', filename='images/games/sprunki-spruted.png') }}" 
+             alt="Sprunki Spruted img"
+             loading="lazy" 
+             class="w-full h-full object-cover">
+        <div class="absolute inset-0 bg-gradient-to-t from-green-500 via-emerald-500 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+        <div class="absolute bottom-0 left-0 right-0 p-4">
+            <p class="text-sm sm:text-base font-semibold text-gray-800 dark:text-gray-200 group-hover:text-white group-hover:drop-shadow-lg transition-colors duration-300">
+                {{ translations.get('trending', {}).get('sprunki_spruted', 'Sprunki - Spruted') }}
+            </p>
+        </div>
+    </div>
+</a>
+   <!-- Sprunki Ketchup Card -->
+   <a href="https://sprunkr.online/sprunki-ketchup" class="group relative rounded-lg overflow-hidden shadow-lg transition-transform duration-300 hover:transform hover:scale-105">
+    <div class="relative aspect-[4/3]">
+        <img src="{{ url_for('static', filename='images/games/sprunki-ketchup.png') }}" 
+             alt="Sprunki Ketchup img"
+             loading="lazy" 
+             class="w-full h-full object-cover">
+        <div class="absolute inset-0 bg-gradient-to-t from-red-900 via-red-700 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+        <div class="absolute bottom-0 left-0 right-0 p-4">
+            <p class="text-sm sm:text-base font-semibold text-gray-800 dark:text-gray-200 group-hover:text-white group-hover:drop-shadow-lg transition-colors duration-300">
+                {{ translations.get('trending', {}).get('sprunki_ketchup', 'Sprunki - Ketchup') }}
+            </p>
+        </div>
+    </div>
+</a>
+  <!-- Sprunki Banana Card -->
+  <a href="https://sprunkr.online/sprunki-banana" class="group relative rounded-lg overflow-hidden shadow-lg transition-transform duration-300 hover:transform hover:scale-105">
+    <div class="relative aspect-[4/3]">
+        <img src="{{ url_for('static', filename='images/games/sprunki-banana.png') }}" 
+             alt="Sprunki Banana img"
+             loading="lazy" 
+             class="w-full h-full object-cover">
+        <div class="absolute inset-0 bg-gradient-to-t from-yellow-500 via-yellow-400 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+        <div class="absolute bottom-0 left-0 right-0 p-4">
+            <p class="text-sm sm:text-base font-semibold text-gray-800 dark:text-gray-200 group-hover:text-white group-hover:drop-shadow-lg transition-colors duration-300">
+                {{ translations.get('trending', {}).get('sprunki_banana', 'Sprunki - Banana') }}
+            </p>
+        </div>
+    </div>
+</a>
             <!-- Sprunki Megalovania Card -->
             <a href="https://sprunkr.online/sprunki-megalovania" class="group relative rounded-lg overflow-hidden shadow-lg transition-transform duration-300 hover:transform hover:scale-105">
                 <div class="relative aspect-[4/3]">
                     <img src="{{ url_for('static', filename='images/games/sprunki-megalovania.png') }}" 
-                         alt="Sprunki Megalovania"
+                         alt="Sprunki Megalovania img"
                          loading="lazy" 
                          class="w-full h-full object-cover">
                     <div class="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-700/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
@@ -39,32 +110,12 @@
                     </div>
                 </div>
             </a>
-            {% endif %}
-
-            {% if current_page != 'spruted' %}
-            <!-- Sprunki Spruted Card -->
-            <a href="https://sprunkr.online/sprunki-spruted" class="group relative rounded-lg overflow-hidden shadow-lg transition-transform duration-300 hover:transform hover:scale-105">
-                <div class="relative aspect-[4/3]">
-                    <img src="{{ url_for('static', filename='images/games/sprunki-spruted.png') }}" 
-                         alt="Sprunki Spruted"
-                         loading="lazy" 
-                         class="w-full h-full object-cover">
-                    <div class="absolute inset-0 bg-gradient-to-t from-green-500 via-emerald-500 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                    <div class="absolute bottom-0 left-0 right-0 p-4">
-                        <p class="text-sm sm:text-base font-semibold text-gray-800 dark:text-gray-200 group-hover:text-white group-hover:drop-shadow-lg transition-colors duration-300">
-                            {{ translations.get('trending', {}).get('sprunki_spruted', 'Sprunki - Spruted') }}
-                        </p>
-                    </div>
-                </div>
-            </a>
-            {% endif %}
-
-            {% if current_page != 'sprunkr' %}
+          
             <!-- Sprunki Sprunkr Card -->
             <a href="https://sprunkr.online/" class="group relative rounded-lg overflow-hidden shadow-lg transition-transform duration-300 hover:transform hover:scale-105">
                 <div class="relative aspect-[4/3]">
                     <img src="{{ url_for('static', filename='images/games/sprunki-sprunkr.png') }}" 
-                         alt="Sprunki Sprunkr"
+                         alt="Sprunki Sprunkr img"
                          loading="lazy" 
                          class="w-full h-full object-cover">
                     <div class="absolute inset-0 bg-gradient-to-t from-red-600 via-red-500 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
@@ -75,61 +126,9 @@
                     </div>
                 </div>
             </a>
-            {% endif %}
+          
+         
 
-            {% if current_page != 'banana' %}
-            <!-- Sprunki Banana Card -->
-            <a href="https://sprunkr.online/sprunki-banana" class="group relative rounded-lg overflow-hidden shadow-lg transition-transform duration-300 hover:transform hover:scale-105">
-                <div class="relative aspect-[4/3]">
-                    <img src="{{ url_for('static', filename='images/games/sprunki-banana.png') }}" 
-                         alt="Sprunki Banana"
-                         loading="lazy" 
-                         class="w-full h-full object-cover">
-                    <div class="absolute inset-0 bg-gradient-to-t from-yellow-500 via-yellow-400 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                    <div class="absolute bottom-0 left-0 right-0 p-4">
-                        <p class="text-sm sm:text-base font-semibold text-gray-800 dark:text-gray-200 group-hover:text-white group-hover:drop-shadow-lg transition-colors duration-300">
-                            {{ translations.get('trending', {}).get('sprunki_banana', 'Sprunki - Banana') }}
-                        </p>
-                    </div>
-                </div>
-            </a>
-            {% endif %}
-
-            {% if current_page != 'ketchup' %}
-            <!-- Sprunki Ketchup Card -->
-            <a href="https://sprunkr.online/sprunki-ketchup" class="group relative rounded-lg overflow-hidden shadow-lg transition-transform duration-300 hover:transform hover:scale-105">
-                <div class="relative aspect-[4/3]">
-                    <img src="{{ url_for('static', filename='images/games/sprunki-ketchup.png') }}" 
-                         alt="Sprunki Ketchup"
-                         loading="lazy" 
-                         class="w-full h-full object-cover">
-                    <div class="absolute inset-0 bg-gradient-to-t from-red-900 via-red-700 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                    <div class="absolute bottom-0 left-0 right-0 p-4">
-                        <p class="text-sm sm:text-base font-semibold text-gray-800 dark:text-gray-200 group-hover:text-white group-hover:drop-shadow-lg transition-colors duration-300">
-                            {{ translations.get('trending', {}).get('sprunki_ketchup', 'Sprunki - Ketchup') }}
-                        </p>
-                    </div>
-                </div>
-            </a>
-            {% endif %}
-            {% if current_page != 'retake-but-human' %}
-<!-- Sprunki Retake But Human Card -->
-<a href="https://sprunkr.online/sprunki-retake-but-human" class="group relative rounded-lg overflow-hidden shadow-lg transition-transform duration-300 hover:transform hover:scale-105">
-    <div class="relative aspect-[4/3]">
-        <img src="{{ url_for('static', filename='images/games/sprunki-retake-but-human.png') }}"
-             alt="Sprunki Retake But Human"
-             loading="lazy" 
-             class="w-full h-full object-cover">
-        <div class="absolute inset-0 bg-gradient-to-t from-blue-500 via-cyan-500 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-        <div class="absolute bottom-0 left-0 right-0 p-4">
-            <p class="text-sm sm:text-base font-semibold text-gray-800 dark:text-gray-200 group-hover:text-white group-hover:drop-shadow-lg transition-colors duration-300">
-                {{ translations.get('trending', {}).get('sprunki_retake_but_human', 'Sprunki - Retake But Human') }}
-            </p>
-        </div>
-    </div>
-</a>
-{% endif %}
-{% if current_page != 'parodybox' %}
 <!-- Sprunki Parodybox Card -->
 <a href="https://sprunkr.online/sprunki-parodybox" class="group relative rounded-lg overflow-hidden shadow-lg transition-transform duration-300 hover:transform hover:scale-105">
     <div class="relative aspect-[4/3]">
@@ -145,13 +144,11 @@
         </div>
     </div>
 </a>
-{% endif %}
-{% if current_page != 'fiddlebops' %}
 <!-- Sprunki Fiddlebops Card -->
 <a href="https://sprunkr.online/sprunki-fiddlebops" class="group relative rounded-lg overflow-hidden shadow-lg transition-transform duration-300 hover:transform hover:scale-105">
     <div class="relative aspect-[4/3]">
         <img src="{{ url_for('static', filename='images/games/sprunki-fiddlebops.png') }}"
-             alt="Sprunki Fiddlebops"
+             alt="Sprunki Fiddlebops img"
              loading="lazy" 
              class="w-full h-full object-cover">
         <div class="absolute inset-0 bg-gradient-to-t from-blue-500 via-cyan-500 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
@@ -162,24 +159,7 @@
         </div>
     </div>
 </a>
-{% endif %}
-{% if current_page != 'pyramixed' %}
-<!-- Sprunki Pyramixed Card -->
-<a href="https://sprunkr.online/sprunki-pyramixed" class="group relative rounded-lg overflow-hidden shadow-lg transition-transform duration-300 hover:transform hover:scale-105">
-    <div class="relative aspect-[4/3]">
-        <img src="{{ url_for('static', filename='images/games/sprunki-pyramixed.png') }}"
-             alt="Sprunki Pyramixed"
-             loading="lazy" 
-             class="w-full h-full object-cover">
-        <div class="absolute inset-0 bg-gradient-to-t from-blue-500 via-cyan-500 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-        <div class="absolute bottom-0 left-0 right-0 p-4">
-            <p class="text-sm sm:text-base font-semibold text-gray-800 dark:text-gray-200 group-hover:text-white group-hover:drop-shadow-lg transition-colors duration-300">
-                {{ translations.get('trending', {}).get('sprunki_pyramixed', 'Sprunki - Pyramixed') }}
-            </p>
-        </div>
-    </div>
-</a>
-{% endif %}
+
         </div>
     </div>
 </div>
