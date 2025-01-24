@@ -35,6 +35,36 @@
                     </div>
                     </div>
             </a>
+            <!-- Sprunki Agent Card -->
+            <a href="https://sprunkr.online/sprunki-agents" class="group relative rounded-lg overflow-hidden shadow-lg transition-transform duration-300 hover:transform hover:scale-105">
+                <div class="relative aspect-[4/3]">
+                    <img src="{{ url_for('static', filename='images/games/sprunki-agents.png') }}" 
+                         alt="Sprunki Agent img"
+                         loading="lazy" 
+                         class="w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-700/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    <div class="absolute bottom-0 left-0 right-0 p-4">
+                        <p class="text-sm sm:text-base font-semibold text-gray-800 dark:text-gray-200 group-hover:text-white group-hover:drop-shadow-lg transition-colors duration-300">
+                            {{ translations.get('trending', {}).get('sprunki_agents', 'Sprunki - Agent') }}
+                        </p>
+                    </div>
+                </div>
+            </a>
+            <!-- Sprunki Sprunksters Card -->
+            <a href="https://sprunkr.online/sprunki-sprunksters" class="group relative rounded-lg overflow-hidden shadow-lg transition-transform duration-300 hover:transform hover:scale-105">
+                <div class="relative aspect-[4/3]">
+                    <img src="{{ url_for('static', filename='images/games/sprunki-sprunksters.png') }}" 
+                         alt="Sprunki Sprunksters img"
+                         loading="lazy" 
+                         class="w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-700/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    <div class="absolute bottom-0 left-0 right-0 p-4">
+                        <p class="text-sm sm:text-base font-semibold text-gray-800 dark:text-gray-200 group-hover:text-white group-hover:drop-shadow-lg transition-colors duration-300">
+                            {{ translations.get('trending', {}).get('sprunki_sprunksters', 'Sprunki - Sprunksters') }}
+                        </p>
+                    </div>
+                </div>
+            </a>
             <!-- Sprunki Pyramixed Card -->
 <a href="https://sprunkr.online/sprunki-pyramixed" class="group relative rounded-lg overflow-hidden shadow-lg transition-transform duration-300 hover:transform hover:scale-105">
     <div class="relative aspect-[4/3]">
