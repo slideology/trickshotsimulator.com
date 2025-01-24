@@ -523,6 +523,7 @@ def home():
     translations_data = get_translations()
     faq_data = get_faqs_for_page('index')  # 使用sprunkr的FAQ数据作为主页FAQ
     return render_template('index.html',
+                         page_title='Sprunki Sprunkr',
                          title='Sprunkr - Interactive Music Experience',
                          description='Create amazing music with Sprunkr! Mix beats, compose tunes, and share your musical creations.',
                          translations=translations_data,
