@@ -5,6 +5,21 @@
             Trending games like {{ page_title }}
         </h2>
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6">
+            <!-- Sprunki Phase 1 Card -->
+            <a href="https://sprunki-phase-1.com/" class="group relative rounded-lg overflow-hidden shadow-lg transition-transform duration-300 hover:transform hover:scale-105">
+                <div class="relative aspect-[4/3]">
+                    <img src="{{ url_for('static', filename='images/games/sprunki-phase-1.png') }}" 
+                         alt="Sprunki Phase 1 img"
+                         loading="lazy" 
+                         class="w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-700/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    <div class="absolute bottom-0 left-0 right-0 p-4">
+                        <p class="text-sm sm:text-base font-semibold text-gray-800 dark:text-gray-200 group-hover:text-white group-hover:drop-shadow-lg transition-colors duration-300">
+                            {{ translations.get('trending', {}).get('sprunki_phase_1', 'Sprunki - Phase 1') }}
+                        </p>
+                    </div>
+                </div>
+            </a>
             <!-- Sprunki Lily Card -->
             <a href="https://sprunkr.online/sprunki-lily" class="group relative rounded-lg overflow-hidden shadow-lg transition-transform duration-300 hover:transform hover:scale-105">
                 <div class="relative aspect-[4/3]">
