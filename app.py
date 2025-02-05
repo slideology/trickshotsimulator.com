@@ -416,6 +416,27 @@ def get_faqs_for_page(page_name):
             ],
             'conclusion': 'Sprunki Agent Gives the Sprunki world an epic spy - themed makeover! Characters turn into super cool secret agents. They got sleek looks, mysterious personalities, and the sound is so exciting, it will get your heart pounding!'
         },
+        'banana-porridge': {
+            'faqs': [
+                {
+                    "question": "What is the Sprunki Banana Porridge Mod?",
+                    "answer": "The Sprunki Banana Porridge Mod is a fun and flavorful addition to the Sprunki universe. It combines smooth beats with banana - infused visuals, offering a light - hearted and wacky musical experience."
+                },
+                {
+                    "question": "What are the features of the Sprunki Banana Porridge Mod?",
+                    "answer": "Features include banana - themed Sprunki characters with yellow - tinted designs and breakfast - inspired animations, smooth & creamy soundscapes blending warm melodies with funky percussion, playful and vibrant visuals filled with bananas, and wacky sound effects like banana peel slips and slurping porridge sounds."
+                },
+                {
+                    "question": "How do you play the Sprunki Banana Porridge Mod?",
+                    "answer": "First, select banana - infused characters from the porridge - loving Sprunki lineup. Then, create tasty tunes by dragging and dropping characters onto the stage to mix sweet melodies with banana rhythms. Next, experiment with different banana - themed character interactions to unlock hidden musical surprises. Finally, save and share your tracks with the Sprunki community."
+                },
+                {
+                    "question": "Why should one play the Sprunki Banana Porridge Mod?",
+                    "answer": "One should play it for a light - hearted, fun experience, as it's silly and creative. It's also great for fans of quirky music mods who love playful themes and goofy visuals. Additionally, it offers a deliciously unique sound with its smooth, bouncy beats that bring a fresh twist to Sprunki gameplay."
+}
+            ],
+            'conclusion': 'Sprunki Banana Porridge Mod: Groovy food beats! Wacky banana visuals & smooth rhythms. Taste the fun!'
+        },
         'sprunkr': {
             'faqs': [
                 {
@@ -732,7 +753,14 @@ def sprunki_agents():
                          dynamic_faqs=faq_data['faqs'],
                          conclusion=faq_data['conclusion'],
                          translations=get_translations())
-
+@app.route('/sprunki-banana-porridge')
+def sprunki_banana_porridge():
+    faq_data = get_faqs_for_page('banana-porridge')
+    return render_template('sprunki-banana-porridge.html',
+                         page_title='Sprunki Banana Porridge',
+                         dynamic_faqs=faq_data['faqs'],
+                         conclusion=faq_data['conclusion'],
+                         translations=get_translations())
 @app.route('/sprunki-retake-but-human')
 def sprunki_retake_but_human():
     faq_data = get_faqs_for_page('retake-but-human')

@@ -15,6 +15,7 @@ Allow: /sprunki-parodybox
 Allow: /sprunki-pyramixed
 Allow: /sprunki-sprunksters
 Allow: /sprunki-agents
+Allow: /sprunki-banana-porridge
 
 # 禁止访问的目录
 Disallow: /api/
