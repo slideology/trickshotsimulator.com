@@ -8,23 +8,23 @@
     <!-- Plausible Analytics -->
     <script defer data-domain="trickshotsimulator.com" src="https://plausible.io/js/script.js"></script>
     
-    <title>{% block title %}Sprunkr : Sprunki Online Horror Music Game{% endblock %}</title>
+    <title>{% block title %}Trick Shot Simulator: Raora & Gura clash! Stunt chaos unleashed!{% endblock %}</title>
     
     <!-- SEO Meta Tags -->
     {% block meta_description %}
-    <meta name="description" content="Incredibox Sprunki Sprunkr - Unleash haunting melodies with our special glitch music system. Stack sounds, witness their digital distortion transformation. Embrace Horror Aesthetics.">
+    <meta name="description" content="Trick Shot Simulator: Raora & Gura clash in BigFish x Beeg Cat chaos! Real stunts & BTS madness. Watch now!">
     {% endblock %}
     
-    <meta name="author" content="Sprunkr">
+    <meta name="author" content="trickshotsimulator">
     <meta name="robots" content="index, follow">
     
     <!-- Open Graph Meta Tags -->
-    <meta property="og:title" content="{% block og_title %}Sprunkr : Sprunki Online Horror Music Game{% endblock %}">
-    <meta property="og:description" content="{% block og_description %}Unleash haunting melodies with our special glitch music system. Stack sounds, witness their digital distortion transformation. Embrace Horror Aesthetics.{% endblock %}">
+    <meta property="og:title" content="{% block og_title %}Trick Shot Simulator: Raora & Gura clash! Stunt chaos unleashed!{% endblock %}">
+    <meta property="og:description" content="{% block og_description %}Trick Shot Simulator: Raora & Gura clash in BigFish x Beeg Cat chaos! Real stunts & BTS madness. Watch now!{% endblock %}">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://sprunkr.online{{ request.path }}">
+    <meta property="og:url" content="https://trickshotsimulator.com{{ request.path }}">
     <meta property="og:image" content="{% block og_image %}{{ url_for('static', filename='images/og-image.jpg', _external=True) }}{% endblock %}">
-    <meta property="og:site_name" content="Sprunkr">
+    <meta property="og:site_name" content="trickshotsimulator">
     
     <!-- Twitter Card Meta Tags -->
     <meta name="twitter:card" content="summary_large_image">
@@ -33,7 +33,7 @@
     <meta name="twitter:image" content="{{ self.og_image() }}">
     
     <!-- Canonical URL -->
-    <link rel="canonical" href="https://sprunkr.online{{ request.path }}">
+    <link rel="canonical" href="https://trickshotsimulator.com{{ request.path }}">
     
     <!-- Favicon -->
     {% block favicon %}
@@ -68,29 +68,17 @@
     </style>
     {% block styles %}{% endblock %}
     
-    <!-- Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-JW7VP8KX3V"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'G-JW7VP8KX3V');
-    </script>
-    
-    <!-- Google AdSense -->
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3179065211650247" crossorigin="anonymous"></script>
-    
     <!-- Schema.org Markup -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
         "@type": "WebSite",
-        "name": "Sprunkr",
-        "description": "Unleash haunting melodies with our special glitch music system",
-        "url": "https://sprunkr.online",
+        "name": "trickshotsimulator",
+        "description": "Trick Shot Simulator: Raora & Gura clash in BigFish x Beeg Cat chaos! Real stunts & BTS madness. Watch now!",
+        "url": "https://trickshotsimulator.com",
         "potentialAction": {
             "@type": "SearchAction",
-            "target": "https://sprunkr.online/search?q={search_term_string}",
+            "target": "https://trickshotsimulator.com/search?q={search_term_string}",
             "query-input": "required name=search_term_string"
         }
     }
