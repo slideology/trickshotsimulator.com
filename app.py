@@ -641,15 +641,15 @@ def faq():
 
 @app.route('/sitemap.xml')
 def sitemap():
-    return send_from_directory('static', 'sitemap.xml')
+    return send_from_directory('static', 'sitemap.xml', mimetype='application/xml')
 
 @app.route('/robots.txt')
 def robots():
-    return send_from_directory('static', 'robots.txt')
+    return send_from_directory('static', 'robots.txt', mimetype='text/plain')
 
 @app.route('/ads.txt')
 def ads_txt():
-    return send_from_directory('static', 'ads.txt')
+    return send_from_directory('static', 'ads.txt', mimetype='text/plain')
 
 @app.route('/sprunki-lily')
 def sprunki_lily():

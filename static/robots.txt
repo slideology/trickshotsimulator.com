@@ -1,12 +1,13 @@
 User-agent: *
 Allow: /
+Allow: /sitemap.xml
+Allow: /index.html
 
 # 禁止访问的目录
 Disallow: /api/
 Disallow: /admin/
 Disallow: /temp/
 Disallow: /dev/
-Disallow: /_next/static/
 
 # 爬虫设置
 Crawl-delay: 1
