@@ -469,43 +469,31 @@ def get_faqs_for_page(page_name):
         'index': {
             'faqs': [
                 {
-    "question": "What is Sprunki Sprunkr Game?",
-    "answer": "Sprunki Sprunkr Game is a fan-made expansion of the popular Incredibox music-mixing game, introducing Sprunki Sprunkr mods, Sprunki Sprunkr phases, and unique gameplay elements. It offers endless opportunities to craft personal tracks and is a creative journey into rhythm and sound, playable for free."
+"question": "What kind of game is TrickShot Simulator?",
+"answer": "It's an ultimate stunt shot simulator that realistically reproduces real - life action, allowing players to experience various stunt shot levels with simple mouse operation. It challenges precision and patience."
 },
 {
-    "question": "What are the key features of Sprunki Sprunkr Game?",
-    "answer": "The key features include Sprunki Sprunkr Mods which are fan-made modifications with custom characters, beats, and animations; Sprunki Sprunkr Phases like themed expansions for enhanced gameplay; Interactive Gameplay with drag-and-drop controls for creating soundtracks; and Creative Freedom to combine sounds, experiment with visuals, and share creations with the community."
+"question": "What are the game features of TrickShot Simulator?",
+"answer": "Use the mouse to throw various objects at tiny targets. The game is extremely difficult, with small operation differences affecting the outcome. Some stunt shots can take a long time to complete. It offers a sense of achievement when overcoming challenges and has special shot replay sharing for successful trick shots."
 },
 {
-    "question": "Who is the creator of the original Sprunki Sprunkr Mod and what's their background?",
-    "answer": "The creator is NyankoBfLol. They are 15 years old from Thailand, have been active on the Scratch platform for over 2 years, enjoy creating fun and imaginative content, and are currently focusing on the Sprunki Sprunkr mod. Their YouTube Channel is https://www.youtube.com/@nyankobflol8390 and they also have other profiles like Cocrea Profile and Scratch Profile."
+"question": "How can players share their successful trick shots?",
+"answer": "Successful trick shots are recorded as replay videos (mp4), which players can share with friends and on social media. However, these replay videos are not included in Steam Cloud."
 },
 {
-    "question": "How do you play Incredibox Sprunki Sprunkr Game?",
-    "answer": "To play, start the game by visiting platforms like sprunkr.online or spranki.art and hitting the play button. Then choose your characters from the Sprunki Sprunkr game crew, create your mix by dragging and dropping sound icons onto the characters, unlock special features by combining certain sounds, and finally save and share your mix with friends or the community."
+"question": "What are some examples of trick shots in the game?",
+"answer": "Examples include placing cards between two balls, rolling a marble through a hole on a dice and stopping, and flipping a water bottle onto a small dice. There are also a variety of difficult stunt shots like threading a needle."
 },
 {
-    "question": "What are some tips for success in playing Sprunki Sprunkr Incredibox Game?",
-    "answer": "Tips include experimenting with sound combinations, following the beat for a more harmonious track, exploring tutorials on YouTube, and engaging with the community by sharing mixes, joining contests, and collaborating with other players."
+"question": "What are the streaming policies for TrickShot Simulator?",
+"answer": "Players are free to stream and upload videos of the gameplay. There are no restrictions on monetization for both individuals and corporations."
 },
 {
-    "question": "What are Sprunki Sprunkr Mods and their types?",
-    "answer": "Sprunki Sprunkr Mods are fan-made modifications of the original Incredibox Sprunki Sprunkr game, adding unique twists like new character designs, custom soundtracks, and thematic changes. Popular types include Original-Style Mods, Sprunki Sprunkr Horror, Thematic Mod, Crossover Sprunki Sprunkr Games, Sprunki Sprunkr Funny or Parody Mods, Advanced/Complex Mods, Gender-Based Mods, Reskin Mods, Sprunki Sprunkr Phase-Based Mods, Custom Sound Mods etc."
-},
-{
-    "question": "What are some of the top trending Sprunki Mods?",
-    "answer": "Some of the top trending Sprunki Mods are Sprunki Retake Mod, Sprunki Mustard Mod, Sprunki  Remastered, Sprunki Swapped Mod, Sprunki Parasite Mod."
-},
-{
-    "question": "What are the FAQs about Sprunki Sprunkr Incredibox?",
-    "answer": "FAQs cover aspects like what Sprunki Sprunkr Mod is (a fan-made adaptation of Incredibox with unique features), how to download Sprunki Sprunkr Incredibox (from official sites or as APK for Android), where to play Sprunki Sprunkr Mod online (on various platforms), what makes Sprunki Sprunkr Mods unique (creative twists etc.), what Sprunki Sprunkr Phases are (themed expansions), and more questions related to aspects like horror-themed mods, main characters, differences from Incredibox, collaboration possibilities, submitting fan games, and creating custom characters."
-},
-{
-    "question": "What's the conclusion about Sprunki Sprunkr Incredibox game?",
-    "answer": "Sprunki Sprunkr Incredibox game offers an immersive and creative musical experience where you can mix beats, experiment with sounds, and share creations with a thriving community. Sprunki Sprunkr and players can enjoy various versions and creations within the Sprunki Sprunkr world."
-} 
+"question": "What are the minimum system requirements for TrickShot Simulator?",
+"answer": "Requires a 64 - bit processor and operating system. The operating system should be Windows 10 64 - bit, with an Intel or AMD (2.5 GHz) processor, 4 GB of RAM, an NVIDIA GeForce GTX 1650 graphics card, DirectX Version 11, and 2 GB of free storage space."
+}
     ],
-    'conclusion': "Sprunki Sprunkr Incredibox game offers an immersive and creative musical experience where you can mix beats, experiment with sounds, and share creations with a thriving community. Sprunki Sprunkr and players can enjoy various versions and creations within the Sprunki Sprunkr world."
+    'conclusion': "Trick Shot Simulator: Raora & Gura collide in epic stunt chaos! Watch insane shots live now!"
 },
         'spruted': {
             'faqs': [
@@ -544,9 +532,7 @@ def home():
     translations_data = get_translations()
     faq_data = get_faqs_for_page('index')  # 使用sprunkr的FAQ数据作为主页FAQ
     return render_template('index.html',
-                         page_title='Sprunki Sprunkr',
-                         title='Sprunkr - Interactive Music Experience',
-                         description='Create amazing music with Sprunkr! Mix beats, compose tunes, and share your musical creations.',
+                         page_title='Trick Shot Simulator',
                          translations=translations_data,
                          dynamic_faqs=faq_data['faqs'],
                          conclusion=faq_data['conclusion'])
