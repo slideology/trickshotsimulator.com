@@ -1,13 +1,29 @@
 <!-- Trending Videos Section -->
-<div class="py-24 bg-white dark:bg-gray-800">
-    <div class="container mx-auto px-4">
-        <h2 class="text-4xl font-bold mb-12 text-center bg-gradient-to-r from-purple-600 via-pink-500 to-red-500 bg-clip-text text-transparent">
+<div class="py-12 sm:py-24 bg-white dark:bg-gray-800">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <!-- 标题区域 - 在移动端减小字体大小 -->
+        <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold mb-6 sm:mb-12 text-center bg-gradient-to-r from-purple-600 via-pink-500 to-red-500 bg-clip-text text-transparent">
             Trick Shot Simulator: Raora & Gura clash! Stunt chaos unleashed!
         </h2>
+        
+        <!-- 视频容器 - 添加更好的响应式布局 -->
         <div class="flex justify-center">
-            <!-- Video Container -->
-            <div class="relative rounded-xl overflow-hidden shadow-lg bg-gray-100 dark:bg-gray-900 w-full max-w-4xl">
-                <div id="mainPlayer" class="w-full aspect-video"></div>
+            <div class="w-full max-w-4xl">
+                <!-- 16:9 宽高比容器 -->
+                <div class="relative rounded-xl overflow-hidden shadow-lg bg-gray-100 dark:bg-gray-900">
+                    <!-- 加载状态指示器 -->
+                    <div id="videoLoader" class="absolute inset-0 flex items-center justify-center bg-gray-100 dark:bg-gray-900">
+                        <div class="animate-spin rounded-full h-12 w-12 border-4 border-purple-500 border-t-transparent"></div>
+                    </div>
+                    <!-- 视频播放器 -->
+                    <div class="relative w-full" style="padding-bottom: 56.25%;">
+                        <div id="mainPlayer" class="absolute inset-0 w-full h-full"></div>
+                    </div>
+                </div>
+                <!-- 视频描述 - 移动端优化 -->
+                <div class="mt-4 text-sm sm:text-base text-gray-600 dark:text-gray-300 text-center px-4">
+                    Watch the epic collaboration between Raora and Gura in this incredible trick shot challenge!
+                </div>
             </div>
         </div>
     </div>
@@ -25,8 +41,36 @@ function onYouTubeIframeAPIReady() {
         playerVars: {
             'playsinline': 1,
             'modestbranding': 1,
-            'rel': 0
+            'rel': 0,
+            'autoplay': 0,
+            'controls': 1
+        },
+        events: {
+            'onReady': onPlayerReady,
+            'onStateChange': onPlayerStateChange
         }
     });
 }
+
+function onPlayerReady(event) {
+    // 视频准备就绪时隐藏加载动画
+    document.getElementById('videoLoader').style.display = 'none';
+}
+
+function onPlayerStateChange(event) {
+    // 可以在这里添加视频状态改变时的处理逻辑
+    if (event.data == YT.PlayerState.PLAYING) {
+        document.getElementById('videoLoader').style.display = 'none';
+    }
+}
+
+// 添加窗口大小改变时的处理
+window.addEventListener('resize', function() {
+    if (player && player.getIframe()) {
+        // 确保视频容器始终保持16:9的比例
+        const iframe = player.getIframe();
+        const width = iframe.parentElement.offsetWidth;
+        iframe.style.height = (width * 9 / 16) + 'px';
+    }
+});
 </script>
