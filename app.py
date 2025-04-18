@@ -774,6 +774,10 @@ def sprunki_pyramixed():
                          conclusion=faq_data['conclusion'],
                          translations=get_translations())
 
+@app.route('/ads.txt')
+def ads_txt():
+    return send_from_directory('static', 'ads.txt')
+    
 @app.route('/privacy-policy')
 def privacy_policy():
     try:
